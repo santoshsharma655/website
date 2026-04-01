@@ -108,32 +108,35 @@
     </div>
 </div>
 <section id="feedback-popup" class="feedback-modal">
-    <div class="feedback-content" itemscope itemtype="https://schema.org/AggregateRating">
+    <div class="feedback-content" itemscope itemtype="https://schema.org/Service">
         
-        <meta itemprop="itemReviewed" content="Santosh Sharma Web Services">
-        <meta itemprop="bestRating" content="5">
-        <meta itemprop="worstRating" content="1">
-
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h3>How do you like our service ?</h3>
-        
-        <div class="stars" id="star-rating">
-            <span class="star" data-value="5" title="Excellent">&#9733;</span>
-            <span class="star" data-value="4" title="Good">&#9733;</span>
-            <span class="star" data-value="3" title="Average">&#9733;</span>
-            <span class="star" data-value="2" title="Poor">&#9733;</span>
-            <span class="star" data-value="1" title="Very Bad">&#9733;</span>
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Thing">
+            <meta itemprop="name" content="Santosh Sharma Web Services">
         </div>
-        
-        <button id="submit-rating" disabled>Rate It</button>
-        
-        <div class="live-stats">
-            <p>Average: <span id="avg-display" itemprop="ratingValue">0.0</span>/5</p>
-            <p>Total Reviews: <span id="total-count" itemprop="ratingCount">0</span></p>
+
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3>How do you like our service ?</h3>
+            
+            <div class="stars" id="star-rating">
+                <span class="star" data-value="5" title="Excellent">&#9733;</span>
+                <span class="star" data-value="4" title="Good">&#9733;</span>
+                <span class="star" data-value="3" title="Average">&#9733;</span>
+                <span class="star" data-value="2" title="Poor">&#9733;</span>
+                <span class="star" data-value="1" title="Very Bad">&#9733;</span>
+            </div>
+            
+            <button id="submit-rating" disabled>Rate It</button>
+            
+            <div class="live-stats">
+                <p>Average: <span id="avg-display" itemprop="ratingValue">0.0</span>/5</p>
+                <p>Total Reviews: <span id="total-count" itemprop="ratingCount">0</span></p>
+            </div>
         </div>
     </div>
 </section>
-
 
   
 <section class="my">
