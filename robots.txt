@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /assets/images/
-Allow: /assets/css/
-Allow: /assets/js/
-Disallow: /assets/videos/
 
 Sitemap: https://santoshsharma1.com.np/sitemap.xml
