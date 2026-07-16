@@ -4,7 +4,8 @@
                 </video>`:n.innerHTML=`
                 <img src="${d}" alt="Update" crossorigin="anonymous" 
                      style="max-width:100%; max-height:100%;" 
-                     oncontextmenu="return false;">`}}window.innerWidth>=800&&g()}),document.addEventListener("DOMContentLoaded",()=>{let a="en",e="ne",t,n=document.getElementById("sourceText"),r=document.getElementById("targetText"),i=document.getElementById("charCounter"),s=document.getElementById("loader");async function o(){let t=n.value.trim();if(!t){r.value="";return}s&&s.classList.remove("hidden");try{let i=t.match(/[\s\S]{1,2000}/g)||[],o="";for(let h of i){let l=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=${a}&tl=${e}&dt=t&q=${encodeURIComponent(h)}`,$=await fetch(l),d=await $.json();d&&d[0]&&d[0].forEach(a=>{a[0]&&(o+=a[0])})}r.value=o}catch(u){console.error("Snova AI API Error:",u)}finally{s&&s.classList.add("hidden")}}n&&r&&(n.addEventListener("input",()=>{i&&(i.innerText=`${n.value.length} / 7000`),clearTimeout(t),t=setTimeout(o,700)}),window.switchLanguage=function(){[a,e]=[e,a];let t=document.querySelector("#lang-from span"),i=document.querySelector("#lang-to span");t&&i&&([t.innerText,i.innerText]=[i.innerText,t.innerText]);let s=n.value;n.value=r.value,r.value=s,o()},window.copyToClipboard=function(){let a=r.value;a&&navigator.clipboard.writeText(a).then(()=>{let a=document.getElementById("copyTxt");if(a){let e=a.innerText;a.innerText="✓ Copied!",setTimeout(()=>{a.innerText=e},2e3)}}).catch(a=>{console.error("Copy failed: ",a)})},window.clearAll=function(){n.value="",r.value="",i&&(i.innerText="0 / 7000")})});let currentQRUrl="";function toggleQRForm(){let a=document.getElementById("qrFormContainer"),e=document.querySelector(".qr-open-btn");a.classList.contains("active")?(a.classList.remove("active"),e.setAttribute("aria-expanded","false")):(a.classList.add("active"),e.setAttribute("aria-expanded","true"),setTimeout(()=>{a.scrollIntoView({behavior:"smooth",block:"start"})},400))}function generateQR(){let a=document.getElementById("fullName").value.trim();if(""===a){alert("Full Name is required");return}let e=`
+                     oncontextmenu="return false;">`}}// यदि chatDisplay र userMsg उपलब्ध छ (अर्थात् Snova AI पेज हो) भने मात्र मिडिया लोड गर्ने
+window.innerWidth>=800&&document.getElementById("chatDisplay")&&document.getElementById("userMsg")&&g()}),document.addEventListener("DOMContentLoaded",()=>{let a="en",e="ne",t,n=document.getElementById("sourceText"),r=document.getElementById("targetText"),i=document.getElementById("charCounter"),s=document.getElementById("loader");async function o(){let t=n.value.trim();if(!t){r.value="";return}s&&s.classList.remove("hidden");try{let i=t.match(/[\s\S]{1,2000}/g)||[],o="";for(let h of i){let l=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=${a}&tl=${e}&dt=t&q=${encodeURIComponent(h)}`,$=await fetch(l),d=await $.json();d&&d[0]&&d[0].forEach(a=>{a[0]&&(o+=a[0])})}r.value=o}catch(u){console.error("Snova AI API Error:",u)}finally{s&&s.classList.add("hidden")}}n&&r&&(n.addEventListener("input",()=>{i&&(i.innerText=`${n.value.length} / 7000`),clearTimeout(t),t=setTimeout(o,700)}),window.switchLanguage=function(){[a,e]=[e,a];let t=document.querySelector("#lang-from span"),i=document.querySelector("#lang-to span");t&&i&&([t.innerText,i.innerText]=[i.innerText,t.innerText]);let s=n.value;n.value=r.value,r.value=s,o()},window.copyToClipboard=function(){let a=r.value;a&&navigator.clipboard.writeText(a).then(()=>{let a=document.getElementById("copyTxt");if(a){let e=a.innerText;a.innerText="✓ Copied!",setTimeout(()=>{a.innerText=e},2e3)}}).catch(a=>{console.error("Copy failed: ",a)})},window.clearAll=function(){n.value="",r.value="",i&&(i.innerText="0 / 7000")})});let currentQRUrl="";function toggleQRForm(){let a=document.getElementById("qrFormContainer"),e=document.querySelector(".qr-open-btn");a.classList.contains("active")?(a.classList.remove("active"),e.setAttribute("aria-expanded","false")):(a.classList.add("active"),e.setAttribute("aria-expanded","true"),setTimeout(()=>{a.scrollIntoView({behavior:"smooth",block:"start"})},400))}function generateQR(){let a=document.getElementById("fullName").value.trim();if(""===a){alert("Full Name is required");return}let e=`
 SNOVA AI DIGITAL CARD
 --------------------
 Name: ${a}
@@ -21,4 +22,473 @@ Social Link: ${document.getElementById("social").value}
                         <span class="sn-font-text" style="font-family:'${a}'">${$}</span>
                     </div>
                     <button class="sn-dl-btn" onclick="snDownload(${t}, '${$}')">Download</button>
-                `,s.appendChild(n)}),l+=10,h&&(h.className=l>=a.length?"sn-footer-hide":"sn-footer-hide show")}e&&t&&(e.onclick=()=>t.classList.add("active")),n&&t&&(n.onclick=()=>{t.classList.remove("active"),s&&(s.innerHTML="")}),r&&i&&s&&(r.onclick=()=>{if(!($=i.value.trim()))return alert("Please type your name!");s.innerHTML="",l=0,d()}),o&&(o.onclick=d)}),window.snDownload=(a,e)=>{let t=document.getElementById(`sn-cap-${a}`);t&&html2canvas(t,{scale:3,backgroundColor:"#ffffff",useCORS:!0}).then(a=>{let t=document.createElement("a");t.download=`Signature_${e||"Snova"}.jpg`,t.href=a.toDataURL("image/jpeg",.9),t.click()})}}(),document.addEventListener("DOMContentLoaded",()=>{let a=document.getElementById("langToggle"),e="en";a&&a.addEventListener("click",()=>{let t=document.querySelectorAll("[data-en]");t.forEach(a=>{a.style.transition="opacity 0.2s ease",a.style.opacity="0",setTimeout(()=>{"en"===e?a.textContent=a.getAttribute("data-ne"):a.textContent=a.getAttribute("data-en"),a.style.opacity="1"},200)}),"en"===e?(a.textContent="In English",e="ne"):(a.textContent="In Nepali",e="en")})}),function(a,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((a="undefined"!=typeof globalThis?globalThis:a||self).NepaliDate={})}(this,function(a){"use strict";var e,t,n=function(){return(n=Object.assign||function a(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var i in t=arguments[n])Object.prototype.hasOwnProperty.call(t,i)&&(e[i]=t[i]);return e}).apply(this,arguments)},r={2e3:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2001:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2002:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2003:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2004:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2005:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2006:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2007:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2008:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2009:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2010:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2011:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2012:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2013:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2014:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2015:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2016:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2017:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2018:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2019:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2020:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2021:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2022:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2023:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2024:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2025:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2026:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2027:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2028:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2029:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:32,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2030:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2031:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2032:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2033:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2034:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2035:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2036:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2037:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2038:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2039:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2040:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2041:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2042:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2043:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2044:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2045:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2046:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2047:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2048:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2049:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2050:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2051:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2052:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2053:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2054:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2055:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2056:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:32,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2057:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2058:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2059:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2060:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2061:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2062:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2063:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2064:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2065:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2066:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2067:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2068:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2069:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2070:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2071:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2072:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2073:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2074:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2075:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2076:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2077:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2078:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2079:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2080:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2081:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2082:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2083:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2084:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2085:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2086:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2087:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2088:{Baisakh:30,Jestha:31,Asar:32,Shrawan:32,Bhadra:30,Aswin:31,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2089:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2090:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30}};(t=e||(e={})).np="np",t.en="en";var i=Object.values(r).map(function(a){return Object.values(a)}),s=i.map(function(a){var e=0;return a.map(function(a){var t=[a,e];return e+=a,t})},[]),o=0,h=i.map(function(a){var e=a.reduce(function(a,e){return a+e},0),t=[e,o];return o+=e,t});if(33238!==o)throw Error("Invalid constant initialization for Nepali Date.");function l(a){return a-d}function $(a){return a+d}var d=2e3,u={en:{day:{short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},month:{short:["Bai","Jes","Asa","Shr","Bhd","Asw","Kar","Man","Pou","Mag","Fal","Cha"],long:["Baisakh","Jestha","Asar","Shrawan","Bhadra","Aswin","Kartik","Mangsir","Poush","Magh","Falgun","Chaitra",]},date:["0","1","2","3","4","5","6","7","8","9"]},np:{day:{short:["आइत","सोम","मंगल","बुध","बिहि","शुक्र","शनि"],long:["आइतबार","सोमबार","मंगलबार","बुधबार","बिहिबार","शुक्रबार","शनिबार"]},month:{short:["बै","जे","अ","श्रा","भा","आ","का","मं","पौ","मा","फा","चै"],long:["बैशाख","जेठ","असार","श्रावण","भाद्र","आश्विन","कार्तिक","मंसिर","पौष","माघ","फाल्गुण","चैत्र",]},date:["०","१","२","३","४","५","६","७","८","९"]}},g={year:1943,month:3,date:13,day:3};function c(a){if(a<1||a>33238)throw Error("The epoch difference is not within the boundaries ".concat(1," - ").concat(33238));var e,t=h.findIndex(function(e){return a>e[1]&&a<=e[1]+e[0]}),n=a-h[t][1],r=s[t].findIndex(function(a){return n>a[1]&&n<=a[1]+a[0]}),i=n-s[t][r][1];return{year:(e=t)+d,month:r,date:i}}function _(a){var e=new Date(Date.UTC(1943,3,13+a));return{year:e.getUTCFullYear(),month:e.getUTCMonth(),date:e.getUTCDate(),day:e.getUTCDay()}}function p(a,e){return a.split("").map(function(a){return u[e].date[parseInt(a,10)]}).join("")}function f(a){var e;if(null!==(e=a.match(/(\d{4})\s*([/-]|\s+)\s*(\d{1,2})\s*([/-]|\s+)\s*(\d{1,2})/)))return{year:parseInt(e[1],10),month:parseInt(e[3],10)-1,date:parseInt(e[5],10)};if(null!==(e=a.match(/(\d{1,2})\s*([/-]|\s+)\s*(\d{1,2})\s*([/-]|\s+)\s*(\d{4})/)))return{year:parseInt(e[5],10),month:parseInt(e[3],10)-1,date:parseInt(e[1],10)};throw Error("Invalid date format")}var y=Symbol("Date"),m=Symbol("Day"),w=Symbol("Year"),B=Symbol("MonthIndex"),k=Symbol("JsDate"),M=Symbol("convertToBS()"),v=Symbol("convertToAD()"),A=Symbol("setADBS()"),C=Symbol("setDayYearMonth()"),S=function(){function a(){var a=Error("Invalid constructor arguments");if(0===arguments.length)this[M](new Date);else if(1===arguments.length){var e=arguments[0];switch(typeof e){case"number":this[M](new Date(e));break;case"string":var t=f(e),n=t.date,r=t.year,i=t.month;this[C](r,i,n),this[v]();break;case"object":if(e instanceof Date)this[M](e);else throw a;break;default:throw a}}else if(arguments.length<=3)this[C](arguments[0],arguments[1],arguments[2]),this[v]();else throw a}return a.prototype[C]=function(a,e,t,n){void 0===e&&(e=0),void 0===t&&(t=1),void 0===n&&(n=0),this[w]=a,this[B]=e,this[y]=t,this[m]=n},a.prototype.toJsDate=function(){return this[k]},a.prototype.getDate=function(){return this[y]},a.prototype.getYear=function(){return this[w]},a.prototype.getDay=function(){return this[m]},a.prototype.getMonth=function(){return this[B]},a.prototype.getDateObject=function(){return{BS:this.getBS(),AD:this.getAD()}},a.prototype.getBS=function(){return{year:this[w],month:this[B],date:this[y],day:this[m]}},a.prototype.getAD=function(){return{year:this[k].getFullYear(),month:this[k].getMonth(),date:this[k].getDate(),day:this[k].getDay()}},a.prototype.setDate=function(a){var e=this[y];try{this[y]=a,this[v]()}catch(t){throw this[y]=e,t}},a.prototype.setMonth=function(a){var e=this[B];try{this[B]=a,this[v]()}catch(t){throw this[B]=e,t}},a.prototype.setYear=function(a){var e=this[w];try{this[w]=a,this[v]()}catch(t){throw this[w]=e,t}},a.prototype.format=function(e,t){var n,r,i;return void 0===t&&(t=a.language),n=this.getBS(),r=e,i=t,r.replace(/((\\[MDYd])|D{1,2}|M{1,4}|Y{2,4}|d{1,3})/g,function(a,e,t){var r;switch(a){case"D":return p(n.date.toString(),i);case"DD":return p(n.date.toString().padStart(2,"0"),i);case"M":return p((n.month+1).toString(),i);case"MM":return p((n.month+1).toString().padStart(2,"0"),i);case"MMM":return u[i].month.short[n.month];case"MMMM":return u[i].month.long[n.month];case"YY":return p(n.year.toString().slice(-2),i);case"YYY":return p(n.year.toString().slice(-3),i);case"YYYY":return p(n.year.toString(),i);case"d":return p((null===(r=n.day)||void 0===r?void 0:r.toString())||"0",i);case"dd":return u[i].day.short[n.day||0];case"ddd":return u[i].day.long[n.day||0];default:return t.replace("/","")}}).replace(/\\/g,"")},a.parse=function(e){var t=f(e),n=t.date,r=t.year,i=t.month;return new a(r,i,n)},a.now=function(){return new a},a.fromAD=function(e){return new a(e)},a.prototype[M]=function(a){var e=function a(e){try{var t,r,i,s,o=(t=e.getFullYear(),r=e.getMonth(),i=e.getDate(),s=Math.abs(Date.UTC(t,r,i)-Date.UTC(g.year,g.month,g.date)),Math.ceil(s/864e5)),h=c(o),l=_(o);return{AD:l,BS:n(n({},h),{day:l.day})}}catch($){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}(a),t=e.AD,r=e.BS;this[A](t,r)},a.prototype[A]=function(a,e){this[C](e.year,e.month,e.date,e.day),this[k]=new Date(a.year,a.month,a.date)},a.prototype[v]=function(){var a=function a(e){try{var t=function a(e,t,n){try{var r,i=(r=e)-d,o=h[i][1],l=function a(e,t){for(;t<0;)t+=e;return t%e}(12,t),$=Math.floor(t/12),u=h[i+$][1]-o+s[i+$][l][1],g=o+u+n;if(g<1||g>33238)throw Error();return g}catch(c){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}(e.year,e.month,e.date),r=c(t),i=_(t);return{AD:i,BS:n(n({},r),{day:i.day})}}catch(o){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}({year:this[w],month:this[B],date:this[y]}),e=a.AD,t=a.BS;this[A](e,t)},a.prototype.valueOf=function(){return this[k].getTime()},a.prototype.toString=function(){return this.format("ddd DD, MMMM YYYY")},a.language=e.en,a}();a.dateConfigMap=r,a.default=S,Object.defineProperty(a,"__esModule",{value:!0})}),document.addEventListener("DOMContentLoaded",function(){let a=window.NepaliDate||window.NepaliDateConverter&&window.NepaliDateConverter.default;a&&a.default&&(a=a.default);let e=document.getElementById("inputCalendarType"),t=document.getElementById("inYear"),n=document.getElementById("inMonth"),r=document.getElementById("inDay"),i=document.getElementById("resVal1"),s=document.getElementById("resLabel1");function o(){if("function"!=typeof a)return;let o=parseInt(t.value),h=parseInt(n.value),l=parseInt(r.value);if(o&&h&&l)try{if("BS"===e.value){let $=new a(o,h-1,l);s.innerText="A.D. Date:",i.innerText=$.toJsDate().toDateString()}else{let d=new Date(o,h-1,l),u=new a(d);s.innerText="B.S. Date:",i.innerText=u.format("YYYY MMMM DD")}}catch(g){i.innerText="Invalid Date"}}if(t){[t,n,r,e].forEach(a=>{a.addEventListener("input",o)});try{let h=new a;t.value=h.getYear(),n.value=h.getMonth()+1,r.value=h.getDate(),o()}catch(l){}}let $=document.getElementById("datePopup");if($){let d=localStorage.getItem("datePopupLastShown"),u=new Date().getTime();(!d||u-d>864e5)&&setTimeout(()=>{updatePopupData(),$.classList.add("show-popup"),setTimeout(()=>{$.classList.remove("show-popup"),localStorage.setItem("datePopupLastShown",u)},8e3)},3e3)}});const apiConfig={primary:{key:"b5316ef253c1b7936b6e733d",url:"https://v6.exchangerate-api.com/v6/"},backup1:{key:"fca_live_t7AyVMrrS3KY7mmwwIqK0ZNFFs2C2Ex8wnkL7UhV",url:"https://api.freecurrencyapi.com/v1/latest"},backup2:{url:"https://api.frankfurter.app/latest"}},fromCur=document.getElementById("fromCurrency"),toCur=document.getElementById("toCurrency");if(fromCur&&toCur){async function a(){try{let a=await fetch(`${apiConfig.primary.url}${apiConfig.primary.key}/codes`),t=await a.json();t.supported_codes.forEach(([a,e])=>{fromCur.add(new Option(`${a} - ${e}`,a)),toCur.add(new Option(`${a} - ${e}`,a))}),fromCur.value="USD",toCur.value="NPR",e(!1)}catch(n){console.error("API Init Error")}}function e(a=!0){let e=document.getElementById("fromFlag"),n=document.getElementById("toFlag");e&&(e.src=`https://flagcdn.com/w40/${fromCur.value.slice(0,2).toLowerCase()}.png`),n&&(n.src=`https://flagcdn.com/w40/${toCur.value.slice(0,2).toLowerCase()}.png`),a&&t()}async function t(){let a=document.getElementById("amount"),e=(a?a.value:1)||1,t=fromCur.value,i=toCur.value,s=`rates_${t}`,o=new Date().getTime(),h=localStorage.getItem(s),l=localStorage.getItem(`sync_${t}`);if(h&&l&&o-l<864e5){let $=JSON.parse(h);if($[i]){r($[i]*e,$[i],parseInt(l));return}}let d=document.getElementById("finalAmount");d&&(d.innerText="Syncing...");try{let u=await (await fetch(`${apiConfig.primary.url}${apiConfig.primary.key}/latest/${t}`)).json();if("success"===u.result){n(u.conversion_rates,t,i,e,o);return}}catch(g){console.warn("Primary API Failed")}try{let c=await (await fetch(`${apiConfig.backup1.url}?apikey=${apiConfig.backup1.key}&base_currency=${t}&currencies=${i}`)).json();if(c.data){n(c.data,t,i,e,o);return}}catch(_){console.warn("Backup 1 Failed")}try{let p=await (await fetch(`${apiConfig.backup2.url}?from=${t}&to=${i}`)).json();p.rates&&n(p.rates,t,i,e,o)}catch(f){d&&(d.innerText="Error: All Limits Reached")}}function n(a,e,t,n,i){localStorage.setItem(`rates_${e}`,JSON.stringify(a)),localStorage.setItem(`sync_${e}`,i),r(a[t]*n,a[t],i)}function r(a,e,t){let n=document.getElementById("finalAmount"),r=document.getElementById("rateInfo"),i=document.getElementById("updateTime");if(n&&(n.innerText=`${a.toLocaleString(void 0,{minimumFractionDigits:2})} ${toCur.value}`),r&&(r.innerText=`1 ${fromCur.value} = ${e.toFixed(4)} ${toCur.value}`),i){let s=new Date(t).toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"});i.innerText=`Last Bank Sync: ${s}`}}let i=document.getElementById("swapBtn");i&&(i.onclick=()=>{[fromCur.value,toCur.value]=[toCur.value,fromCur.value],e()}),fromCur.onchange=()=>e(),toCur.onchange=()=>e();let s=document.getElementById("amount");s&&(s.oninput=t),a()}function toggleView(a,e){let t=document.getElementById(a+"-intro"),n=document.getElementById(a+"-details");t&&n&&(e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none"))}function changeLang(a,e){let t=document.getElementById(a+"-accordion");if(t){t.querySelectorAll(".acc-body").forEach(a=>{let t=a.getAttribute("data-"+e);t&&(a.innerHTML=t)});let n=document.getElementById(a+"-ne-btn"),r=document.getElementById(a+"-en-btn");n&&n.classList.toggle("active","ne"===e),r&&r.classList.toggle("active","en"===e)}}document.addEventListener("DOMContentLoaded",function(){let a=document.getElementById("unitCategory"),e=document.getElementById("unitInput"),t=document.getElementById("unitFrom"),n=document.getElementById("unitTo"),r=document.getElementById("unitResult"),i=document.getElementById("unitNameDisplay"),s=document.getElementById("unitSwapBtn"),o=document.getElementById("unit-converter");if(a&&e&&t&&n&&o){if("undefined"!=typeof IntersectionObserver){let h=new IntersectionObserver(a=>{a.forEach(a=>{a.isIntersecting&&o.classList.add("show-animation")})},{threshold:.2});h.observe(o)}let l={length:{meter:1,km:.001,cm:100,mile:621371e-9,foot:3.28084,inch:39.3701},weight:{kg:1,gram:1e3,pound:2.20462,ounce:35.274},area:{"sq-meter":1,"sq-foot":10.7639,acre:247105e-9,ropani:.01965,bigha:147e-6},volume:{liter:1,ml:1e3,gallon:.264172},speed:{"km/h":1,mph:.621371,"m/s":.277778},time:{second:1,minute:.0166667,hour:277778e-9,day:11574e-9},digital:{MB:1,GB:976563e-9,TB:953e-9,KB:1024},pressure:{pascal:1,bar:1e-5,psi:145038e-9},frequency:{hertz:1,kilohertz:.001,megahertz:1e-6},temperature:{celsius:"c",fahrenheit:"f",kelvin:"k"}};function $(){let e=a.value,r=Object.keys(l[e]);t.innerHTML=r.map(a=>`<option value="${a}">${a.toUpperCase()}</option>`).join(""),n.innerHTML=r.map(a=>`<option value="${a}">${a.toUpperCase()}</option>`).join(""),n.selectedIndex=1,d()}function d(){let s=parseFloat(e.value),o=n.value;if(isNaN(s)){r&&(r.innerText="0.00"),i&&(i.innerText=o.toUpperCase());return}let h=a.value,$=t.value,d;if("temperature"===h){let u="c"===$?s:"f"===$?(s-32)*5/9:s-273.15;d="c"===o?u:"f"===o?9*u/5+32:u+273.15}else{let g=l[h][$],c=l[h][o];d=s/g*c}r&&(r.innerText=d.toLocaleString(void 0,{maximumFractionDigits:4})),i&&(i.innerText=o.toUpperCase())}a.addEventListener("change",$),[e,t,n].forEach(a=>{a&&a.addEventListener("input",d)}),s&&s.addEventListener("click",()=>{let a=t.value;t.value=n.value,n.value=a,d()}),$()}}),document.querySelectorAll(".acc-head").forEach(a=>{a.addEventListener("click",()=>{let e=a.parentElement,t=e.parentElement;t&&t.querySelectorAll(".acc-card").forEach(a=>{a!==e&&a.classList.remove("active")}),e.classList.toggle("active")})});const revealObserver=new IntersectionObserver(a=>{a.forEach(a=>{a.isIntersecting&&a.target.classList.add("visible")})},{threshold:.1});function switchResultTab(a,e){let t=document.getElementById(a+"-screen").previousElementSibling,n=document.getElementById(a+"-screen");e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none")}document.querySelectorAll(".scroll-reveal").forEach(a=>{a&&revealObserver.observe(a)}),window.onload=()=>{document.getElementById("gov-accordion")&&changeLang("gov","ne"),document.getElementById("ntc-accordion")&&changeLang("ntc","ne"),document.querySelectorAll(".scroll-reveal").forEach(a=>{a&&a.classList.add("visible")})},"undefined"!=typeof emailjs&&emailjs.init("_N7S4qogRNuwsa-8G");const contactForm=document.getElementById("contact-form");contactForm&&contactForm.addEventListener("submit",function(a){a.preventDefault();let e=document.getElementById("submit-btn"),t=document.getElementById("status-msg");if("undefined"==typeof emailjs){alert("Email service is currently unavailable. Please try again later.");return}e.innerText="Sending...",e.disabled=!0,emailjs.sendForm("service_hxn0i4q","template_qbs42as",this).then(function(){t.innerHTML="<p style='color:green; margin-top:10px; font-weight:bold;'>Thanks! Message Sent. I'll be in touch soon.</p>",e.innerText="Message Sent!",contactForm.reset(),setTimeout(()=>{e.innerText="Send Message",e.disabled=!1,t.innerHTML=""},5e3)},function(a){console.error("EmailJS Error:",a),t.innerHTML="<p style='color:red; margin-top:10px;'>Oops! Something went wrong. Please try again.</p>",e.innerText="Send Message",e.disabled=!1})});const ratingConfig={apiKey:"AIzaSyD6fuC5_zlTONBjwvk2tDXvu4yBLMcs_Bo",authDomain:"website-rating-2f755.firebaseapp.com",projectId:"website-rating-2f755",storageBucket:"website-rating-2f755.firebasestorage.app",messagingSenderId:"1048134413231",appId:"1:1048134413231:web:125b09179d28bc121e5d5a"};let ratingApp;try{(ratingApp=firebase.apps.find(a=>"RatingApp"===a.name))||(ratingApp=firebase.initializeApp(ratingConfig,"RatingApp"))}catch(o){console.warn("RatingApp initialization logic:",o)}const ratingDb=firebase.firestore(ratingApp);window.closePopup=function(){let a=document.getElementById("feedback-popup");a&&(a.classList.remove("active"),setTimeout(()=>{a.style.display="none"},400))},document.addEventListener("DOMContentLoaded",()=>{let a=document.getElementById("feedback-popup"),e=document.querySelectorAll(".star"),t=document.getElementById("submit-rating");if(!a||!t||!ratingDb)return;let n=ratingDb.collection("statistics").doc("ratings");function r(){n.get().then(a=>{if(a.exists){let e=a.data(),t=document.getElementById("total-count"),n=document.getElementById("avg-display");if(t&&(t.innerText=e.totalUsers||0),n){let r=e.totalUsers>0?(e.sumRatings/e.totalUsers).toFixed(1):"0";n.innerText=r}}}).catch(a=>console.log("Rating fetch error:",a))}r();let i=localStorage.getItem("v_feedback_timestamp");(!i||Date.now()-parseInt(i)>2592e6)&&setTimeout(()=>{a.style.display="flex",setTimeout(()=>a.classList.add("active"),100)},15e3),e.forEach(a=>{a.addEventListener("click",function(){e.forEach(a=>a.classList.remove("selected")),this.classList.add("selected"),t.disabled=!1,t.dataset.rating=this.dataset.value})}),t.addEventListener("click",async()=>{let a=parseInt(t.dataset.rating);if(a){t.disabled=!0,t.innerText="सेभ हुँदैछ...";try{await n.update({totalUsers:firebase.firestore.FieldValue.increment(1),sumRatings:firebase.firestore.FieldValue.increment(a)}),localStorage.setItem("v_feedback_timestamp",Date.now()),t.style.background="#10b981",t.innerText="Thanks✓",r(),setTimeout(window.closePopup,2e3)}catch(e){console.error("Update error:",e),t.innerText="Error! Try again",t.disabled=!1}}})});
+                `,s.appendChild(n)}),l+=10,h&&(h.className=l>=a.length?"sn-footer-hide":"sn-footer-hide show")}e&&t&&(e.onclick=()=>t.classList.add("active")),n&&t&&(n.onclick=()=>{t.classList.remove("active"),s&&(s.innerHTML="")}),r&&i&&s&&(r.onclick=()=>{if(!($=i.value.trim()))return alert("Please type your name!");s.innerHTML="",l=0,d()}),o&&(o.onclick=d)}),window.snDownload=(a,e)=>{let t=document.getElementById(`sn-cap-${a}`);t&&html2canvas(t,{scale:3,backgroundColor:"#ffffff",useCORS:!0}).then(a=>{let t=document.createElement("a");t.download=`Signature_${e||"Snova"}.jpg`,t.href=a.toDataURL("image/jpeg",.9),t.click()})}}(),document.addEventListener("DOMContentLoaded",()=>{let a=document.getElementById("langToggle"),e="en";a&&a.addEventListener("click",()=>{let t=document.querySelectorAll("[data-en]");t.forEach(a=>{a.style.transition="opacity 0.2s ease",a.style.opacity="0",setTimeout(()=>{"en"===e?a.textContent=a.getAttribute("data-ne"):a.textContent=a.getAttribute("data-en"),a.style.opacity="1"},200)}),"en"===e?(a.textContent="In English",e="ne"):(a.textContent="In Nepali",e="en")})}),function(a,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((a="undefined"!=typeof globalThis?globalThis:a||self).NepaliDate={})}(this,function(a){"use strict";var e,t,n=function(){return(n=Object.assign||function a(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var i in t=arguments[n])Object.prototype.hasOwnProperty.call(t,i)&&(e[i]=t[i]);return e}).apply(this,arguments)},r={2e3:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2001:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2002:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2003:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2004:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2005:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2006:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2007:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2008:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2009:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2010:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2011:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2012:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2013:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2014:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2015:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2016:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2017:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2018:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2019:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2020:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2021:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2022:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2023:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2024:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2025:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2026:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2027:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2028:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2029:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:32,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2030:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2031:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2032:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2033:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2034:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2035:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2036:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2037:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2038:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2039:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2040:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2041:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2042:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2043:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2044:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2045:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2046:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2047:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2048:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2049:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2050:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2051:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2052:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2053:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2054:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2055:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2056:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:32,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2057:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2058:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2059:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2060:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2061:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2062:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2063:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2064:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2065:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2066:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:29,Chaitra:31},2067:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2068:{Baisakh:31,Jestha:31,Asar:32,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2069:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2070:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:29,Mangsir:30,Poush:30,Magh:29,Falgun:30,Chaitra:30},2071:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2072:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2073:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2074:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2075:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2076:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2077:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2078:{Baisakh:31,Jestha:31,Asar:31,Shrawan:32,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2079:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2080:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:30},2081:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2082:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2083:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2084:{Baisakh:31,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:29,Falgun:30,Chaitra:31},2085:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:29,Chaitra:31},2086:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:29,Poush:30,Magh:29,Falgun:30,Chaitra:30},2087:{Baisakh:31,Jestha:31,Asar:32,Shrawan:31,Bhadra:31,Aswin:31,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2088:{Baisakh:30,Jestha:31,Asar:32,Shrawan:32,Bhadra:30,Aswin:31,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2089:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30},2090:{Baisakh:30,Jestha:32,Asar:31,Shrawan:32,Bhadra:31,Aswin:30,Kartik:30,Mangsir:30,Poush:29,Magh:30,Falgun:30,Chaitra:30}};(t=e||(e={})).np="np",t.en="en";var i=Object.values(r).map(function(a){return Object.values(a)}),s=i.map(function(a){var e=0;return a.map(function(a){var t=[a,e];return e+=a,t})},[]),o=0,h=i.map(function(a){var e=a.reduce(function(a,e){return a+e},0),t=[e,o];return o+=e,t});if(33238!==o)throw Error("Invalid constant initialization for Nepali Date.");function l(a){return a-d}function $(a){return a+d}var d=2e3,u={en:{day:{short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},month:{short:["Bai","Jes","Asa","Shr","Bhd","Asw","Kar","Man","Pou","Mag","Fal","Cha"],long:["Baisakh","Jestha","Asar","Shrawan","Bhadra","Aswin","Kartik","Mangsir","Poush","Magh","Falgun","Chaitra",]},date:["0","1","2","3","4","5","6","7","8","9"]},np:{day:{short:["आइत","सोम","मंगल","बुध","बिहि","शुक्र","शनि"],long:["आइतबार","सोमबार","मंगलबार","बुधबार","बिहिबार","शुक्रबार","शनिबार"]},month:{short:["बै","जे","अ","श्रा","भा","आ","का","मं","पौ","मा","फा","चै"],long:["बैशाख","जेठ","असार","श्रावण","भाद्र","आश्विन","कार्तिक","मंसिर","पौष","माघ","फाल्गुण","चैत्र",]},date:["०","१","२","३","४","५","६","७","८","९"]}},g={year:1943,month:3,date:13,day:3};function c(a){if(a<1||a>33238)throw Error("The epoch difference is not within the boundaries ".concat(1," - ").concat(33238));var e,t=h.findIndex(function(e){return a>e[1]&&a<=e[1]+e[0]}),n=a-h[t][1],r=s[t].findIndex(function(a){return n>a[1]&&n<=a[1]+a[0]}),i=n-s[t][r][1];return{year:(e=t)+d,month:r,date:i}}function _(a){var e=new Date(Date.UTC(1943,3,13+a));return{year:e.getUTCFullYear(),month:e.getUTCMonth(),date:e.getUTCDate(),day:e.getUTCDay()}}function p(a,e){return a.split("").map(function(a){return u[e].date[parseInt(a,10)]}).join("")}function f(a){var e;if(null!==(e=a.match(/(\d{4})\s*([/-]|\s+)\s*(\d{1,2})\s*([/-]|\s+)\s*(\d{1,2})/)))return{year:parseInt(e[1],10),month:parseInt(e[3],10)-1,date:parseInt(e[5],10)};if(null!==(e=a.match(/(\d{1,2})\s*([/-]|\s+)\s*(\d{1,2})\s*([/-]|\s+)\s*(\d{4})/)))return{year:parseInt(e[5],10),month:parseInt(e[3],10)-1,date:parseInt(e[1],10)};throw Error("Invalid date format")}var y=Symbol("Date"),m=Symbol("Day"),w=Symbol("Year"),B=Symbol("MonthIndex"),k=Symbol("JsDate"),M=Symbol("convertToBS()"),v=Symbol("convertToAD()"),A=Symbol("setADBS()"),C=Symbol("setDayYearMonth()"),S=function(){function a(){var a=Error("Invalid constructor arguments");if(0===arguments.length)this[M](new Date);else if(1===arguments.length){var e=arguments[0];switch(typeof e){case"number":this[M](new Date(e));break;case"string":var t=f(e),n=t.date,r=t.year,i=t.month;this[C](r,i,n),this[v]();break;case"object":if(e instanceof Date)this[M](e);else throw a;break;default:throw a}}else if(arguments.length<=3)this[C](arguments[0],arguments[1],arguments[2]),this[v]();else throw a}return a.prototype[C]=function(a,e,t,n){void 0===e&&(e=0),void 0===t&&(t=1),void 0===n&&(n=0),this[w]=a,this[B]=e,this[y]=t,this[m]=n},a.prototype.toJsDate=function(){return this[k]},a.prototype.getDate=function(){return this[y]},a.prototype.getYear=function(){return this[w]},a.prototype.getDay=function(){return this[m]},a.prototype.getMonth=function(){return this[B]},a.prototype.getDateObject=function(){return{BS:this.getBS(),AD:this.getAD()}},a.prototype.getBS=function(){return{year:this[w],month:this[B],date:this[y],day:this[m]}},a.prototype.getAD=function(){return{year:this[k].getFullYear(),month:this[k].getMonth(),date:this[k].getDate(),day:this[k].getDay()}},a.prototype.setDate=function(a){var e=this[y];try{this[y]=a,this[v]()}catch(t){throw this[y]=e,t}},a.prototype.setMonth=function(a){var e=this[B];try{this[B]=a,this[v]()}catch(t){throw this[B]=e,t}},a.prototype.setYear=function(a){var e=this[w];try{this[w]=a,this[v]()}catch(t){throw this[w]=e,t}},a.prototype.format=function(e,t){var n,r,i;return void 0===t&&(t=a.language),n=this.getBS(),r=e,i=t,r.replace(/((\\[MDYd])|D{1,2}|M{1,4}|Y{2,4}|d{1,3})/g,function(a,e,t){var r;switch(a){case"D":return p(n.date.toString(),i);case"DD":return p(n.date.toString().padStart(2,"0"),i);case"M":return p((n.month+1).toString(),i);case"MM":return p((n.month+1).toString().padStart(2,"0"),i);case"MMM":return u[i].month.short[n.month];case"MMMM":return u[i].month.long[n.month];case"YY":return p(n.year.toString().slice(-2),i);case"YYY":return p(n.year.toString().slice(-3),i);case"YYYY":return p(n.year.toString(),i);case"d":return p((null===(r=n.day)||void 0===r?void 0:r.toString())||"0",i);case"dd":return u[i].day.short[n.day||0];case"ddd":return u[i].day.long[n.day||0];default:return t.replace("/","")}}).replace(/\\/g,"")},a.parse=function(e){var t=f(e),n=t.date,r=t.year,i=t.month;return new a(r,i,n)},a.now=function(){return new a},a.fromAD=function(e){return new a(e)},a.prototype[M]=function(a){var e=function a(e){try{var t,r,i,s,o=(t=e.getFullYear(),r=e.getMonth(),i=e.getDate(),s=Math.abs(Date.UTC(t,r,i)-Date.UTC(g.year,g.month,g.date)),Math.ceil(s/864e5)),h=c(o),l=_(o);return{AD:l,BS:n(n({},h),{day:l.day})}}catch($){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}(a),t=e.AD,r=e.BS;this[A](t,r)},a.prototype[A]=function(a,e){this[C](e.year,e.month,e.date,e.day),this[k]=new Date(a.year,a.month,a.date)},a.prototype[v]=function(){var a=function a(e){try{var t=function a(e,t,n){try{var r,i=(r=e)-d,o=h[i][1],l=function a(e,t){for(;t<0;)t+=e;return t%e}(12,t),$=Math.floor(t/12),u=h[i+$][1]-o+s[i+$][l][1],g=o+u+n;if(g<1||g>33238)throw Error();return g}catch(c){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}(e.year,e.month,e.date),r=c(t),i=_(t);return{AD:i,BS:n(n({},r),{day:i.day})}}catch(o){throw Error("The date doesn't fall within 2000/01/01 - 2090/12/30")}}({year:this[w],month:this[B],date:this[y]}),e=a.AD,t=a.BS;this[A](e,t)},a.prototype.valueOf=function(){return this[k].getTime()},a.prototype.toString=function(){return this.format("ddd DD, MMMM YYYY")},a.language=e.en,a}();a.dateConfigMap=r,a.default=S,Object.defineProperty(a,"__esModule",{value:!0})}),document.addEventListener("DOMContentLoaded",function(){let a=window.NepaliDate||window.NepaliDateConverter&&window.NepaliDateConverter.default;a&&a.default&&(a=a.default);let e=document.getElementById("inputCalendarType"),t=document.getElementById("inYear"),n=document.getElementById("inMonth"),r=document.getElementById("inDay"),i=document.getElementById("resVal1"),s=document.getElementById("resLabel1");function o(){if("function"!=typeof a)return;let o=parseInt(t.value),h=parseInt(n.value),l=parseInt(r.value);if(o&&h&&l)try{if("BS"===e.value){let $=new a(o,h-1,l);s.innerText="A.D. Date:",i.innerText=$.toJsDate().toDateString()}else{let d=new Date(o,h-1,l),u=new a(d);s.innerText="B.S. Date:",i.innerText=u.format("YYYY MMMM DD")}}catch(g){i.innerText="Invalid Date"}}if(t){[t,n,r,e].forEach(a=>{a.addEventListener("input",o)});try{let h=new a;t.value=h.getYear(),n.value=h.getMonth()+1,r.value=h.getDate(),o()}catch(l){}}let $=document.getElementById("datePopup");if($){let d=localStorage.getItem("datePopupLastShown"),u=new Date().getTime();(!d||u-d>864e5)&&setTimeout(()=>{updatePopupData(),$.classList.add("show-popup"),setTimeout(()=>{$.classList.remove("show-popup"),localStorage.setItem("datePopupLastShown",u)},8e3)},3e3)}});const apiConfig={primary:{key:"b5316ef253c1b7936b6e733d",url:"https://v6.exchangerate-api.com/v6/"},backup1:{key:"fca_live_t7AyVMrrS3KY7mmwwIqK0ZNFFs2C2Ex8wnkL7UhV",url:"https://api.freecurrencyapi.com/v1/latest"},backup2:{url:"https://api.frankfurter.app/latest"}},fromCur=document.getElementById("fromCurrency"),toCur=document.getElementById("toCurrency");if(fromCur&&toCur){async function a(){try{let a=await fetch(`${apiConfig.primary.url}${apiConfig.primary.key}/codes`),t=await a.json();t.supported_codes.forEach(([a,e])=>{fromCur.add(new Option(`${a} - ${e}`,a)),toCur.add(new Option(`${a} - ${e}`,a))}),fromCur.value="USD",toCur.value="NPR",e(!1)}catch(n){console.error("API Init Error")}}function e(a=!0){let e=document.getElementById("fromFlag"),n=document.getElementById("toFlag");e&&(e.src=`https://flagcdn.com/w40/${fromCur.value.slice(0,2).toLowerCase()}.png`),n&&(n.src=`https://flagcdn.com/w40/${toCur.value.slice(0,2).toLowerCase()}.png`),a&&t()}async function t(){let a=document.getElementById("amount"),e=(a?a.value:1)||1,t=fromCur.value,i=toCur.value,s=`rates_${t}`,o=new Date().getTime(),h=localStorage.getItem(s),l=localStorage.getItem(`sync_${t}`);if(h&&l&&o-l<864e5){let $=JSON.parse(h);if($[i]){r($[i]*e,$[i],parseInt(l));return}}let d=document.getElementById("finalAmount");d&&(d.innerText="Syncing...");try{let u=await (await fetch(`${apiConfig.primary.url}${apiConfig.primary.key}/latest/${t}`)).json();if("success"===u.result){n(u.conversion_rates,t,i,e,o);return}}catch(g){console.warn("Primary API Failed")}try{let c=await (await fetch(`${apiConfig.backup1.url}?apikey=${apiConfig.backup1.key}&base_currency=${t}&currencies=${i}`)).json();if(c.data){n(c.data,t,i,e,o);return}}catch(_){console.warn("Backup 1 Failed")}try{let p=await (await fetch(`${apiConfig.backup2.url}?from=${t}&to=${i}`)).json();p.rates&&n(p.rates,t,i,e,o)}catch(f){d&&(d.innerText="Error: All Limits Reached")}}function n(a,e,t,n,i){localStorage.setItem(`rates_${e}`,JSON.stringify(a)),localStorage.setItem(`sync_${e}`,i),r(a[t]*n,a[t],i)}function r(a,e,t){let n=document.getElementById("finalAmount"),r=document.getElementById("rateInfo"),i=document.getElementById("updateTime");if(n&&(n.innerText=`${a.toLocaleString(void 0,{minimumFractionDigits:2})} ${toCur.value}`),r&&(r.innerText=`1 ${fromCur.value} = ${e.toFixed(4)} ${toCur.value}`),i){let s=new Date(t).toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"});i.innerText=`Last Bank Sync: ${s}`}}let i=document.getElementById("swapBtn");i&&(i.onclick=()=>{[fromCur.value,toCur.value]=[toCur.value,fromCur.value],e()}),fromCur.onchange=()=>e(),toCur.onchange=()=>e();let s=document.getElementById("amount");s&&(s.oninput=t),a()}function toggleView(a,e){let t=document.getElementById(a+"-intro"),n=document.getElementById(a+"-details");t&&n&&(e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none"))}function changeLang(a,e){let t=document.getElementById(a+"-accordion");if(t){t.querySelectorAll(".acc-body").forEach(a=>{let t=a.getAttribute("data-"+e);t&&(a.innerHTML=t)});let n=document.getElementById(a+"-ne-btn"),r=document.getElementById(a+"-en-btn");n&&n.classList.toggle("active","ne"===e),r&&r.classList.toggle("active","en"===e)}}document.addEventListener("DOMContentLoaded",function(){let a=document.getElementById("unitCategory"),e=document.getElementById("unitInput"),t=document.getElementById("unitFrom"),n=document.getElementById("unitTo"),r=document.getElementById("unitResult"),i=document.getElementById("unitNameDisplay"),s=document.getElementById("unitSwapBtn"),o=document.getElementById("unit-converter");if(a&&e&&t&&n&&o){if("undefined"!=typeof IntersectionObserver){let h=new IntersectionObserver(a=>{a.forEach(a=>{a.isIntersecting&&o.classList.add("show-animation")})},{threshold:.2});h.observe(o)}let l={length:{meter:1,km:.001,cm:100,mile:621371e-9,foot:3.28084,inch:39.3701},weight:{kg:1,gram:1e3,pound:2.20462,ounce:35.274},area:{"sq-meter":1,"sq-foot":10.7639,acre:247105e-9,ropani:.01965,bigha:147e-6},volume:{liter:1,ml:1e3,gallon:.264172},speed:{"km/h":1,mph:.621371,"m/s":.277778},time:{second:1,minute:.0166667,hour:277778e-9,day:11574e-9},digital:{MB:1,GB:976563e-9,TB:953e-9,KB:1024},pressure:{pascal:1,bar:1e-5,psi:145038e-9},frequency:{hertz:1,kilohertz:.001,megahertz:1e-6},temperature:{celsius:"c",fahrenheit:"f",kelvin:"k"}};function $(){let e=a.value,r=Object.keys(l[e]);t.innerHTML=r.map(a=>`<option value="${a}">${a.toUpperCase()}</option>`).join(""),n.innerHTML=r.map(a=>`<option value="${a}">${a.toUpperCase()}</option>`).join(""),n.selectedIndex=1,d()}function d(){let s=parseFloat(e.value),o=n.value;if(isNaN(s)){r&&(r.innerText="0.00"),i&&(i.innerText=o.toUpperCase());return}let h=a.value,$=t.value,d;if("temperature"===h){let u="c"===$?s:"f"===$?(s-32)*5/9:s-273.15;d="c"===o?u:"f"===o?9*u/5+32:u+273.15}else{let g=l[h][$],c=l[h][o];d=s/g*c}r&&(r.innerText=d.toLocaleString(void 0,{maximumFractionDigits:4})),i&&(i.innerText=o.toUpperCase())}a.addEventListener("change",$),[e,t,n].forEach(a=>{a&&a.addEventListener("input",d)}),s&&s.addEventListener("click",()=>{let a=t.value;t.value=n.value,n.value=a,d()}),$()}}),document.querySelectorAll(".acc-head").forEach(a=>{a.addEventListener("click",()=>{let e=a.parentElement,t=e.parentElement;t&&t.querySelectorAll(".acc-card").forEach(a=>{a!==e&&a.classList.remove("active")}),e.classList.toggle("active")})});const revealObserver=new IntersectionObserver(a=>{a.forEach(a=>{a.isIntersecting&&a.target.classList.add("visible")})},{threshold:.1});function switchResultTab(a,e){let t=document.getElementById(a+"-screen").previousElementSibling,n=document.getElementById(a+"-screen");e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none")}document.querySelectorAll(".scroll-reveal").forEach(a=>{a&&revealObserver.observe(a)}),window.onload=()=>{document.getElementById("gov-accordion")&&changeLang("gov","ne"),document.getElementById("ntc-accordion")&&changeLang("ntc","ne"),document.querySelectorAll(".scroll-reveal").forEach(a=>{a&&a.classList.add("visible")})},"undefined"!=typeof emailjs&&emailjs.init("_N7S4qogRNuwsa-8G");const contactForm=document.getElementById("contact-form");contactForm&&contactForm.addEventListener("submit",function(a){a.preventDefault();let e=document.getElementById("submit-btn"),t=document.getElementById("status-msg");if("undefined"==typeof emailjs){alert("Email service is currently unavailable. Please try again later.");return}e.innerText="Sending...",e.disabled=!0,emailjs.sendForm("service_hxn0i4q","template_qbs42as",this).then(function(){t.innerHTML="<p style='color:green; margin-top:10px; font-weight:bold;'>Thanks! Message Sent. I'll be in touch soon.</p>",e.innerText="Message Sent!",contactForm.reset(),setTimeout(()=>{e.innerText="Send Message",e.disabled=!1,t.innerHTML=""},5e3)},function(a){console.error("EmailJS Error:",a),t.innerHTML="<p style='color:red; margin-top:10px;'>Oops! Something went wrong. Please try again.</p>",e.innerText="Send Message",e.disabled=!1})});
+
+                // प्राइसिङ ट्याबहरू स्विच गर्ने फङ्क्सन
+function switchPricingTab(tabId) {
+    // सबै प्राइसिङ ग्रिडहरू लुकाउने
+    const grids = document.querySelectorAll('.pricing-grid');
+    grids.forEach(grid => {
+        grid.classList.remove('active');
+    });
+
+    // सबै ट्याब बटनहरूबाट 'active' क्लास हटाउने
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // क्लिक गरिएको ट्याब ग्रिडलाई देखाउने
+    const activeGrid = document.getElementById(tabId);
+    if (activeGrid) {
+        activeGrid.classList.add('active');
+    }
+
+    // क्लिक गरिएको बटनलाई 'active' बनाउने
+    const eventTarget = window.event ? window.event.target : null;
+    if (eventTarget && eventTarget.classList.contains('tab-btn')) {
+        eventTarget.classList.add('active');
+    } else {
+        // यदि विन्डो इभेन्ट भेटिएन भने लुप लगाएर खोज्ने
+        buttons.forEach(btn => {
+            if (btn.getAttribute('onclick').includes(tabId)) {
+                btn.classList.add('active');
+            }
+        });
+    }
+}
+
+// पुराना Quiz Modal सम्बन्धी फङ्क्सनहरू (तपाईंको पहिलेकै कोडहरू यथावत राख्नुहोला)
+function openQuizModal() {
+    document.getElementById('quiz-modal').style.display = 'flex';
+}
+
+function closeQuizModal() {
+    document.getElementById('quiz-modal').style.display = 'none';
+}
+// ==========================================
+// FIREBASE & WEB3FORMS INTEGRATION FOR PRICING (COMPAT VERSION)
+// ==========================================
+
+// १. कन्फिगरेसन र कीहरू
+const PRICING_WEB3FORMS_KEY = "90d8df3d-93d2-41b1-901b-d4fb31b9cce5";
+const pricingFirebaseConfig = {
+    apiKey: "AIzaSyA7XlTXyOYa-i88j-EFrWvykwmCUQiOcpY",
+    authDomain: "pricing--packages.firebaseapp.com",
+    databaseURL: "https://pricing--packages-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "pricing--packages",
+    messagingSenderId: "895890105482",
+    appId: "1:895890105482:web:868197d9bbb22c8ac73973"
+};
+
+// २०२६ सुरक्षित फायरबेस इनिसियलाइजेशन (Compat SDK को लागि)
+let pricingApp;
+try {
+    // पहिले नै 'pricingApp' बनेको छ कि छैन चेक गर्ने
+    pricingApp = firebase.app("pricingApp");
+} catch (e) {
+    // यदि बनेको छैन भने नयाँ बनाउने
+    pricingApp = firebase.initializeApp(pricingFirebaseConfig, "pricingApp");
+}
+
+// .lp (Long Polling) र Unload Violation एरर स्थायी रूपमा हटाउन WebSocket放置 गरिएको
+try {
+    firebase.database().INTERNAL.forceWebSockets();
+} catch (err) {
+    console.log("WebSocket force applied");
+}
+
+const pricingDatabase = firebase.database(pricingApp);
+pricingDatabase.goOnline(); // कनेक्सन सधैं सक्रिय राख्न
+
+// प्लान नेमलाई म्यापिङ की (planKey) सँग जोड्नका लागि सहयोगी फसन
+function getPlanKeyFromName(planName) {
+    if (!planName) return "";
+    const name = planName.toLowerCase();
+    if (name.includes("data entry") || name.includes("typing")) {
+        if (name.includes("basic")) return "data-entry-basic";
+        if (name.includes("standard")) return "data-entry-standard";
+        if (name.includes("premium")) return "data-entry-premium";
+    }
+    if (name.includes("thumbnail") || name.includes("graphics")) {
+        if (name.includes("basic")) return "graphics-basic";
+        if (name.includes("standard")) return "graphics-standard";
+        if (name.includes("premium")) return "graphics-premium";
+    }
+    if (name.includes("portfolio") || name.includes("web dev") || name.includes("business/professional") || name.includes("web app")) {
+        if (name.includes("basic") || name.includes("portfolio")) return "web-dev-basic";
+        if (name.includes("standard") || name.includes("business")) return "web-dev-standard";
+        if (name.includes("premium") || name.includes("dynamic")) return "web-dev-premium";
+    }
+    if (name.includes("student") || name.includes("services list")) return "student-utilities";
+    return "";
+}
+
+// २. विन्डो स्कोपमा फसनहरू उपलब्ध गराउने (HTML 'onclick' का लागि सुरक्षित)
+window.switchPricingTab = function(tabId) {
+    document.querySelectorAll('.pricing-grid').forEach(grid => grid.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+    const selectedGrid = document.getElementById(tabId);
+    if (selectedGrid) selectedGrid.classList.add('active');
+    
+    const clickedBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => 
+        btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${tabId}'`)
+    );
+    if (clickedBtn) clickedBtn.classList.add('active');
+};
+
+window.openOrderModal = function(planName, cardElement) {
+    let dynamicPlanName = planName;
+    if (cardElement) {
+        const card = cardElement.closest('.pricing-card');
+        if (card && card.querySelector('.card-header h3')) {
+            dynamicPlanName = card.querySelector('.card-header h3').innerText.trim();
+        }
+    }
+
+    let orderModal = document.getElementById('orderModal');
+    if (!orderModal) {
+        createPricingOrderModalHTML();
+        orderModal = document.getElementById('orderModal');
+    }
+
+    document.getElementById('selectedPlanInput').value = dynamicPlanName;
+    document.getElementById('displayPlanName').innerText = dynamicPlanName;
+    orderModal.style.display = 'flex';
+};
+
+window.closeOrderModal = function() {
+    const orderModal = document.getElementById('orderModal');
+    if (orderModal) orderModal.style.display = 'none';
+};
+
+window.openReviewModal = function(planKey) {
+    let reviewModal = document.getElementById('reviewModal');
+    if (!reviewModal) {
+        createPricingReviewModalHTML();
+        reviewModal = document.getElementById('reviewModal');
+    }
+
+    document.getElementById('currentReviewPlanKey').value = planKey;
+    const planIdMapping = {
+        'data-entry-basic': 'Basic Plan (Simple Entry & Typing)',
+        'data-entry-standard': 'Standard Plan (Advanced Document & Data Management)',
+        'data-entry-premium': 'Premium Plan (Complete Executive & Virtual Assistant)',
+        'graphics-basic': 'Basic Plan (Thumbnail Design)',
+        'graphics-standard': 'Standard Plan (Thumbnail Design)',
+        'graphics-premium': 'Premium Plan (Thumbnail Design)',
+        'web-dev-basic': 'Basic Plan (Portfolio)',
+        'web-dev-standard': 'Standard Plan (Complete Business/professional Site)',
+        'web-dev-premium': 'Premium Plan (Dynamic Web App)',
+        'student-utilities': 'Services List & Single Rates'
+    };
+    document.getElementById('reviewModalTitle').innerText = planIdMapping[planKey] || "Reviews";
+    
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    reviewsContainer.innerHTML = "<p style='text-align:center;'>Loading reviews...</p>";
+    
+    pricingDatabase.ref(`reviews/${planKey}`).once('value').then((snapshot) => {
+        reviewsContainer.innerHTML = "";
+        const data = snapshot.val();
+        if (!data) {
+            reviewsContainer.innerHTML = "<p style='color:#777; text-align:center;'>No reviews yet. Be the first to review!</p>";
+            return;
+        }
+        
+        Object.values(data).reverse().forEach(rev => {
+            const dateStr = rev.timestamp ? new Date(rev.timestamp).toLocaleDateString() : '';
+            const stars = "⭐".repeat(parseInt(rev.rating));
+            const revItem = `
+                <div style="border-bottom:1px solid #eee; padding:10px 0; text-align:left;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                        <strong>${rev.name}</strong>
+                        <span style="font-size:12px; color:#999;">${dateStr}</span>
+                    </div>
+                    <div style="color:#ffc107; font-size:14px; margin-bottom:5px;">${stars}</div>
+                    <p style="margin:0; font-size:14px; color:#444;">${rev.comment}</p>
+                </div>`;
+            reviewsContainer.insertAdjacentHTML('beforeend', revItem);
+        });
+    }).catch(err => {
+        reviewsContainer.innerHTML = "<p style='color:red; text-align:center;'>Error loading reviews.</p>";
+    });
+
+    reviewModal.style.display = 'flex';
+};
+
+window.closeReviewModal = function() {
+    const reviewModal = document.getElementById('reviewModal');
+    if (reviewModal) reviewModal.style.display = 'none';
+};
+
+// ३. अर्डर मोडल HTML निर्माण र फायरबेस सेभ फिक्स
+function createPricingOrderModalHTML() {
+    const modalHTML = `
+    <div id="orderModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:30px; border-radius:8px; width:100%; max-width:450px; position:relative; box-shadow:0 4px 15px rgba(0,0,0,0.2); color:#333; font-family:sans-serif;">
+            <span onclick="closeOrderModal()" style="position:absolute; top:15px; right:20px; font-size:24px; cursor:pointer;">&times;</span>
+            <h3 style="margin-bottom:5px; text-align:left;">Place Your Order</h3>
+            <p style="color:#666; font-size:14px; margin-bottom:20px; text-align:left;">Selected: <strong id="displayPlanName" style="color:#333;"></strong></p>
+            <form id="dynamicOrderForm">
+                <input type="hidden" name="access_key" value="${PRICING_WEB3FORMS_KEY}">
+                <input type="hidden" name="subject" value="New Service Order from Premium Portfolio">
+                <input type="hidden" name="selected_plan" id="selectedPlanInput">
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; font-size:14px; margin-bottom:5px; text-align:left;">Full Name *</label>
+                    <input type="text" name="name" id="orderName" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; font-size:14px; margin-bottom:5px; text-align:left;">Email Address *</label>
+                    <input type="email" name="email" id="orderEmail" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; font-size:14px; margin-bottom:5px; text-align:left;">Project Details / Requirements *</label>
+                    <textarea name="message" id="orderMessage" required rows="4" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; resize:vertical; box-sizing:border-box;"></textarea>
+                </div>
+                <button type="submit" id="orderSubmitBtn" style="width:100%; background:#007bff; color:#fff; border:none; padding:12px; border-radius:4px; font-size:16px; cursor:pointer;">Submit Order</button>
+                <p id="orderStatusMessage" style="margin-top:10px; text-align:center; font-size:14px; display:none;"></p>
+            </form>
+        </div>
+    </div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    document.getElementById('dynamicOrderForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('orderSubmitBtn');
+        const statusMsg = document.getElementById('orderStatusMessage');
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending Order...";
+        statusMsg.style.display = 'block';
+        statusMsg.innerText = "Processing...";
+
+        const planName = document.getElementById('selectedPlanInput').value;
+        const name = document.getElementById('orderName').value.trim();
+        const email = document.getElementById('orderEmail').value.trim().toLowerCase();
+        const message = document.getElementById('orderMessage').value.trim();
+
+        const emailKey = email.replace(/\./g, '_');
+        const targetPlanKey = getPlanKeyFromName(planName);
+
+        // क) पहिले फायरबेस डेटाबेसमा 'orders' नोड भित्र सेभ गर्ने
+        const newOrderRef = pricingDatabase.ref('orders').push();
+        newOrderRef.set({
+            clientName: name,
+            clientEmail: email,
+            selectedPlan: planName,
+            requirements: message,
+            timestamp: Date.now()
+        }).then(() => {
+            // ख) अर्डर गरेको विशिष्ट प्लानको लागि मात्र यो इमेल प्रमाणीकरण (True) गर्ने
+            if (targetPlanKey) {
+                return pricingDatabase.ref(`allowed_emails/${emailKey}/${targetPlanKey}`).set(true);
+            }
+            return Promise.resolve();
+        }).then(() => {
+            // ग) फायरबेसमा काम सकिएपछि Web3Forms मार्फत इमेल पठाउने
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+
+            return fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(object)
+            });
+        })
+        .then(async (response) => {
+            if (response && response.status == 200) {
+                statusMsg.style.color = 'green';
+                statusMsg.innerText = "Order placed & verified for reviews successfully!";
+                this.reset();
+                setTimeout(() => { closeOrderModal(); statusMsg.style.display = 'none'; }, 2500);
+            } else {
+                statusMsg.style.color = 'orange';
+                statusMsg.innerText = "Saved in Database, but Email sending failed.";
+            }
+        })
+        .catch((err) => {
+            statusMsg.style.color = 'red';
+            statusMsg.innerText = "Error completing order.";
+            console.error(err);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit Order";
+        });
+    });
+}
+
+// ४. रिभ्यु मोडल HTML निर्माण
+function createPricingReviewModalHTML() {
+    const modalHTML = `
+    <div id="reviewModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:25px; border-radius:8px; width:100%; max-width:500px; max-height:85vh; overflow-y:auto; position:relative; box-shadow:0 4px 15px rgba(0,0,0,0.2); color:#333; font-family:sans-serif;">
+            <span onclick="closeReviewModal()" style="position:absolute; top:15px; right:20px; font-size:24px; cursor:pointer;">&times;</span>
+            <h3 id="reviewModalTitle" style="margin-bottom:15px; text-align:left;">Client Reviews</h3>
+            <div id="reviewsContainer" style="max-height:200px; overflow-y:auto; margin-bottom:20px; padding:10px; border:1px solid #f0f0f0; border-radius:4px; background:#fafafa; text-align:left;"></div>
+            
+            <form id="addReviewForm" style="border-top:2px solid #eee; padding-top:15px; text-align:left;">
+                <input type="hidden" id="currentReviewPlanKey">
+                <h4 style="margin-bottom:10px;">Leave a Review</h4>
+                <div style="margin-bottom:10px;">
+                    <label style="display:block; font-size:13px; margin-bottom:3px;">Your Email (Authorized only) *</label>
+                    <input type="email" id="revEmail" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+                </div>
+                <div style="margin-bottom:10px; display:flex; gap:15px;">
+                    <div style="flex:1;">
+                        <label style="display:block; font-size:13px; margin-bottom:3px;">Name *</label>
+                        <input type="text" id="revName" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:13px; margin-bottom:3px;">Rating *</label>
+                        <select id="revRating" style="padding:8px; border:1px solid #ccc; border-radius:4px;">
+                            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+                            <option value="4">⭐⭐⭐⭐ 4</option>
+                            <option value="3">⭐⭐⭐ 3</option>
+                            <option value="2">⭐⭐ 2</option>
+                            <option value="1">⭐ 1</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label style="display:block; font-size:13px; margin-bottom:3px;">Your Review *</label>
+                    <textarea id="revComment" required rows="3" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; resize:vertical; box-sizing:border-box;"></textarea>
+                </div>
+                <button type="submit" id="reviewSubmitBtn" style="width:100%; background:#28a745; color:#fff; border:none; padding:10px; border-radius:4px; cursor:pointer;">Submit Review</button>
+                <p id="reviewStatusMessage" style="margin-top:8px; text-align:center; font-size:13px; display:none;"></p>
+            </form>
+        </div>
+    </div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    document.getElementById('addReviewForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const planKey = document.getElementById('currentReviewPlanKey').value;
+        const email = document.getElementById('revEmail').value.trim().toLowerCase();
+        const name = document.getElementById('revName').value.trim();
+        const rating = document.getElementById('revRating').value;
+        const comment = document.getElementById('revComment').value.trim();
+        const statusMsg = document.getElementById('reviewStatusMessage');
+        const submitBtn = document.getElementById('reviewSubmitBtn');
+
+        statusMsg.style.display = 'block';
+        statusMsg.style.color = '#666';
+        statusMsg.innerText = "Verifying authorization...";
+        submitBtn.disabled = true;
+
+        const emailKey = email.replace(/\./g, '_');
+
+        // १. पहिले जाँच गर्ने: यो प्रयोगकर्ताले यो विशिष्ट प्लान अर्डर गरेको छ कि छैन
+        pricingDatabase.ref(`allowed_emails/${emailKey}/${planKey}`).once('value').then((snapshot) => {
+            if (snapshot.exists() && snapshot.val() === true) {
+                
+                // २. दोस्रो जाँच: यो प्रयोगकर्ताले यो विशिष्ट प्लानमा पहिले नै रिभ्यु लेखिसकेको छ कि छैन
+                pricingDatabase.ref(`reviews/${planKey}`).once('value').then((reviewSnapshot) => {
+                    const existingReviews = reviewSnapshot.val();
+                    let hasAlreadyReviewed = false;
+                    
+                    if (existingReviews) {
+                        hasAlreadyReviewed = Object.values(existingReviews).some(rev => rev.email && rev.email.toLowerCase() === email);
+                    }
+                    
+                    if (hasAlreadyReviewed) {
+                        statusMsg.style.color = 'red';
+                        statusMsg.innerText = "❌ You have already reviewed this plan! Only 1 review allowed per plan.";
+                        submitBtn.disabled = false;
+                    } else {
+                        // यदि सबै सर्त मिल्यो भने रिभ्यु सेभ गर्ने
+                        const newReviewRef = pricingDatabase.ref(`reviews/${planKey}`).push();
+                        newReviewRef.set({
+                            name: name,
+                            email: email,
+                            rating: rating,
+                            comment: comment,
+                            timestamp: Date.now()
+                        }).then(() => {
+                            statusMsg.style.color = 'green';
+                            statusMsg.innerText = "Review published successfully!";
+                            document.getElementById('addReviewForm').reset();
+                            setTimeout(() => { closeReviewModal(); statusMsg.style.display = 'none'; }, 2000);
+                        }).finally(() => {
+                            submitBtn.disabled = false;
+                        });
+                    }
+                });
+
+            } else {
+                statusMsg.style.color = 'red';
+                statusMsg.innerText = "❌ Access Denied! You must order this specific plan to review it.";
+                submitBtn.disabled = false;
+            }
+        }).catch((err) => {
+            statusMsg.style.color = 'red';
+            statusMsg.innerText = "Verification error.";
+            console.error(err);
+            submitBtn.disabled = false;
+        });
+    });
+}
+
+// ५. रियल-टाइम रेटिङ र काउन्ट लिस्नर
+function listenToPricingReviews() {
+    const plans = ['data-entry-basic', 'data-entry-standard', 'data-entry-premium', 'graphics-basic', 'graphics-standard', 'graphics-premium', 'web-dev-basic', 'web-dev-standard', 'web-dev-premium', 'student-utilities'];
+    plans.forEach(planKey => {
+        pricingDatabase.ref(`reviews/${planKey}`).on('value', (snapshot) => {
+            const data = snapshot.val();
+            let totalReviews = 0;
+            let averageRating = 0.0;
+            if (data) {
+                const reviewList = Object.values(data);
+                totalReviews = reviewList.length;
+                const sumRating = reviewList.reduce((sum, item) => sum + parseFloat(item.rating || 0), 0);
+                averageRating = (sumRating / totalReviews).toFixed(1);
+            }
+            
+            document.querySelectorAll('.pricing-card').forEach(card => {
+                const btn = card.querySelector('.view-all-reviews-btn');
+                if (btn && btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${planKey}'`)) {
+                    const starSpan = card.querySelector('.review-stars, .utility-rating');
+                    const countSpan = card.querySelector('.review-count, .utility-count');
+                    if (starSpan) starSpan.innerText = `⭐ ${totalReviews == 0 ? '0.0' : averageRating}`;
+                    if (countSpan) countSpan.innerText = `(${totalReviews} Review${totalReviews > 1 ? 's' : ''})`;
+                }
+            });
+        });
+    });
+}
+
+// ६. विन्डो लोड इभेन्ट (बटनहरू र अनक्लिक कन्फिगर गर्ने)
+window.addEventListener("load", () => {
+    listenToPricingReviews();
+    
+    // सबै CTA बटनहरूमा अटो-डिटेक्सन थप्ने
+    document.querySelectorAll('.pricing-section .cta-btn').forEach(btn => {
+        btn.setAttribute('onclick', 'openOrderModal("", this)');
+    });
+    
+    // सबै रिभ्यु बटनहरू म्याप गर्ने
+    const planKeys = ['data-entry-basic', 'data-entry-standard', 'data-entry-premium', 'graphics-basic', 'graphics-standard', 'graphics-premium', 'web-dev-basic', 'web-dev-standard', 'web-dev-premium', 'student-utilities'];
+    document.querySelectorAll('.view-all-reviews-btn').forEach((btn, index) => {
+        if(planKeys[index]) {
+            btn.setAttribute('onclick', `openReviewModal('${planKeys[index]}')`);
+        }
+    });
+});
+
+
+// for vesrion control system
+fetch("/version.json")
+  .then(res => {
+    if (!res.ok) throw new Error("Local environment: version.json not found yet.");
+    return res.json();
+  })
+  .then(data => {
+    let el = document.getElementById("web-version");
+    if (el) el.innerText = `${data.version} (${data.buildDate})`;
+  })
+  .catch(err => {
+    let el = document.getElementById("web-version");
+    if (el) el.innerText = "Development Mode";
+    console.log("Version status:", err.message);
+  });
+  

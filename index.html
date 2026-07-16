@@ -87,7 +87,7 @@
       </div>
 
   <a href="/">Home</a>
-  <a href="/skills/">Skills</a>
+  <a href="/Services/">Services</a>
   <a href="/snovaai/">Snova Ai</a>
   <a href="/dailyuse/">Daily Use</a>
   <a href="/contactus/">Contact Us</a>
@@ -110,36 +110,6 @@
         </div>
     </div>
 </div>
-<section id="feedback-popup" class="feedback-modal">
-    <div class="feedback-content" itemscope itemtype="https://schema.org/Service">
-        
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Thing">
-            <meta itemprop="name" content="Santosh Sharma Web Services">
-        </div>
-
-        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-            <meta itemprop="bestRating" content="5">
-            <meta itemprop="worstRating" content="1">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h3>How do you like our service ?</h3>
-            
-            <div class="stars" id="star-rating">
-                <span class="star" data-value="5" title="Excellent">&#9733;</span>
-                <span class="star" data-value="4" title="Good">&#9733;</span>
-                <span class="star" data-value="3" title="Average">&#9733;</span>
-                <span class="star" data-value="2" title="Poor">&#9733;</span>
-                <span class="star" data-value="1" title="Very Bad">&#9733;</span>
-            </div>
-            
-            <button id="submit-rating" disabled>Rate It</button>
-            
-            <div class="live-stats">
-                <p>Average: <span id="avg-display" itemprop="ratingValue">0.0</span>/5</p>
-                <p>Total Reviews: <span id="total-count" itemprop="ratingCount">0</span></p>
-            </div>
-        </div>
-    </div>
-</section>
 
   
 <section class="my">
@@ -154,6 +124,7 @@
     <h3 class="creative-dev">CREATIVE WEB DEVELOPER</h3>
     <h1 class="main-title">First Website<br>Launcher from <span class="doti-text">Doti</span></h1>
     <p class="tagline">Empowering Far-West through Technology and Creativity.</p>
+    <a href="/services/" class="btn-hire">Hire Me</a>
   </div>
 </section>
 
@@ -334,21 +305,24 @@
 </section>
   </main>
 
-<footer class="site-footer" aria-label="Site Footer">
-  <div class="foot-container">
-    <div class="foot-left-space"></div>
-
-    <div class="foot-center">
-      <p class="copyright-p">&copy; <span id="year"></span> Santosh Sharma. All Rights Reserved.</p>
+  <footer class="site-footer" aria-label="Site Footer">
+    <div class="foot-container">
+      <!-- यहाँ भित्र यो span एलिमेन्ट थप्नुहोस् -->
+      <div class="foot-left-space">
+        <span style="font-size: 0.5rem; opacity: 0.8;">Version: <span id="web-version"></span></span>
+      </div>
+  
+      <div class="foot-center">
+        <p class="copyright-p">&copy; <span id="year"></span> Santosh Sharma. All Rights Reserved.</p>
+      </div>
+  
+      <div class="foot-links-group">
+        <a href="terms-and-conditions/" class="foot-link-item">Terms</a>
+        <a href="privacy-policy/" class="foot-link-item">Privacy</a>
+        <a href="disclaimer/" class="foot-link-item">Disclaimer</a>
+      </div>
     </div>
-
-    <div class="foot-links-group">
-      <a href="terms-and-conditions/" class="foot-link-item">Terms</a>
-      <a href="privacy-policy/" class="foot-link-item">Privacy</a>
-      <a href="disclaimer/" class="foot-link-item">Disclaimer</a>
-    </div>
-  </div>
-</footer>
+  </footer>
   
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 
