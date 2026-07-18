@@ -13,6 +13,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Version JSON
+        env:
+          TZ: 'Asia/Kathmandu'
         run: |
           echo "{\"version\": \"${{ vars.VERSION_BASE }}.${{ github.run_number }}\", \"buildDate\": \"$(date +'%Y-%m-%d %H:%M')\"}" > version.json
 
