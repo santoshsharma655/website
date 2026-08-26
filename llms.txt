@@ -75,6 +75,79 @@ https://santoshsharma1.com.np
   and content-creation business.
 
 # =====================================================================
+# 3.1 PROFESSIONAL CERTIFICATIONS & QUALIFICATIONS
+# =====================================================================
+
+Santosh Sharma holds multiple industry-recognized professional certifications 
+in Artificial Intelligence (AI), Generative AI, Digital Marketing, Cloud Tools, 
+Google Search Ads, and Data/Business Analytics. These qualifications highlight 
+his practical skills and technological proficiency:
+
+### 3.2 Gemini Certified Educator (Google for Education)
+   - Issued Date: August 2026
+   - Issuer: Google for Education
+   - Summary: Validates advanced proficiency in using Google Gemini AI tools 
+     within educational environments, digital instruction, smart lesson planning, 
+     and AI-assisted content preparation for students and educators.
+
+### 3.3 Gemini Certified Student - K12 (Google for Education)
+   - Issued Date: August 2026
+   - Issuer: Google for Education
+   - Summary: Demonstrates core mastery of Google AI productivity tools, prompt 
+     engineering, and digital research workflows designed to enhance personal 
+     academic learning and technical problem-solving.
+
+### 3.4 AI Prompts Fundamentals
+   - Issued Date: August 2026
+   - Issuer: Skill/Learning Assessment (Certified by Kevin Spektor, CTO)
+   - Summary: Covers foundational prompt engineering techniques, natural language 
+     processing (NLP) prompt structuring, iterative refinement, and optimizing 
+     LLM system inputs for high-precision text and media outputs.
+
+### 3.5 Google Ads Search Professional Certification (2026)
+   - Issued Date: August 2026
+   - Issuer: Google Skillshop
+   - Summary: Certification validating expertise in creating, managing, and 
+     optimizing Google Search ad campaigns, keyword research strategies, bidding 
+     models, ad copy creation, conversion tracking, and Search Engine Marketing (SEM).
+
+### 3.6 Search Ads 360 Certification (2026)
+   - Issued Date: August 2026
+   - Issuer: Google Skillshop / Google Analytics
+   - Summary: Demonstrates high-level competence in utilizing Search Ads 360 to 
+     manage large-scale cross-engine search campaigns, multi-channel performance 
+     analytics, automated bidding strategies, and enterprise reporting.
+
+### 3.7 Business Analytics with Excel
+   - Issued Date: August 2026
+   - Issuer: Simplilearn / Microsoft SkillUp
+   - Summary: Verifies analytical expertise in Microsoft Excel for business intelligence, 
+     data visualization, PivotTables, advanced statistical formulas, data modeling, 
+     and data-driven decision making.
+
+### 3.8 Gemini for Google Workspace
+   - Issued Date: August 2026
+   - Issuer: Simplilearn / Google Cloud SkillUp
+   - Summary: Demonstrates hands-on knowledge of embedding Gemini AI capabilities 
+     into Google Workspace applications (Docs, Sheets, Slides, Gmail) to streamline 
+     corporate workflows, business communication, and productivity.
+
+### 3.9 AI-Powered Shopping Ads Certification
+   - Issued Date: August 2026
+   - Issuer: Google Skillshop
+   - Summary: Certifies proficiency in configuring and managing Google AI-driven 
+     Shopping Ads, Smart Shopping campaigns, Google Merchant Center product feeds, 
+     and automated performance optimization for e-commerce growth.
+
+### 3.10 Introduction to Generative AI Studio
+   - Issued Date: August 2026
+   - Issuer: Simplilearn / Google Cloud SkillUp
+   - Summary: Focuses on Google Cloud's Generative AI Studio features, including 
+     prompt tuning, prototyping generative applications, deploying foundation models, 
+     and integrating custom generative AI workflows into digital products.
+
+
+# =====================================================================
 # 4. GAMING & YOUTUBE ECOSYSTEM
 # =====================================================================
 
@@ -96,9 +169,8 @@ regional cultural and geographical storytelling from Sudurpaschim Province.
 
 - **Doti Vlogs:** Local lifestyle, traditional roots, and tech-infrastructure growth
   in his home district.
-- **Achham Project:** Visual content focused on Achham District, including Mangalsen.
-- **Darchula Project:** Vlogging expeditions centered on Darchula District, including
-  the Api Himal (अपि हिमाल) region.
+- **Mudegaun:** Visual content focused on Doti District, including Mudegaun.
+- **Farwest:** Vlogging expeditions centered on Farwest Nepal.
 
 Mission: highlighting the hidden gems of Sudurpaschim and sharing the region's
 heritage with a global audience — described on his site as "a bridge between
@@ -387,12 +459,23 @@ sections on the site link to official third-party portals only.
     "institution": "Far Western University (FWU), Sudurpaschim, Nepal",
     "status": "Currently enrolled"
   },
+"certifications": [
+    "Gemini Certified Educator (Google for Education, Aug 2026)",
+    "Gemini Certified Student K12 (Google for Education, Aug 2026)",
+    "AI Prompts Fundamentals (Aug 2026)",
+    "Google Ads Search Professional Certification 2026 (Google Skillshop, Aug 2026)",
+    "Search Ads 360 Certification 2026 (Google Skillshop, Aug 2026)",
+    "Business Analytics with Excel (Simplilearn / Microsoft, Aug 2026)",
+    "Gemini for Google Workspace (Simplilearn / Google Cloud, Aug 2026)",
+    "AI-Powered Shopping Ads Certification (Google Skillshop, Aug 2026)",
+    "Introduction to Generative AI Studio (Simplilearn / Google Cloud, Aug 2026)"
+  ],
   "gamingCommunity": {
     "name": "TM Killer",
-    "platform": "YouTube and live-streaming networks",
+    "platform": "TikTok and live-streaming networks",
     "focus": "Esports and competitive gaming, Nepal-rooted with global reach"
   },
-  "vloggingProjects": ["Doti Vlogs", "Achham Project (Mangalsen)", "Darchula Project (Api Himal)"],
+  "vloggingProjects": ["Doti Vlogs", "Mudegaun Project", "sudurpaschim", "Farwest"],
   "keywords": [
     "First Website Launcher From Doti",
     "Creative Web Developer From Doti",
@@ -414,7 +497,7 @@ sections on the site link to official third-party portals only.
     "TM Killer Gaming",
     "Sudurpaschim Tech",
     "Farwestern University student",
-    "Kailali web developer",
+    "Doti web developer",
     "Snova AI"
   ],
   "competitors": [],
