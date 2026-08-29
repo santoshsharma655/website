@@ -380,7 +380,247 @@
       </div>
     </div>
   </footer>
+  <!-- PMO RELIEF POPUP START -->
+<a href="/pmo_relife" class="pmo-float-btn" title="View PM Relief Fund">
+  🤝 Relief Fund
+</a>
+
+<div id="pmoReliefModal" class="pmo-modal-overlay">
+  <div class="pmo-modal-card">
+    <button class="pmo-close-icon" onclick="closePmoModal()">&times;</button>
+    
+    <div class="pmo-header">
+      <img src="https://pmdrf.nchl.com.np/Images/Emblem_of_Nepal.png" alt="Nepal Government PMO Logo" class="pmo-gov-logo">
+      <span class="pmo-badge">सहयोग अभियान</span>
+      <h2>Prime Minister Disaster Relief Fund</h2>
+      <p class="pmo-desc">
+        हामी विद्यार्थीहरू मिलेर प्रधानमन्त्री दैवी प्रकोप उद्धार कोषका लागि सहयोग रकम सङ्कलन गर्दैछौँ। Transparency को लागि सम्पूर्ण Donor List र Receipt हरू वेबसाइटमा अध्यावधिक गरिन्छ।
+      </p>
+      <a href="/pmo_relife" class="pmo-btn-primary">Donor List र विवरण हेर्नुहोस्</a>
+    </div>
+
+    <div class="pmo-qr-section">
+      <h3>सरकारी आधिकारिक QR Codes (Official QR Codes)</h3>
+      
+      <div class="pmo-qr-grid">
+        <div class="pmo-qr-card">
+          <span class="qr-title">NepalPay QR</span>
+          <img src="https://pmdrf.nchl.com.np/Images/nqr_laxmisunrise.png" alt="Laxmi Sunrise NepalPay QR" loading="lazy">
+          <p class="qr-desc">Mobile Banking / ConnectIPS / Wallet / Alipay+ via NepalPay QR</p>
+        </div>
+
+        <div class="pmo-qr-card">
+          <span class="qr-title">HBL NepalPay QR</span>
+          <img src="https://pmdrf.nchl.com.np/Images/nqr_hbl.png" alt="HBL NepalPay QR" loading="lazy">
+          <p class="qr-desc">Mobile Banking / ConnectIPS / Wallet / Alipay+ via NepalPay QR</p>
+        </div>
+
+        <div class="pmo-qr-card">
+          <span class="qr-title">Fonepay QR</span>
+          <img src="https://pmdrf.nchl.com.np/Images/UPI.JPG" alt="Fonepay QR Code" loading="lazy">
+          <p class="qr-desc">UPI India / UnionPay / eSewa / Mobile Banking / Alipay+ via Fonepay QR</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pmo-disclaimer">
+      <strong>Legal Disclaimer:</strong> यो एक विद्यार्थी-नेतृत्व सहयोग अभियान हो। यहाँ राखिएका QR कोडहरू नेपाल सरकारको प्रधानमन्त्री दैवी प्रकोप उद्धार कोषका आधिकारिक भुक्तानी प्रणालीहरू (NCHL/ConnectIPS) सँग सीधै जोडिएका छन्। संकलित सबै रकमको भौचर र विवरण पूर्ण पारदर्शिताका साथ यसै वेबसाइटमा सार्वजनिक गरिन्छ।
+    </div>
+
+    <div class="pmo-footer">
+      <button onclick="closePmoModal()" class="pmo-btn-secondary">पछि हेर्छु (Close)</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pmo-float-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0066cc;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+    z-index: 9998;
+    transition: transform 0.3s ease;
+  }
+  .pmo-float-btn:hover { transform: translateY(-3px); background: #004085; }
+
+  .pmo-modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .pmo-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+  }
+
+  .pmo-close-icon {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: #f1f3f5;
+    border: none;
+    font-size: 26px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    color: #333;
+    cursor: pointer;
+    line-height: 36px;
+    text-align: center;
+  }
+  .pmo-close-icon:hover { background: #e9ecef; color: #d9534f; }
+
+  .pmo-header { text-align: center; margin-bottom: 20px; }
   
+  .pmo-gov-logo {
+    height: 65px;
+    width: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pmo-badge {
+    display: inline-block;
+    background: #e6f0fa;
+    color: #0066cc;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .pmo-header h2 { color: #004085; margin: 5px 0 10px 0; font-size: 24px; }
+  .pmo-desc { color: #555; max-width: 700px; margin: 0 auto 15px auto; font-size: 14px; line-height: 1.5; }
+
+  .pmo-btn-primary {
+    display: inline-block;
+    background: #0066cc;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .pmo-btn-primary:hover { background: #004085; }
+
+  .pmo-qr-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    text-align: center;
+  }
+  .pmo-qr-section h3 { margin-top: 0; color: #333; font-size: 18px; margin-bottom: 15px; }
+
+  .pmo-qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .pmo-qr-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .qr-title {
+    font-weight: bold;
+    color: #004085;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .pmo-qr-card img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    object-fit: contain;
+  }
+
+  .qr-desc {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .pmo-disclaimer {
+    margin-top: 20px;
+    padding: 12px 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    font-size: 12px;
+    border-radius: 8px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .pmo-footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .pmo-btn-secondary {
+    background: #e9ecef;
+    color: #495057;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pmo-btn-secondary:hover { background: #ced4da; }
+
+  @media (max-width: 600px) {
+    .pmo-modal-card { padding: 18px 12px; }
+    .pmo-header h2 { font-size: 19px; }
+    .pmo-qr-grid { grid-template-columns: 1fr; }
+    .pmo-qr-card img { max-width: 180px; }
+    .pmo-gov-logo { height: 50px; }
+  }
+</style>
+
+<script>
+  function closePmoModal() {
+    document.getElementById('pmoReliefModal').style.display = 'none';
+  }
+</script>
+<!-- PMO RELIEF POPUP END -->
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>

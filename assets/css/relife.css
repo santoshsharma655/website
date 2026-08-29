@@ -1,0 +1,531 @@
+:root {
+    --np-crimson: #dc143c;
+    --np-crimson-dark: #a6192e;
+    --np-blue: #003893;
+    --np-navy: #041e42;
+    --np-gold: #f5b324;
+    --np-cream: #faf7f0;
+    --np-surface: #ffffff;
+    --np-border: #e6ddc9;
+    --np-text: #241f1a;
+    --np-text-muted: #6b6155;
+    --np-error: #b3261e;
+    --font-display: "Yatra One", "Noto Sans Devanagari", cursive;
+    --font-body: "Noto Sans Devanagari", "Noto Sans", sans-serif;
+    --radius: 0.875rem;
+    --shadow-sm: 0 0.0625rem 0.1875rem rgba(4, 30, 66, 0.08);
+    --shadow-md: 0 0.625rem 1.625rem rgba(4, 30, 66, 0.14);
+    --max-width: 72rem; /* Notice card wide layout */
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* No horizontal scrollbar */
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: var(--np-cream);
+    color: var(--np-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Smooth Page Entrance Animation */
+  .page-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Header Adjustments */
+  .site-header {
+    background: linear-gradient(135deg, var(--np-blue) 0%, #002a6e 100%);
+    color: #ffffff;
+    padding: 0.8rem 0 1.5rem;
+    position: relative;
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .emblem {
+    flex-shrink: 0;
+    width: 3.8rem;
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .pmo-gov-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0.1875rem 0.375rem rgba(0, 0, 0, 0.25));
+  }
+  
+  .site-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    line-height: 1.2;
+  }
+  
+  .site-subtitle {
+    margin: 0.15rem 0 0;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    color: var(--np-gold);
+    font-weight: 600;
+  }
+  
+  .pennant-edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.875rem;
+    height: 0.875rem;
+    background: linear-gradient(135deg, var(--np-blue) 0%, #002a6e 100%);
+    clip-path: polygon(
+      0% 0%, 100% 0%,
+      100% 100%, 97% 0%, 94% 100%, 91% 0%, 88% 100%, 85% 0%, 82% 100%, 79% 0%,
+      76% 100%, 73% 0%, 70% 100%, 67% 0%, 64% 100%, 61% 0%, 58% 100%, 55% 0%,
+      52% 100%, 49% 0%, 46% 100%, 43% 0%, 40% 100%, 37% 0%, 34% 100%, 31% 0%,
+      28% 100%, 25% 0%, 22% 100%, 19% 0%, 16% 100%, 13% 0%, 10% 100%, 7% 0%,
+      4% 100%, 1% 0%, 0% 100%
+    );
+  }
+  
+  main {
+    padding: 1.8rem 0;
+  }
+  
+  /* Notice Card */
+  .notice-card {
+    position: relative;
+    background-color: var(--np-surface);
+    border: 0.0625rem solid var(--np-border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+  }
+  
+  .notice-tag {
+    display: inline-block;
+    background-color: var(--np-crimson);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 62.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notice-card h2 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--np-blue);
+  }
+  
+  .notice-card p {
+    margin-bottom: 0.8rem;
+    color: var(--np-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .notice-card strong {
+    color: var(--np-crimson-dark);
+  }
+  
+  .official-link-box {
+    margin-top: 1rem;
+  }
+  
+  .portal-link-btn {
+    display: inline-block;
+    background-color: var(--np-crimson);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+  
+  .portal-link-btn:hover {
+    background-color: var(--np-crimson-dark);
+    transform: translateY(-1px);
+  }
+  
+  /* Summary Cards Area */
+  .summary-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-card {
+    background-color: var(--np-surface);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-bottom: 0.25rem solid var(--np-crimson);
+  }
+  
+  .count-card {
+    border-bottom-color: var(--np-blue);
+  }
+  
+  .summary-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  .summary-label {
+    font-size: 0.85rem;
+    color: var(--np-text-muted);
+    font-weight: 600;
+  }
+  
+  .summary-value {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 400;
+    color: var(--np-crimson-dark);
+  }
+  
+  .count-card .summary-value {
+    color: var(--np-blue);
+  }
+  
+  /* Donor Table Section */
+  .section-heading-center {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--np-blue);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .table-wrapper {
+    background-color: var(--np-surface);
+    border: 0.0625rem solid var(--np-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .donor-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .donor-table thead th {
+    background-color: var(--np-blue);
+    color: #ffffff;
+    text-align: left;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.8rem 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .donor-table tbody td {
+    padding: 0.75rem 0.75rem;
+    border-bottom: 0.0625rem solid var(--np-border);
+    font-size: 0.85rem;
+  }
+  
+  .donor-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .donor-table tbody tr:hover {
+    background-color: #fdf3ee;
+  }
+  
+  .donor-table td.donor-name,
+  .donor-table td.donor-program {
+    word-break: break-word;
+  }
+  
+  .donor-table td.donor-amount {
+    font-weight: 700;
+    color: var(--np-crimson-dark);
+  }
+  
+  .receipt-btn {
+    display: inline-block;
+    background-color: var(--np-blue);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
+  }
+  
+  .receipt-btn:hover {
+    background-color: var(--np-crimson);
+  }
+  
+  .receipt-btn.disabled {
+    background-color: #c9c2b3;
+    pointer-events: none;
+  }
+  
+  /* Spinner Loader for Row */
+  .spinner-loader {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid rgba(0, 56, 147, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--np-blue);
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 0.3rem;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .state-row td {
+    text-align: center;
+    color: var(--np-text-muted);
+    padding: 1.5rem 0.5rem !important;
+    font-style: italic;
+  }
+  
+  .state-row-inline {
+    text-align: center;
+    color: var(--np-text-muted);
+    font-style: italic;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .error-state {
+    color: var(--np-error);
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  /* Official QR Section */
+  .pmo-qr-section {
+    margin-top: 2.5rem;
+    background-color: var(--np-surface);
+    border: 0.0625rem solid var(--np-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+  }
+  
+  .pmo-qr-section h3 {
+    font-family: var(--font-display);
+    color: var(--np-blue);
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  
+  .pmo-qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .pmo-qr-card {
+    background-color: #faf9f6;
+    border: 0.0625rem solid var(--np-border);
+    border-radius: 0.6rem;
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .pmo-qr-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .qr-title {
+    font-weight: 700;
+    color: var(--np-navy);
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Larger & High-visibility QR Image Container */
+  .qr-img-wrapper {
+    width: 100%;
+    max-width: 22rem; /* QR फोटो ठूलो र प्रस्ट देखिने बनाइएको */
+    background: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
+  }
+  
+  .qr-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .qr-desc {
+    font-size: 0.78rem;
+    color: var(--np-text-muted);
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    line-height: 1.35;
+  }
+  
+  /* Legal Disclaimer */
+  .disclaimer-card {
+    margin-top: 1.5rem;
+    background-color: #f4efe6;
+    border-left: 4px solid var(--np-crimson);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    color: var(--np-text-muted);
+  }
+  
+  .disclaimer-title {
+    font-weight: 700;
+    color: var(--np-navy);
+    margin: 0 0 0.2rem;
+  }
+  
+  .disclaimer-text {
+    margin: 0;
+    line-height: 1.45;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background-color: var(--np-navy);
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
+  }
+  
+  /* Responsive Adjustments for Mobile Screens */
+  @media (max-width: 48rem) {
+    .notice-card {
+      padding: 1.2rem 1rem;
+    }
+  }
+  
+  @media (max-width: 36rem) {
+    .container {
+      padding: 0 0.5rem; /* Screen area for mobile */
+    }
+  
+    .header-inner {
+      gap: 0.4rem;
+    }
+  
+    .emblem {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  
+    .summary-banner {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+  
+    .notice-card,
+    .summary-card {
+      padding: 0.85rem;
+    }
+  
+    /* Compact & Properly Scaled Table for Mobile Screen */
+    .donor-table thead th {
+      padding: 0.45rem 0.25rem;
+      font-size: 0.7rem; /* Mobile font scale */
+      white-space: nowrap;
+    }
+  
+    .donor-table tbody td {
+      padding: 0.45rem 0.25rem;
+      font-size: 0.72rem; /* Mobile font scale */
+      line-height: 1.3;
+    }
+  
+    .receipt-btn {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.65rem;
+    }
+  
+    /* Larger QR Display on Mobile */
+    .pmo-qr-section {
+      padding: 1rem 0.6rem;
+    }
+  
+    .pmo-qr-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+  
+    .qr-img-wrapper {
+      max-width: 100%;
+      padding: 0.4rem;
+    }
+  }
