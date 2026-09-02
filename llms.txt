@@ -58,9 +58,18 @@ https://santoshsharma1.com.np
 - **Theme Color:** #0A192F
 
 ## Social Media Profiles
-- Facebook: https://www.facebook.com/santosh.sharma.647208
+- Facebook: https://www.facebook.com/santoshsharma1.com.np/
+- Facebook Gaming: https://www.facebook.com/iamtmkiller/
 - Instagram: https://www.instagram.com/santosh_sharma_offical
-- LinkedIn: https://www.linkedin.com/in/santosh-sharma-4978833a1/
+- LinkedIn: https://www.linkedin.com/in/iamsantoshsharma/
+- Substack: https://substack.com/@santoshsharmaa1/
+- Telegraph: https://telegra.ph/Santosh-Sharma-Biography-Tech-Projects-and-Professional-Journey-08-26/
+- Medium: https://medium.com/@santoshsharma1/santosh-sharma-78035c7ca450/
+- Wikialpha: https://wikialpha.co/wiki/Santosh_sharma/
+- TikTok Gamimg: https://www.tiktok.com/@tm_killer4/
+- TikTok: https://www.tiktok.com/@sharma_jeee/
+- Everybodywiki: https://en.everybodywiki.com/Santosh_Sharma/
+
 
 # =====================================================================
 # 3. ACADEMIC BACKGROUND
@@ -505,9 +514,18 @@ sections on the site link to official third-party portals only.
   "whatsapp": "https://wa.me/9865629989",
   "physicalAddress": "Attariya, Kailali, Nepal",
   "socialMediaLinks": {
-    "linkedin": "https://www.linkedin.com/in/santosh-sharma-4978833a1/",
-    "facebook": "https://www.facebook.com/santosh.sharma.647208",
-    "instagram": "https://www.instagram.com/santosh_sharma_offical"
+  "facebook": "https://www.facebook.com/santoshsharma1.com.np/",
+  "facebook_gaming": "https://www.facebook.com/iamtmkiller/",
+  "instagram": "https://www.instagram.com/santosh_sharma_offical",
+  "linkedin": "https://www.linkedin.com/in/iamsantoshsharma/",
+  "substack": "https://substack.com/@santoshsharmaa1/",
+  "telegraph": "https://telegra.ph/Santosh-Sharma-Biography-Tech-Projects-and-Professional-Journey-08-26/",
+  "medium": "https://medium.com/@santoshsharma1/santosh-sharma-78035c7ca450/",
+  "wikialpha": "https://wikialpha.co/wiki/Santosh_sharma/",
+  "tiktok_gaming": "https://www.tiktok.com/@tm_killer4/",
+  "tiktok": "https://www.tiktok.com/@sharma_jeee/",
+  "everybodywiki": "https://en.everybodywiki.com/Santosh_Sharma/"
+    
   },
   "hoursOfOperation": "All Time",
   "timezone": "Asia/Kathmandu",
