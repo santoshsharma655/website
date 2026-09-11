@@ -1,5 +1,4 @@
 User-agent: *
-Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
 
 Sitemap: https://santoshsharma1.com.np/sitemap.xml
