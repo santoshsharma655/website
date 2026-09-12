@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#ff4f81">
+<title>A Little Something For You ❤️ | Interactive Romantic Proposal by Santosh Sharma</title>
+<meta name="description" content="A beautiful, interactive love proposal and romantic greeting card built with code. Experience a sweet surprise filled with cute questions, animations, and love.">
+<meta name="keywords" content="romantic proposal, interactive love card, cute html greeting, Santosh Sharma web design, love calculator, surprise gift, online proposal">
+<meta name="author" content="Santosh Sharma">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="English, Nepali">
+<meta name="generator" content="Santosh Sharma Web Solutions">
+<meta name="geo.region" content="NP-P5">
+<meta name="geo.placename" content="kailali">
+<link rel="canonical" href="https://santoshsharma1.com.np/">
+<link rel="icon" type="image/png" href="https://santoshsharma1.com.np/favicon.png">
+<link rel="apple-touch-icon" href="https://santoshsharma1.com.np/favicon.png">
+<meta property="og:title" content="A Little Something For You ❤️ | Interactive Proposal">
+<meta property="og:description" content="Send a sweet, interactive coded surprise to your special someone. Handcrafted with love by Santosh Sharma.">
+<meta property="og:url" content="https://santoshsharma1.com.np/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://media.tenor.com/4V4nWkqGf7AAAAAi/bear-love.gif">
+<meta property="og:site_name" content="Santosh Sharma Portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Little Something For You ❤️">
+<meta name="twitter:description" content="A beautiful, interactive love proposal and romantic greeting card built with code.">
+<meta name="twitter:image" content="https://media.tenor.com/4V4nWkqGf7AAAAAi/bear-love.gif">
+<meta name="twitter:creator" content="@SantoshSharma">
+<script type="application/ld+json">
+    {
+     "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "A Little Something For You ❤️",
+    "url": "https://santoshsharma1.com.np/",
+     "author": {
+    "@type": "Person",
+    "name": "Santosh Sharma",
+   "url": "https://santoshsharma1.com.np/",
+  "jobTitle": "Web Designer",
+     "address": {
+    "@type": "PostalAddress",
+   "addressLocality": "Kailali",
+ "addressRegion": "Farwest Province",
+     "addressCountry": "Nepal"
+    }
+    },
+    "description": "An interactive web-based romantic proposal.",
+     "inLanguage": ["en", "ne"]
+    
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden;font-family:Poppins,sans-serif}
+body{background:linear-gradient(135deg,#fff0f5,#ffe1eb,#fff8fb);color:#4a1830}
+button{user-select:none;-webkit-tap-highlight-color:transparent}
+.bg1,.bg2,.bg3{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none}
+.bg1{width:38vw;height:38vw;background:#ff8fab;top:-15%;left:-12%;opacity:.35}
+.bg2{width:32vw;height:32vw;background:#d8b4fe;right:-12%;bottom:-12%;opacity:.3}
+.bg3{width:25vw;height:25vw;background:#ffc1d5;left:38%;top:42%;opacity:.22}
+.glass{max-height:92vh;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 25px 90px rgba(145,35,76,.16)}
+.step{animation:enter .6s ease}
+@keyframes enter{from{opacity:0;transform:translateY(28px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes pulseLove{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes heartUp{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:1}100%{transform:translateY(-110vh) scale(1.5);opacity:0}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+@keyframes pop{0%{transform:scale(.2);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.float{animation:float 4s ease-in-out infinite}
+.pulse-love{animation:pulseLove 1.8s ease-in-out infinite}
+.pop{animation:pop .5s ease}
+.shake{animation:shake .45s ease}
+.heart{position:fixed;bottom:-50px;pointer-events:none;z-index:100;animation:heartUp linear forwards}
+.spark{position:fixed;pointer-events:none;font-size:22px;animation:heartUp 2.2s linear forwards;z-index:101}
+.choice{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.choice:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 14px 35px rgba(236,72,153,.18);border-color:#f9a8d4}
+.yes{transition:transform .35s ease,box-shadow .35s ease}
+.yes:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 18px 45px rgba(236,72,153,.32)}
+.no{transition:left .65s cubic-bezier(.2,.8,.2,1),top .65s cubic-bezier(.2,.8,.2,1),transform .25s ease}
+.gif{width:min(200px,50vw);height:min(140px,18vh);object-fit:contain;margin:auto;border-radius:28px;background:linear-gradient(135deg,#fff,#fff0f5);padding:8px}
+.hidden{display:none!important}
+.lang-btn{transition:all .25s ease}
+.lang-btn:hover{transform:scale(1.05)}
+.language-active{background:#fce7f3;color:#db2777}
+.line{position:relative}
+.line:before,.line:after{content:"";display:inline-block;width:35px;height:1px;background:#f9a8d4;vertical-align:middle;margin:0 10px}
+</style>
+</head>
+<body>
+<div class="bg1"></div>
+<div class="bg2"></div>
+<div class="bg3"></div>
+<div id="floatingHearts"></div>
+<main class="relative z-10 w-full h-full flex flex-col items-center justify-center p-3">
+<div class="w-full max-w-2xl">
+<div class="flex justify-end mb-2">
+<div class="flex items-center gap-1 p-1 rounded-full bg-white/70 border border-white/80 shadow-sm">
+<button id="enBtn" onclick="setLanguage('en')" class="lang-btn language-active w-10 h-10 rounded-full text-lg" title="English">🇬🇧</button>
+<button id="npBtn" onclick="setLanguage('np')" class="lang-btn w-10 h-10 rounded-full text-lg" title="नेपाली">🇳🇵</button>
+</div>
+</div>
+<section class="glass rounded-[2rem] p-5 sm:p-8 text-center w-full">
+<div id="step1" class="step">
+<img class="gif float" src="https://media.tenor.com/4V4nWkqGf7AAAAAi/bear-love.gif" alt="Cute love bear">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="A little surprise 💌" data-np="एउटा सानो surprise 💌">A little surprise 💌</p>
+<h1 class="mt-2 text-2xl sm:text-4xl font-extrabold text-gray-800" data-en="Hey... wait! 👀" data-np="ए... एकछिन! 👀">Hey... wait! 👀</h1>
+<p class="mt-3 text-gray-600 text-sm sm:text-base" data-en="I have some small questions for you." data-np="मसँग तिम्रो लागि केही साना प्रश्न छन्।">I have some small questions for you.</p>
+<p class="mt-1 text-pink-500 font-bold text-sm sm:text-base" data-en="Don't worry... they are cute questions. 😂" data-np="नडराऊ... यी त मायाका प्रश्न हुन्। 😂">Don't worry... they are cute questions. 😂</p>
+<p class="mt-2 text-gray-400 text-xs italic" data-en="And please don't run away. 🥹" data-np="अनि कृपया भाग्ने प्रयास नगर। 🥹">And please don't run away. 🥹</p>
+<button onclick="next()" class="yes mt-5 px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-base shadow-lg" data-en="Okay, ask me 😳" data-np="ल, सोध न त 😳">Okay, ask me 😳</button>
+</div>
+<div id="step2" class="step hidden">
+<img id="gif2" class="gif float" src="https://media.tenor.com/5dYzJx6mM4AAAAAi/cute-bear.gif" alt="Cute bear">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="A true thing 🥺" data-np="एउटा साँचो कुरा 🥺">A true thing 🥺</p>
+<h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-gray-800" data-en="Do you like talking to me? 💗" data-np="के तिमीलाई मसँग कुरा गर्न मन पर्छ? 💗">Do you like talking to me? 💗</h2>
+<p id="q2text" class="mt-2 text-gray-500 text-sm sm:text-base" data-en="Be honest... I can handle it. 👀" data-np="साँचो भन है... म सहन सक्छु। 👀">Be honest... I can handle it. 👀</p>
+<div class="mt-5 flex flex-row justify-center gap-3">
+<button onclick="q2yes()" class="yes px-5 py-3 rounded-2xl bg-pink-500 text-white font-bold text-base w-full max-w-[140px]" data-en="Yes of course 💗" data-np="हो नि 💗">Yes of course 💗</button>
+<button id="q2no" onclick="q2no()" class="no px-5 py-3 rounded-2xl bg-white text-pink-600 border border-pink-200 font-bold text-base w-full max-w-[140px]" data-en="Not really 😐" data-np="अलि कम 😐">Not really 😐</button>
+</div>
+</div>
+<div id="step3" class="step hidden">
+<img id="gif3" class="gif pulse-love" src="https://media.tenor.com/3V5nR2r7dGAAAAAi/bear-love.gif" alt="Love bear">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="Now something a little deeper 💕" data-np="अब अलि गहिरो कुरा 💕">Now something a little deeper 💕</p>
+<h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-gray-800" data-en="Do you like me a little bit? 🥹" data-np="के तिमीलाई म अलिकति मन पर्छु? 🥹">Do you like me a little bit? 🥹</h2>
+<p class="mt-2 text-gray-500 text-sm sm:text-base" data-en="Even a tiny bit is okay. 😌" data-np="अलिकति मात्र भए पनि हुन्छ। 😌">Even a tiny bit is okay. 😌</p>
+<div class="mt-4">
+<div class="text-4xl sm:text-5xl font-extrabold text-pink-500"><span id="loveNumber">0</span>%</div>
+<div class="mt-3 h-5 rounded-full bg-pink-100 overflow-hidden"><div id="loveBar" class="h-full bg-gradient-to-r from-pink-400 to-rose-500 transition-all duration-500" style="width:0%"></div></div>
+<p id="loveText" class="mt-3 text-gray-500 font-semibold text-sm" data-en="Let's check your heart... 😂" data-np="तिम्रो मन कति भरिएको छ हेरौँ... 😂">Let's check your heart... 😂</p>
+</div>
+<button id="loveBtn" onclick="loveMeter()" class="yes mt-5 px-6 py-3 rounded-2xl bg-pink-500 text-white font-bold text-base" data-en="Check my heart ❤️" data-np="मेरो मन जाँच 💗">Check my heart ❤️</button>
+</div>
+<div id="step4" class="step hidden">
+<img id="gif4" class="gif float" src="https://media.tenor.com/0AVbKGY_MxkAAAAC/love-bear.gif" alt="Cute love">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="A sweet choice 🌸" data-np="एउटा sweet choice 🌸">A sweet choice 🌸</p>
+<h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-gray-800" data-en="Can I hold your hand and never let go? 🥺" data-np="के म तिम्रो हात समातेर कहिल्यै नछोड्न सक्छु? 🥺">Can I hold your hand and never let go? 🥺</h2>
+<p class="mt-2 text-gray-600 text-sm" data-en="Choose your answer carefully... 👀" data-np="उत्तर सोचेर दिनू है... 👀">Choose your answer carefully... 👀</p>
+<div class="grid grid-cols-2 gap-3 mt-4">
+<button onclick="choice(this,'yes')" class="choice px-3 py-3 rounded-2xl bg-white border border-pink-100 font-bold text-gray-700 text-sm" data-en="Yes, hold it ❤️" data-np="हो, समात ❤️">Yes, hold it ❤️</button>
+<button onclick="choice(this,'maybe')" class="choice px-3 py-3 rounded-2xl bg-white border border-pink-100 font-bold text-gray-700 text-sm" data-en="Maybe... 🙈" data-np="सायद... 🙈">Maybe... 🙈</button>
+<button onclick="choice(this,'always')" class="choice px-3 py-3 rounded-2xl bg-white border border-pink-100 font-bold text-gray-700 text-sm" data-en="Never let go 💕" data-np="कहिल्यै नछोड्नु 💕">Never let go 💕</button>
+<button onclick="choice(this,'all')" class="choice px-3 py-3 rounded-2xl bg-white border border-pink-100 font-bold text-gray-700 text-sm" data-en="Yes, forever 🥹" data-np="हो, सधैँका लागि 🥹">Yes, forever 🥹</button>
+</div>
+<p id="choiceText" class="mt-3 min-h-[20px] text-pink-500 font-bold text-sm"></p>
+</div>
+<div id="step5" class="step hidden">
+<img id="gif5" class="gif float" src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Love kiss">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="A question from the heart 💍" data-np="अब एउटा मनको प्रश्न 💍">A question from the heart 💍</p>
+<h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-800" data-en="Will you be mine, forever? 💕" data-np="के तिमी सधैँका लागि मेरो हुनेछौ? 💕">Will you be mine, forever? 💕</h2>
+<p class="mt-3 text-gray-600 text-sm sm:text-base leading-snug" data-en="I don't want a perfect story." data-np="मलाई perfect story चाहिँदैन।">I don't want a perfect story.</p>
+<p class="mt-1 text-pink-500 font-bold text-base sm:text-lg" data-en="I just want a beautiful story with you. ❤️" data-np="मलाई तिमीसँग एउटा सुन्दर कहानी चाहिन्छ। ❤️">I just want a beautiful story with you. ❤️</p>
+<p class="mt-2 text-gray-500 text-sm" data-en="Will you stay with me and make more memories? 🥹" data-np="के तिमी मसँग बसेर अझ धेरै यादहरू बनाउनेछौ? 🥹">Will you stay with me and make more memories? 🥹</p>
+<div class="mt-5 relative min-h-[140px] flex items-center justify-center">
+<button id="mainYes" onclick="accepted()" class="yes px-7 py-3 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-fuchsia-500 text-white font-extrabold text-base shadow-xl" data-en="YES, I WILL 💖" data-np="हो, हुनेछु 💖">YES, I WILL 💖</button>
+<button id="mainNo" onmouseenter="delayedEscape()" onclick="mobileEscape()" class="no absolute px-5 py-2 rounded-2xl bg-white border border-pink-200 text-pink-600 font-bold text-sm" style="left:58%;top:72%" data-en="No 😭" data-np="होइन 😭">No 😭</button>
+</div>
+<p id="proposalText" class="mt-1 text-xs text-gray-400" data-en="Psst... the NO button is very shy. 😂" data-np="सुन न... NO button अलि लजालु छ। 😂">Psst... the NO button is very shy. 😂</p>
+</div>
+<div id="step6" class="step hidden">
+<img class="gif pulse-love" src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Happy love">
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500" data-en="That made me smile 🎉" data-np="त्यो सुन्दा मनै खुसी भयो 🎉">That made me smile 🎉</p>
+<h2 class="mt-2 text-3xl sm:text-5xl font-extrabold text-pink-500" data-en="YAAAAAY! 🥰" data-np="याआआआ! 🥰">YAAAAAY! 🥰</h2>
+<p class="mt-3 text-gray-600 text-base" data-en="You said YES! ❤️" data-np="तिमीले YES भन्यौ! ❤️">You said YES! ❤️</p>
+<p class="mt-1 text-pink-500 font-bold text-sm" data-en="My heart is doing a happy dance. 😂💗" data-np="मेरो मन खुसीले नाचिरहेको छ। 😂💗">My heart is doing a happy dance. 😂💗</p>
+<div class="mt-4 rounded-2xl bg-pink-50/80 p-4 border border-pink-100">
+<p class="text-gray-700 leading-snug font-medium text-sm" data-en="You just made one person very, very happy. 🥹❤️" data-np="तिमीले एउटा मान्छेलाई धेरै धेरै खुसी बनायौ। 🥹❤️">You just made one person very, very happy. 🥹❤️</p>
+<p class="mt-2 text-pink-500 font-bold text-sm" data-en="And yes... that person is me. 😌" data-np="अनि हो... त्यो मान्छे म नै हुँ। 😌">And yes... that person is me. 😌</p>
+</div>
+<button onclick="next()" class="yes mt-5 px-6 py-3 rounded-2xl bg-pink-500 text-white font-bold text-sm" data-en="One more thing... 👀" data-np="एउटा कुरा अझै बाँकी छ... 👀">One more thing... 👀</button>
+</div>
+<div id="step7" class="step hidden">
+<div class="text-6xl sm:text-7xl pulse-love mt-2">💖</div>
+<h2 class="mt-4 text-2xl sm:text-3xl font-extrabold text-gray-800" data-en="A little message for you 💌" data-np="तिम्रो लागि सानो सन्देश 💌">A little message for you 💌</h2>
+<div class="mt-4 rounded-2xl bg-white/70 p-4 sm:p-5 border border-pink-100">
+<p class="text-gray-700 leading-snug text-sm sm:text-base" data-en="You are not just someone I like." data-np="तिमी मलाई मन पर्ने मान्छे मात्र होइनौ।">You are not just someone I like.</p>
+<p class="mt-2 text-gray-700 leading-snug text-sm sm:text-base" data-en="You are someone who makes my normal days feel a little more special. ❤️" data-np="तिमी त्यो मान्छे हौ जसले मेरा सामान्य दिनहरूलाई पनि विशेष बनाउँछौ। ❤️">You are someone who makes my normal days feel a little more special. ❤️</p>
+<p class="mt-2 text-gray-700 leading-snug text-sm sm:text-base" data-en="I may not always have the perfect words, but my heart knows one thing..." data-np="मसँग सधैँ सही शब्द नहुन सक्छन्, तर मेरो मनले एउटा कुरा जान्दछ...">I may not always have the perfect words, but my heart knows one thing...</p>
+<p class="mt-3 text-pink-500 font-bold text-sm sm:text-base" data-en="I want more smiles, more talks, more memories, and more moments with you. 💕" data-np="म तिमीसँग अझ धेरै हाँसो, कुराकानी, याद र सुन्दर पलहरू चाहन्छु। 💕">I want more smiles, more talks, more memories, and more moments with you. 💕</p>
+<p class="mt-3 text-pink-500 font-extrabold text-base" data-en="You have a special place in my heart. ❤️" data-np="मेरो मनमा तिम्रो विशेष ठाउँ छ। ❤️">You have a special place in my heart. ❤️</p>
+</div>
+<p class="line mt-4 text-pink-400 font-semibold text-xs" data-en="The End? Never. 💗" data-np="अन्त्य? कहिल्यै होइन। 💗">The End? Never. 💗</p>
+<p class="mt-1 text-gray-500 text-xs" data-en="This is only the beginning. ✨" data-np="यो त सुरुवात मात्र हो। ✨">This is only the beginning. ✨</p>
+<button onclick="restart()" class="mt-4 px-5 py-2 rounded-2xl bg-white border border-pink-200 text-pink-600 font-bold text-sm" data-en="Read again 🔄" data-np="फेरि पढौँ 🔄">Read again 🔄</button>
+</div>
+</section>
+<p class="text-center mt-3 text-[10px] text-pink-400" data-en="Made with code, courage & lots of ❤️" data-np="code, साहस अनि धेरै धेरै ❤️ ले बनाइएको">Made with code, courage & lots of ❤️</p>
+</div>
+</main>
+<script>
+let current=1;let no2=0;let love=0;let proposalNo=0;let language="en";let escapeTimer=null;
+const noTextsEn=["No 😭","Are you sure? 🥺","Really? 👀","Think again! 😭","Pleaseee 🥹","My heart is sad 💔","Okay... try YES 😂"];
+const noTextsNp=["होइन 😭","पक्का हो? 🥺","साँच्चै? 👀","एकपटक फेरि सोच न। 😭","मनले के भन्छ? 🥹","यो सुन्दा अलि नरमाइलो लाग्यो। 💔","ल... YES try गरौँ न 😂"];
+const loveTextsEn=["20%? That's too little. 😭","40%! Okay... there's hope. 👀","60%! Now I'm smiling. 🥰","80%! My heart is happy. 💗","100%! Exactly what I wanted to hear. ❤️"];
+const loveTextsNp=["२०%? अलि थोरै भयो नि। 😭","४०%! Okay... अझै hope छ। 👀","६०%! अब त smile आयो। 🥰","८०%! मन खुसी भयो। 💗","१००%! यही answer सुन्न मन थियो। ❤️"];
+function setLanguage(lang){
+language=lang;document.documentElement.lang=lang;
+document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.getAttribute(lang==="np"?"data-np":"data-en");});
+document.getElementById("enBtn").classList.toggle("language-active",lang==="en");
+document.getElementById("npBtn").classList.toggle("language-active",lang==="np");
+}
+function showStep(n){
+for(let i=1;i<=7;i++){document.getElementById("step"+i).classList.add("hidden");}
+document.getElementById("step"+n).classList.remove("hidden");
+document.getElementById("step"+n).classList.add("pop");
+current=n;
+}
+function next(){if(current<7){showStep(current+1);hearts(10);}}
+function q2no(){
+no2++;let btn=document.getElementById("q2no");let yes=document.querySelector("#step2 .yes");
+let texts=language==="np"?noTextsNp:noTextsEn;
+document.getElementById("q2text").textContent=texts[Math.min(no2,6)];
+btn.textContent=texts[Math.min(no2,6)];
+yes.style.transform=`scale(${1+no2*.1})`;
+btn.classList.add("shake");setTimeout(()=>btn.classList.remove("shake"),450);
+if(no2>=6){
+btn.textContent=language==="np"?"ल YES 😂":"Okay YES 😂";
+btn.onclick=q2yes;
+}}
+function q2yes(){
+document.getElementById("gif2").src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+document.getElementById("q2text").textContent=language==="np"?"याआय! मलाई थाहा थियो! 🥰":"Yay! I knew it! 🥰";
+hearts(15);setTimeout(next,900);
+}
+function loveMeter(){
+if(love<100){
+love+=20;document.getElementById("loveNumber").textContent=love;document.getElementById("loveBar").style.width=love+"%";
+let texts=language==="np"?loveTextsNp:loveTextsEn;
+document.getElementById("loveText").textContent=texts[(love/20)-1];
+}
+if(love>=100){
+document.getElementById("loveBtn").textContent=language==="np"?"अर्को 💌":"Continue 💌";
+document.getElementById("loveBtn").onclick=next;
+document.getElementById("gif3").src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+hearts(20);
+}}
+function choice(btn,type){
+document.querySelectorAll("#step4 .choice").forEach(x=>{x.style.transform="";x.style.boxShadow="";});
+btn.style.transform="scale(1.04)";btn.style.boxShadow="0 15px 35px rgba(236,72,153,.2)";
+let messagesEn={yes:"Aww... let's respect this bond forever. ❤️",maybe:"Let's see... I liked this cute answer too. 🙈💕",always:"This is exactly what I wanted to hear. 🥹❤️",all:"After getting such a beautiful answer, my heart says YES too. 😭💖"};
+let messagesNp={yes:"आहा... त्यसो भए यो साथलाई सधैँ respect गरौँ। ❤️",maybe:"हेरौँ न... यो cute answer पनि मन पर्यो। 🙈💕",always:"यही कुरा सुन्न मन थियो। 🥹❤️",all:"यति सुन्दर answer पाएपछि मेरो मनले पनि YES भन्यो। 😭💖"};
+document.getElementById("choiceText").textContent=language==="np"?messagesNp[type]:messagesEn[type];
+hearts(8);setTimeout(next,1100);
+}
+function moveNoButton(){
+let btn=document.getElementById("mainNo");let box=btn.parentElement;
+let maxX=Math.max(5,box.clientWidth-btn.offsetWidth-5);let maxY=Math.max(5,box.clientHeight-btn.offsetHeight-5);
+let x=Math.random()*maxX;let y=Math.random()*maxY;
+btn.style.left=x+"px";btn.style.top=y+"px";btn.classList.add("shake");
+setTimeout(()=>btn.classList.remove("shake"),450);proposalNo++;
+let yes=document.getElementById("mainYes");yes.style.transform=`scale(${Math.min(1.5,1+proposalNo*.06)})`;
+let en=["The NO button is a bit shy too. 😂","It's easier to catch feelings than this button. 😄","Is your heart looking to say YES? 👀","Maybe your heart is hesitating to say NO. 🥹","Okay... the final answer goes to your heart. ❤️"];
+let np=["NO button पनि अलि shy रहेछ। 😂","यो button भन्दा त मनको कुरा समात्न सजिलो छ। 😄","YES भन्न मनले खोजिरहेको त छैन? 👀","सायद मनले NO भन्न अलि हिच्किचाइरहेको छ। 🥹","ल... अन्तिम answer तिम्रो heart ले नै जान्छ। ❤️"];
+document.getElementById("proposalText").textContent=language==="np"?np[Math.min(proposalNo-1,4)]:en[Math.min(proposalNo-1,4)];
+if(proposalNo>=6){btn.textContent=language==="np"?"YES 😭":"YES 😭";btn.onclick=accepted;btn.onmouseenter=null;}
+}
+function delayedEscape(){if(escapeTimer)return;escapeTimer=setTimeout(()=>{moveNoButton();escapeTimer=null;},650);}
+function mobileEscape(){if(window.matchMedia("(hover:none)").matches){moveNoButton();}else{delayedEscape();}}
+function accepted(){hearts(60);confetti();setTimeout(()=>showStep(6),800);}
+function confetti(){
+let symbols=["💖","❤️","💕","💗","✨","🥰","🎉","💝","🌸","💘"];
+for(let i=0;i<90;i++){
+let s=document.createElement("div");s.className="spark";s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+s.style.left=Math.random()*100+"vw";s.style.bottom="0";s.style.animationDuration=(1.5+Math.random()*2)+"s";
+s.style.fontSize=(14+Math.random()*24)+"px";document.body.appendChild(s);setTimeout(()=>s.remove(),4500);
+}}
+function hearts(amount){
+for(let i=0;i<amount;i++){
+let h=document.createElement("div");h.className="heart";h.textContent=["❤️","💗","💖","💕","💓","💘","✨","🌸"][Math.floor(Math.random()*8)];
+h.style.left=Math.random()*100+"vw";h.style.fontSize=(15+Math.random()*28)+"px";
+h.style.animationDuration=(2.5+Math.random()*3)+"s";h.style.animationDelay=Math.random()+"s";
+document.getElementById("floatingHearts").appendChild(h);setTimeout(()=>h.remove(),6500);
+}}
+function restart(){
+no2=0;love=0;proposalNo=0;
+document.getElementById("loveNumber").textContent="0";
+document.getElementById("loveBar").style.width="0%";
+document.getElementById("loveText").textContent=language==="np"?"तिम्रो मन कति भरिएको छ हेरौँ... 😂":"Let's check your heart... 😂";
+document.getElementById("loveBtn").textContent=language==="np"?"मेरो मन जाँच 💗":"Check my heart ❤️";
+document.getElementById("loveBtn").onclick=loveMeter;
+document.getElementById("q2no").textContent=language==="np"?"अलि कम 😐":"Not really 😐";
+document.getElementById("q2no").onclick=q2no;
+document.getElementById("mainNo").textContent=language==="np"?"होइन 😭":"No 😭";
+document.getElementById("mainNo").style.left="58%";document.getElementById("mainNo").style.top="72%";
+document.getElementById("mainNo").onclick=mobileEscape;document.getElementById("mainNo").onmouseenter=delayedEscape;
+document.getElementById("mainYes").style.transform="";
+document.getElementById("proposalText").textContent=language==="np"?"सुन न... NO button अलि लजालु छ। 😂":"Psst... the NO button is very shy. 😂";
+showStep(1);hearts(10);
+}
+setInterval(()=>{if(Math.random()>.55)hearts(1);},1300);
+setLanguage("en");
+</script>
+</body>
+</html>
