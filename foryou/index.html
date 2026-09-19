@@ -118,6 +118,18 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
 .language-active{background:#fce7f3;color:#db2777}
 .line{position:relative}
 .line:before,.line:after{content:"";display:inline-block;width:35px;height:1px;background:#f9a8d4;vertical-align:middle;margin:0 10px}
+/* Step 0: side messages (desktop only) + mobile fallback inside the centre card */
+.side-msg{display:none!important;transition:opacity .45s ease}
+.side-msg.show{animation:enter .6s ease}
+.only-xl{display:none!important}
+.msg-scroll{scrollbar-width:thin;scrollbar-color:#f9a8d4 transparent}
+.msg-scroll::-webkit-scrollbar{width:5px}
+.msg-scroll::-webkit-scrollbar-thumb{background:#f9a8d4;border-radius:9px}
+@media(min-width:1280px){
+  .side-msg.show{display:flex!important}
+  .only-xl{display:block!important}
+  .below-xl{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -127,7 +139,21 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
 <div id="floatingHearts"></div>
 
 <main class="relative z-10 w-full h-full flex flex-col items-center justify-center p-3">
-<div class="w-full max-w-5xl flex items-center justify-center gap-4">
+<div id="mainWrap" class="w-full max-w-5xl flex items-center justify-center gap-4">
+
+  <aside id="sideMsgLeft" class="side-msg flex-col w-[22rem] max-h-[88vh] p-6 rounded-3xl bg-white/85 backdrop-blur-md border border-pink-200/90 shadow-2xl text-left relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400"></div>
+    <div class="flex items-center justify-between mb-2 shrink-0">
+      <span class="text-[10px] font-extrabold tracking-widest uppercase text-pink-500 bg-pink-100/80 px-2.5 py-0.5 rounded-full">From My Heart 💌</span>
+    </div>
+    <h3 class="shrink-0 font-lobster text-pink-500 text-2xl leading-tight">Before you continue 🤍</h3>
+    <div class="msg-scroll mt-2 flex-1 min-h-0 overflow-y-auto pr-1">
+      <p class="text-[13px] text-pink-600 font-semibold leading-[1.7]">A Broken Chapter 🥀... But our friendship will always remain special. 🤝 Some stories don't end the way we dreamed, and that's okay. 🥺</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3">To be honest, I carry a lot of responsibilities on my shoulders—perhaps even more than you might realize. Your parents give you happiness, but for me, my family and relatives expect me to fulfill my duties first. Only after completing those responsibilities can I truly find peace in my heart. I am deeply sorry that I couldn't accept your feelings in the way you hoped, but please know I am always here for you. You know who Santosh is—whenever you call or need a friend, I will always be there.</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3">Thank you for looking into my eyes and understanding my inner thoughts when I couldn't even explain them myself. We share the same vibe, and that's why we built such a genuine connection. In the beginning, I only saw you as a close friend, just like I do with anyone who speaks to me politely and warmly. I still don't know why you trusted me so quickly or what you saw in me, but I am truly grateful that you shared your heart with me.</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3 font-medium">Thank you for every smile, every deep talk, and every memory. Thank you for understanding me. Our romantic chapter might pause or end here, but our friendship never will from my side. Always love you. Maybe our story isn't truly over... but until then, I will always wish you endless happiness. 🌼💛</p>
+    </div>
+  </aside>
 
   <aside id="sideLeft" class="hidden xl:block w-72 p-6 rounded-3xl bg-white/80 backdrop-blur-md border border-pink-200/90 shadow-2xl text-left transform -rotate-2 hover:rotate-0 transition-all duration-300 relative overflow-hidden group">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400"></div>
@@ -154,7 +180,26 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
 
 <section class="glass rounded-[2rem] p-5 sm:p-7 text-center w-full">
 
-<div id="step1" class="step">
+<div id="step0" class="step">
+<div class="text-4xl sm:text-6xl float mt-1">💔</div>
+<p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500 font-lobster text-lg" data-en="Before you continue 🤍" data-np="अगाडि बढ्नुअघि 🤍">Before you continue 🤍</p>
+<h1 class="mt-1 text-3xl sm:text-5xl font-extrabold text-gray-800 font-rancho tracking-wide" data-en="A Broken Chapter 🥀..." data-np="हाम्रो प्रेम कहानी अधुरै रहला... 🥀">A Broken Chapter 🥀...</h1>
+<p class="mt-2 text-pink-500 font-bold text-sm sm:text-base" data-en="But our friendship will always remain special. 🤝" data-np="तर हाम्रो मित्रता सधैँ विशेष नै रहनेछ। 🤝">But our friendship will always remain special. 🤝</p>
+<div class="below-xl msg-scroll mt-3 max-h-[26vh] overflow-y-auto rounded-2xl bg-white/80 p-4 border border-pink-100 shadow-sm text-left">
+<p class="text-gray-700 leading-relaxed text-xs" data-en="Some stories don't end the way we dreamed, and that's okay. 🥺" data-np="केही कहानीहरू हामीले सपना देखेजस्तो गरी टुङ्गिँदैनन्, र त्यो ठीकै हो। 🥺">Some stories don't end the way we dreamed, and that's okay. 🥺</p>
+<p class="text-gray-700 leading-relaxed text-xs mt-2" data-en="To be honest, I carry a lot of responsibilities on my shoulders—perhaps even more than you might realize. Your parents give you happiness, but for me, my family and relatives expect me to fulfill my duties first. Only after completing those responsibilities can I truly find peace in my heart. I am deeply sorry that I couldn't accept your feelings in the way you hoped, but please know I am always here for you. You know who Santosh is—whenever you call or need a friend, I will always be there." data-np="साँच्चै भन्नुपर्दा, मेरो काँधमा धेरै जिम्मेवारीहरू छन्—सायद तिमीले सोचेभन्दा पनि धेरै। तिम्रा बुबाआमाले तिमीलाई खुसी दिनुहुन्छ, तर मेरो हकमा भने परिवार र आफन्तहरूले पहिले मैले आफ्ना कर्तव्य पूरा गरूँ भन्ने अपेक्षा राख्छन्। ती जिम्मेवारी पूरा गरेपछि मात्र मैले मनमा साँचो शान्ति पाउन सक्छु। तिमीले आशा गरेजस्तो गरी तिम्रो भावनालाई स्वीकार गर्न नसकेकोमा म गहिरो रूपमा माफी चाहन्छु, तर कृपया थाहा पाऊ—म सधैँ तिम्रो साथमा छु। सन्तोष कस्तो मान्छे हो भन्ने तिमीलाई थाहा छ—तिमीले जुनसुकै बेला फोन गर्दा वा साथी चाहिँदा, म सधैँ त्यहाँ हुनेछु।">To be honest, I carry a lot of responsibilities on my shoulders—perhaps even more than you might realize. Your parents give you happiness, but for me, my family and relatives expect me to fulfill my duties first. Only after completing those responsibilities can I truly find peace in my heart. I am deeply sorry that I couldn't accept your feelings in the way you hoped, but please know I am always here for you. You know who Santosh is—whenever you call or need a friend, I will always be there.</p>
+<p class="text-gray-700 leading-relaxed text-xs mt-2" data-en="Thank you for looking into my eyes and understanding my inner thoughts when I couldn't even explain them myself. We share the same vibe, and that's why we built such a genuine connection. In the beginning, I only saw you as a close friend, just like I do with anyone who speaks to me politely and warmly. I still don't know why you trusted me so quickly or what you saw in me, but I am truly grateful that you shared your heart with me." data-np="मैले आफैँ व्यक्त गर्न नसक्दा पनि तिमीले मेरो आँखामा हेरेर मनका कुरा बुझिदिएकोमा धन्यवाद। हाम्रो vibe मिल्छ, त्यसैले हामीबीच यति साँचो सम्बन्ध बन्यो। सुरुमा त म तिमीलाई एक नजिकको साथीका रूपमा मात्र हेर्थेँ—जसरी मसँग नम्र र न्यानो तरिकाले बोल्ने जोकोहीलाई हेर्छु। तिमीले किन यति चाँडै मलाई विश्वास गर्यौ वा मभित्र के देख्यौ, मलाई अहिलेसम्म थाहा छैन, तर तिमीले आफ्नो मन मसँग खोलिदियौ, त्यसका लागि म साँच्चै आभारी छु।">Thank you for looking into my eyes and understanding my inner thoughts when I couldn't even explain them myself. We share the same vibe, and that's why we built such a genuine connection. In the beginning, I only saw you as a close friend, just like I do with anyone who speaks to me politely and warmly. I still don't know why you trusted me so quickly or what you saw in me, but I am truly grateful that you shared your heart with me.</p>
+<p class="text-gray-700 leading-relaxed text-xs mt-2 font-medium" data-en="Thank you for every smile, every deep talk, and every memory. Thank you for understanding me. Our romantic chapter might pause or end here, but our friendship never will from my side. Always love you. Maybe our story isn't truly over... but until then, I will always wish you endless happiness. 🌼💛" data-np="हरेक मुस्कान, हरेक गहिरो कुराकानी र हरेक यादका लागि धन्यवाद। मलाई बुझिदिएकोमा धन्यवाद। हाम्रो प्रेमको अध्याय यहीँ रोकिन वा सकिन सक्छ, तर मेरो तर्फबाट हाम्रो मित्रता कहिल्यै सकिँदैन। सधैँ माया गर्छु। सायद हाम्रो कहानी साँच्चै सकिएकै छैन... तर तबसम्म, म तिमीलाई सधैँ अनन्त खुसी रहोस् भन्ने कामना गर्छु। 🌼💛">Thank you for every smile, every deep talk, and every memory. Thank you for understanding me. Our romantic chapter might pause or end here, but our friendship never will from my side. Always love you. Maybe our story isn't truly over... but until then, I will always wish you endless happiness. 🌼💛</p>
+</div>
+<div class="mt-3 rounded-2xl bg-pink-50/90 p-4 border border-pink-100 shadow-sm text-left">
+<p class="text-gray-700 leading-relaxed text-xs sm:text-sm" data-en="Before you view these old cute questions and memories, remember: you're always special to me as a friend. 🤍" data-np="यी पुराना प्यारा प्रश्न र यादहरू हेर्नुअघि सम्झिनू, साथीको रूपमा तिमी मेरा लागि सधैँ विशेष छौ। 🤍">Before you view these old cute questions and memories, remember: you're always special to me as a friend. 🤍</p>
+<p class="only-xl mt-2 text-pink-500 font-semibold text-xs text-center" data-en="Hopefully this is convenient for you, and I hope you understand!" data-np="आशा छ यसले तपाईंलाई सहज हुनेछ, र तपाईंले कुरा बुझ्नुहुनेछ! ">Hopefully this is convenient for you, and I hope you understand!</p>
+<p class="mt-2 text-pink-600 font-extrabold text-xs sm:text-sm text-center" data-en="Some chapters end. Good friendships don't. 💛" data-np="केही अध्याय सकिन्छन्। असल मित्रता सकिँदैन। 💛">Some chapters end. Good friendships don't. 💛</p>
+</div>
+<button onclick="startMainProposal()" class="yes mt-4 px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-base shadow-lg" data-en="I understand 🤝 Show me" data-np="बुझेँ 🤝 हेर्न देऊ">I understand 🤝 Show me</button>
+</div>
+
+<div id="step1" class="step hidden">
 <img class="gif float" src="https://media.tenor.com/4V4nWkqGf7AAAAAi/bear-love.gif" alt="Cute love bear">
 <p class="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[.2em] text-pink-500 font-lobster text-lg" data-en="A little surprise 💌" data-np="एउटा सानो surprise 💌">A little surprise 💌</p>
 <h1 class="mt-1 text-3xl sm:text-5xl font-extrabold text-gray-800 font-rancho tracking-wide" data-en="Hey... wait! 👀" data-np="ए... एकछिन! 👀">Hey... wait! 👀</h1>
@@ -329,13 +374,27 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
   <div class="absolute -bottom-12 -right-12 w-28 h-28 bg-gradient-to-br from-rose-300/20 to-violet-300/20 rounded-full blur-xl transition-all duration-700 group-hover:scale-150 group-hover:opacity-70"></div>
 </aside>
 
+  <aside id="sideMsgRight" class="side-msg flex-col w-[22rem] max-h-[88vh] p-6 rounded-3xl bg-white/85 backdrop-blur-md border border-pink-200/90 shadow-2xl text-left relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400"></div>
+    <div class="flex items-center justify-between mb-2 shrink-0">
+      <span class="text-[10px] font-extrabold tracking-widest uppercase text-pink-500 bg-pink-100/80 px-2.5 py-0.5 rounded-full">मनको कुरा 💌</span>
+      
+    </div>
+    <h3 class="shrink-0 font-lobster text-pink-500 text-2xl leading-tight">अगाडि बढ्नुअघि 🤍</h3>
+    <div class="msg-scroll mt-2 flex-1 min-h-0 overflow-y-auto pr-1">
+      <p class="text-[13px] text-pink-600 font-semibold leading-[1.7]">हाम्रो प्रेम कहानी अधुरै रहला... 🥀 तर हाम्रो मित्रता सधैँ विशेष नै रहनेछ। 🤝 केही कहानीहरू हामीले सपना देखेजस्तो गरी टुङ्गिँदैनन्, र त्यो ठीकै हो। 🥺</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3">साँच्चै भन्नुपर्दा, मेरो काँधमा धेरै जिम्मेवारीहरू छन्—सायद तिमीले सोचेभन्दा पनि धेरै। तिम्रा बुबाआमाले तिमीलाई खुसी दिनुहुन्छ, तर मेरो हकमा भने परिवार र आफन्तहरूले पहिले मैले आफ्ना कर्तव्य पूरा गरूँ भन्ने अपेक्षा राख्छन्। ती जिम्मेवारी पूरा गरेपछि मात्र मैले मनमा साँचो शान्ति पाउन सक्छु। तिमीले आशा गरेजस्तो गरी तिम्रो भावनालाई स्वीकार गर्न नसकेकोमा म गहिरो रूपमा माफी चाहन्छु, तर कृपया थाहा पाऊ—म सधैँ तिम्रो साथमा छु। सन्तोष कस्तो मान्छे हो भन्ने तिमीलाई थाहा छ—तिमीले जुनसुकै बेला फोन गर्दा वा साथी चाहिँदा, म सधैँ त्यहाँ हुनेछु।</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3">मैले आफैँ व्यक्त गर्न नसक्दा पनि तिमीले मेरो आँखामा हेरेर मनका कुरा बुझिदिएकोमा धन्यवाद। हाम्रो vibe मिल्छ, त्यसैले हामीबीच यति साँचो सम्बन्ध बन्यो। सुरुमा त म तिमीलाई एक नजिकको साथीका रूपमा मात्र हेर्थेँ—जसरी मसँग नम्र र न्यानो तरिकाले बोल्ने जोकोहीलाई हेर्छु। तिमीले किन यति चाँडै मलाई विश्वास गर्यौ वा मभित्र के देख्यौ, मलाई अहिलेसम्म थाहा छैन, तर तिमीले आफ्नो मन मसँग खोलिदियौ, त्यसका लागि म साँच्चै आभारी छु।</p>
+      <p class="text-[13px] text-gray-700 leading-[1.7] mt-3 font-medium">हरेक मुस्कान, हरेक गहिरो कुराकानी र हरेक यादका लागि धन्यवाद। मलाई बुझिदिएकोमा धन्यवाद। हाम्रो प्रेमको अध्याय यहीँ रोकिन वा सकिन सक्छ, तर मेरो तर्फबाट हाम्रो मित्रता कहिल्यै सकिँदैन। सधैँ माया गर्छु। सायद हाम्रो कहानी साँच्चै सकिएकै छैन... तर तबसम्म, म तिमीलाई सधैँ अनन्त खुसी रहोस् भन्ने कामना गर्छु। 🌼💛</p>
+    </div>
+  </aside>
 
 </div>
 </main>
 
 <script>
-let current=1;
-let totalSteps=12;
+let current=0;
+let totalSteps=13;
 let no2=0;
 let love=0;
 let proposalNo=0;
@@ -359,7 +418,7 @@ function setLanguage(lang){
 }
 
 function showStep(n){
-  for(let i=1;i<=totalSteps;i++){
+  for(let i=0;i<=totalSteps;i++){
     const el = document.getElementById("step"+i);
     if(el) el.classList.add("hidden");
   }
@@ -369,7 +428,7 @@ function showStep(n){
     target.classList.add("pop");
   }
   
-  // Toggle Side Cards display only on Step 1
+  // Original side cards (Deep Thought / Our Chat) show only on Step 1
   const sideL = document.getElementById("sideLeft");
   const sideR = document.getElementById("sideRight");
   if(n === 1){
@@ -380,6 +439,14 @@ function showStep(n){
     if(sideR) sideR.classList.add("hidden");
   }
   
+  // Step 0 has its own side messages: English on the left, Nepali on the right (desktop only)
+  const msgL = document.getElementById("sideMsgLeft");
+  const msgR = document.getElementById("sideMsgRight");
+  if(msgL) msgL.classList.toggle("show", n === 0);
+  if(msgR) msgR.classList.toggle("show", n === 0);
+  const wrap = document.getElementById("mainWrap");
+  if(wrap) wrap.style.maxWidth = (n === 0) ? "1280px" : "";
+  
   current=n;
 }
 
@@ -388,6 +455,28 @@ function next(){
     showStep(current+1);
     hearts(8);
   }
+}
+
+// Step 0 -> Step 1 (closure / friendship screen to the original questions)
+function startMainProposal(){
+  const s0=document.getElementById("step0");
+  const msgs=[document.getElementById("sideMsgLeft"),document.getElementById("sideMsgRight")];
+  if(s0){
+    s0.style.transition="opacity .45s ease, transform .45s ease";
+    s0.style.opacity="0";
+    s0.style.transform="translateY(-18px) scale(.97)";
+  }
+  msgs.forEach(m=>{if(m)m.style.opacity="0";});
+  hearts(6);
+  setTimeout(()=>{
+    if(s0){
+      s0.style.transition="";
+      s0.style.opacity="";
+      s0.style.transform="";
+    }
+    msgs.forEach(m=>{if(m)m.style.opacity="";});
+    showStep(1);
+  },450);
 }
 
 // Step 2 logic
@@ -634,7 +723,7 @@ function restart(){
 
 setInterval(()=>{if(Math.random()>.55)hearts(1);},1300);
 setLanguage("en");
-showStep(1);
+showStep(0);
 </script>
 </body>
 </html>
