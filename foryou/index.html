@@ -725,5 +725,118 @@ setInterval(()=>{if(Math.random()>.55)hearts(1);},1300);
 setLanguage("en");
 showStep(0);
 </script>
+<!-- Smooth In & Out Animated Hanging Popup -->
+<div id="popupOverlay" class="fixed inset-0 z-[999] flex flex-col items-center justify-start bg-black/20 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-700 ease-out overflow-hidden">
+  
+  <div id="popupContainer" class="relative flex flex-col items-center origin-top transform -translate-y-10 scale-95 transition-all duration-700 ease-out">
+    
+    <!-- Realistic Rope from Screen Top -->
+    <svg class="w-6 h-48 drop-shadow-md z-10" viewBox="0 0 24 200" fill="none">
+      <path d="M 12 0 L 12 190" stroke="#6e3e1e" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 12 0 L 12 190" stroke="#a06334" stroke-width="2.5" stroke-dasharray="3,3" stroke-linecap="round"/>
+      <circle cx="12" cy="192" r="6" fill="#4a2810" stroke="#8c5225" stroke-width="2"/>
+    </svg>
+
+    <!-- Unique Asymmetric Card -->
+    <div id="countdownPopup" class="-mt-3 w-[90vw] max-w-md bg-gradient-to-b from-[#fff5f8] via-[#fce8ef] to-[#f8dbe5] border-2 border-rose-300/80 shadow-[0_25px_50px_-12px_rgba(225,29,72,0.25)] rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl p-8 text-center relative">
+      
+      <!-- Top Right Unique Pill Badge -->
+      <div class="absolute top-5 right-6 bg-rose-500 text-white font-bold text-xs px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
+        <span id="popupTimer" class="font-extrabold text-sm">10</span>
+      </div>
+
+      <!-- Centered Content -->
+      <div class="flex flex-col items-center justify-center pt-2">
+        <h3 class="font-lobster text-gray-800 text-3xl sm:text-4xl font-extrabold tracking-wide">
+          Maybe the end ?
+        </h3>
+        
+        <p class="text-sm sm:text-base text-gray-700 font-semibold mt-2 flex items-center justify-center gap-1.5">
+          I am sorry... <span class="text-xl inline-block animate-bounce">🥺</span>
+        </p>
+
+        <p class="text-xs sm:text-sm text-gray-600 font-medium italic mt-3 leading-relaxed max-w-xs">
+          Some endings hurt, but...<br>they also teach us to be stronger.
+        </p>
+
+        <div class="mt-4 text-2xl filter drop-shadow-sm transition-transform duration-300 hover:scale-110">
+          💔
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes hangingSwing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1.5deg); }
+    50% { transform: rotate(-1.2deg); }
+    75% { transform: rotate(0.6deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /* Swing animation activates only after smooth entrance finishes */
+  .animate-hangingSwing {
+    animation: hangingSwing 6s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById('popupOverlay');
+    const container = document.getElementById('popupContainer');
+    const timerElem = document.getElementById('popupTimer');
+
+    // Smooth IN Animation on Load
+    setTimeout(() => {
+      if (overlay && container) {
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+
+        container.classList.remove('-translate-y-10', 'scale-95');
+        container.classList.add('translate-y-0', 'scale-100');
+
+        // Start gentle swing after smooth entry completes
+        setTimeout(() => {
+          container.classList.add('animate-hangingSwing');
+        }, 700);
+      }
+    }, 100);
+
+    // 10 Second Countdown Timer
+    let timeLeft = 10;
+    const countdownInterval = setInterval(() => {
+      timeLeft--;
+      if (timerElem) {
+        timerElem.textContent = timeLeft;
+      }
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        closePopupSmooth();
+      }
+    }, 1000);
+
+    // Smooth OUT Animation on Close
+    function closePopupSmooth() {
+      if (overlay && container) {
+        // Pause swing before animating out
+        container.classList.remove('animate-hangingSwing');
+
+        // Animate Out
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+
+        container.classList.remove('translate-y-0', 'scale-100');
+        container.classList.add('-translate-y-10', 'scale-95');
+
+        setTimeout(() => {
+          overlay.style.display = 'none';
+        }, 700);
+      }
+    }
+  });
+</script>
 </body>
 </html>
