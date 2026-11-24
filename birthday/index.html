@@ -1,928 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <!-- Primary SEO Meta Tags -->
-  <title>Happy Birthday Wish | Create & Share Custom Birthday Card & QR</title>
-  <meta name="title" content="Happy Birthday Wish | Create & Share Custom Birthday Card & QR" />
-  <meta name="description" content="Create a personalized interactive birthday wish webpage with custom name, date of birth, animated cake, balloons, and instant shareable link & QR code." />
-  <meta name="keywords" content="Happy Birthday Wish, Birthday Card Generator, QR Code Birthday Wish, Interactive Birthday Cake, Santosh Sharma Birthday" />
-  <meta name="author" content="Santosh Sharma" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://santoshsharma1.com.np/birthday" />
-
-  <!-- Open Graph / Facebook / Messenger -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://santoshsharma1.com.np/birthday" />
-  <meta property="og:title" content="Special Interactive Birthday Wish Just For You!" />
-  <meta property="og:description" content="Tap to light the candles, pop balloons, and open your personalized birthday surprise!" />
-  <meta property="og:site_name" content="Santosh Sharma Birthday Wishes" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://santoshsharma1.com.np/birthday" />
-  <meta name="twitter:title" content="Special Interactive Birthday Wish Just For You!" />
-  <meta name="twitter:description" content="Tap to light the candles, pop balloons, and open your personalized birthday surprise!" />
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Interactive Birthday Wish Generator",
-    "url": "https://santoshsharma1.com.np/birthday",
-    "applicationCategory": "EntertainmentApplication",
-    "operatingSystem": "All",
-    "description": "Create and share a custom interactive birthday celebration webpage with name, date of birth, animated cake, and QR code."
-  }
-  </script>
-
-  <!-- Lightweight Libraries for QR & Confetti -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
-
-  <style>
-    :root {
-      --bg-1: #0f0722;
-      --bg-2: #1f0d3b;
-      --accent-pink: #ff4d8d;
-      --accent-gold: #ffd166;
-      --accent-purple: #9b5de5;
-      --accent-cyan: #00bbf9;
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.18);
-      --text-main: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.78);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120e19">
+<meta name="description" content="Create a magical interactive birthday story with a wrapped gift, music, candles, balloons, memories and a personal shareable birthday link.">
+<meta name="keywords" content="birthday story, birthday surprise, birthday website, birthday wish, birthday link, birthday QR code">
+<meta name="author" content="Santosh Sharma">
+<meta name="creator" content="Santosh Sharma">
+<meta name="publisher" content="Santosh Sharma">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://santoshsharma1.com.np/birthday/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="A Birthday Story Made With Love">
+<meta property="og:description" content="Open a little surprise made especially for someone special.">
+<meta property="og:url" content="https://santoshsharma1.com.np/birthday/">
+<meta property="og:site_name" content="Birthday Stories">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Birthday Story Made With Love">
+<meta name="twitter:description" content="Open a little surprise made especially for someone special.">
+<meta name="twitter:creator" content="@santosh_sharma_offical">
+<title>Happy Birthday to You — A Little Surprise Made With Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://santoshsharma1.com.np/#person",
+      "name": "Santosh Sharma",
+      "url": "https://santoshsharma1.com.np/",
+      "sameAs": [
+        "https://santoshsharma1.com.np/",
+        "https://www.linkedin.com/in/iamsantoshsharma",
+        "https://www.instagram.com/santosh_sharma_offical"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://santoshsharma1.com.np/#website",
+      "url": "https://santoshsharma1.com.np/",
+      "name": "Santosh Sharma",
+      "publisher": {
+        "@id": "https://santoshsharma1.com.np/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://santoshsharma1.com.np/birthday/#webpage",
+      "url": "https://santoshsharma1.com.np/birthday/",
+      "name": "Happy Birthday to You — A Little Surprise Made With Love",
+      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, balloons, memories and a personal shareable birthday link.",
+      "isPartOf": {
+        "@id": "https://santoshsharma1.com.np/#website"
+      },
+      "author": {
+        "@id": "https://santoshsharma1.com.np/#person"
+      },
+      "creator": {
+        "@id": "https://santoshsharma1.com.np/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://santoshsharma1.com.np/birthday/#webapp",
+      "name": "Birthday Stories",
+      "url": "https://santoshsharma1.com.np/birthday/",
+      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, balloons, memories and a personal shareable birthday link.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "author": {
+        "@id": "https://santoshsharma1.com.np/#person"
+      },
+      "creator": {
+        "@id": "https://santoshsharma1.com.np/#person"
+      },
+      "isPartOf": {
+        "@id": "https://santoshsharma1.com.np/#website"
+      }
     }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Strictly Non-Scrollable First-Screen Fit Across All Devices */
-    html, body {
-      width: 100vw;
-      height: 100dvh;
-      max-width: 100%;
-      max-height: 100dvh;
-      overflow: hidden !important;
-      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-      background: radial-gradient(circle at 20% 20%, #2b1055 0%, var(--bg-2) 45%, var(--bg-1) 100%);
-      color: var(--text-main);
-      user-select: none;
-    }
-
-    /* Ambient Background Stars & Bunting Decoration */
-    .bg-decor {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .bunting {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: clamp(24px, 4.5dvh, 42px);
-      display: flex;
-      justify-content: space-around;
-      z-index: 2;
-    }
-
-    .flag {
-      width: 0;
-      height: 0;
-      border-left: clamp(10px, 2vw, 22px) solid transparent;
-      border-right: clamp(10px, 2vw, 22px) solid transparent;
-      border-top: clamp(18px, 3.8dvh, 36px) solid var(--accent-pink);
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35));
-      animation: sway 2.8s ease-in-out infinite alternate;
-    }
-    .flag:nth-child(4n+2) { border-top-color: var(--accent-gold); animation-delay: 0.3s; }
-    .flag:nth-child(4n+3) { border-top-color: var(--accent-cyan); animation-delay: 0.6s; }
-    .flag:nth-child(4n+4) { border-top-color: var(--accent-purple); animation-delay: 0.9s; }
-
-    @keyframes sway {
-      from { transform: rotate(-4deg); }
-      to { transform: rotate(4deg); }
-    }
-
-    /* Floating Balloons Layer */
-    .balloon-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .balloon {
-      position: absolute;
-      bottom: -15dvh;
-      width: clamp(28px, 5vw, 48px);
-      height: clamp(36px, 6.2dvh, 60px);
-      border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
-      opacity: 0.85;
-      animation: floatUp linear infinite;
-      box-shadow: inset -6px -8px 14px rgba(0,0,0,0.25), 0 6px 18px rgba(0,0,0,0.2);
-    }
-    .balloon::after {
-      content: "";
-      position: absolute;
-      bottom: -14px;
-      left: 50%;
-      width: 1.5px;
-      height: 16px;
-      background: rgba(255,255,255,0.45);
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) translateX(0) rotate(0deg); }
-      50% { transform: translateY(-55dvh) translateX(14px) rotate(5deg); }
-      100% { transform: translateY(-120dvh) translateX(-10px) rotate(-5deg); }
-    }
-
-    /* Main Centered Viewport Container */
-    .viewport-wrapper {
-      position: relative;
-      z-index: 3;
-      width: 100%;
-      height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(22px, 4dvh, 40px) clamp(12px, 3vw, 28px) clamp(10px, 2dvh, 20px);
-    }
-
-    /* Glassmorphic Card */
-    .wish-card {
-      width: min(94vw, 540px);
-      height: min(90dvh, 680px);
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: clamp(18px, 3vw, 28px);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
-      padding: clamp(12px, 2.2dvh, 24px) clamp(14px, 3vw, 26px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    /* Top Header & Status */
-    .top-bar {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .pill-badge {
-      font-size: clamp(0.65rem, 1.5vw, 0.78rem);
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      padding: clamp(4px, 0.7dvh, 6px) clamp(10px, 2vw, 14px);
-      border-radius: 999px;
-      background: rgba(255, 77, 141, 0.22);
-      border: 1px solid rgba(255, 77, 141, 0.5);
-      color: #ff9ec2;
-      white-space: nowrap;
-    }
-
-    .step-indicator {
-      font-size: clamp(0.65rem, 1.4vw, 0.76rem);
-      color: var(--accent-gold);
-      font-weight: 600;
-      background: rgba(255, 209, 102, 0.14);
-      padding: clamp(4px, 0.7dvh, 6px) clamp(10px, 2vw, 12px);
-      border-radius: 999px;
-      border: 1px solid rgba(255, 209, 102, 0.35);
-    }
-
-    /* Name & DOB Hero */
-    .hero-section {
-      width: 100%;
-    }
-
-    .hero-title {
-      font-size: clamp(1.35rem, 4.2vw, 2.15rem);
-      font-weight: 800;
-      line-height: 1.15;
-      background: linear-gradient(90deg, #ffffff, #ffd166, #ff7eb3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 4px 20px rgba(255, 77, 141, 0.25);
-      word-break: break-word;
-    }
-
-    .dob-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: clamp(4px, 0.8dvh, 8px);
-      padding: clamp(3px, 0.6dvh, 5px) clamp(10px, 2vw, 14px);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-      font-weight: 600;
-      color: var(--accent-gold);
-    }
-
-    /* Interactive Animated Birthday Cake */
-    .cake-stage {
-      position: relative;
-      width: 100%;
-      height: clamp(105px, 20dvh, 155px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      cursor: pointer;
-    }
-
-    .cake-hint {
-      position: absolute;
-      top: 0;
-      font-size: clamp(0.68rem, 1.5vw, 0.8rem);
-      color: #a5f3fc;
-      background: rgba(0, 187, 249, 0.16);
-      border: 1px solid rgba(0, 187, 249, 0.4);
-      padding: 3px 10px;
-      border-radius: 999px;
-      animation: pulseHint 1.8s infinite;
-    }
-
-    @keyframes pulseHint {
-      0%, 100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-
-    .cake-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transform: scale(clamp(0.78, 0.16dvh, 1));
-      transform-origin: bottom center;
-    }
-
-    .candles {
-      display: flex;
-      gap: 14px;
-      margin-bottom: -2px;
-      z-index: 2;
-    }
-
-    .candle {
-      width: 8px;
-      height: 24px;
-      background: repeating-linear-gradient(45deg, #fff, #fff 4px, #ff4d8d 4px, #ff4d8d 8px);
-      border-radius: 3px;
-      position: relative;
-    }
-
-    .flame {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 10px;
-      height: 14px;
-      background: radial-gradient(circle at 50% 70%, #fff 10%, #ffd166 50%, #ff5400 95%);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      box-shadow: 0 0 12px #ffd166, 0 0 22px #ff5400;
-      animation: flicker 0.35s infinite alternate;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .candle.blown .flame {
-      opacity: 0;
-      transform: translateX(-50%) scale(0);
-    }
-
-    @keyframes flicker {
-      from { transform: translateX(-50%) scale(0.95) rotate(-3deg); }
-      to { transform: translateX(-50%) scale(1.08) rotate(3deg); }
-    }
-
-    .cake-top {
-      width: 112px;
-      height: 24px;
-      background: linear-gradient(180deg, #ff85a1, #ff4d8d);
-      border-radius: 10px 10px 4px 4px;
-      position: relative;
-      box-shadow: inset 0 3px 6px rgba(255,255,255,0.4);
-    }
-
-    .cake-top::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 8px;
-      background: radial-gradient(circle, #fff0f5 50%, transparent 55%) 0 0 / 16px 8px repeat-x;
-    }
-
-    .cake-bottom {
-      width: 144px;
-      height: 32px;
-      background: linear-gradient(180deg, #9b5de5, #6930c3);
-      border-radius: 8px 8px 12px 12px;
-      border-top: 3px solid #ffd166;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-    }
-
-    .cake-plate {
-      width: 172px;
-      height: 7px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 999px;
-      margin-top: 2px;
-    }
-
-    /* Animated Wish Box & Celebration GIF */
-    .wish-content-box {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: clamp(12px, 2vw, 18px);
-      padding: clamp(8px, 1.5dvh, 14px) clamp(10px, 2.2vw, 16px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(4px, 0.8dvh, 8px);
-    }
-
-    .gif-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .celebration-gif {
-      width: clamp(32px, 5dvh, 44px);
-      height: clamp(32px, 5dvh, 44px);
-      border-radius: 10px;
-      object-fit: cover;
-      border: 1px solid rgba(255, 209, 102, 0.5);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .wish-text {
-      font-size: clamp(0.76rem, 1.8vw, 0.92rem);
-      line-height: 1.42;
-      color: var(--text-muted);
-    }
-
-    /* Step-by-Step Mini Guide Strip */
-    .steps-bar {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(5px, 1.2vw, 10px);
-    }
-
-    .step-item {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      padding: clamp(5px, 0.9dvh, 8px) 6px;
-      font-size: clamp(0.62rem, 1.35vw, 0.74rem);
-      color: #e5e7eb;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .step-item.done {
-      border-color: rgba(52, 211, 153, 0.6);
-      background: rgba(16, 185, 129, 0.16);
-      color: #a7f3d0;
-    }
-
-    .step-num {
-      font-weight: 800;
-      color: var(--accent-gold);
-      font-size: clamp(0.68rem, 1.4vw, 0.78rem);
-    }
-
-    /* Action Buttons */
-    .action-row {
-      width: 100%;
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn {
-      flex: 1;
-      border: none;
-      border-radius: 14px;
-      padding: clamp(9px, 1.5dvh, 13px) clamp(12px, 2vw, 16px);
-      font-size: clamp(0.78rem, 1.8vw, 0.92rem);
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .btn:active { transform: scale(0.97); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #ff4d8d, #9b5de5);
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(255, 77, 141, 0.35);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .footer-url {
-      font-size: clamp(0.62rem, 1.3vw, 0.72rem);
-      color: rgba(255, 255, 255, 0.55);
-      letter-spacing: 0.3px;
-    }
-
-    /* Full-Screen Overlay Modal for Generator (No Page Scroll) */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      background: rgba(10, 5, 24, 0.84);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(12px, 3vw, 24px);
-    }
-
-    .modal-overlay.active { display: flex; }
-
-    .modal-card {
-      width: min(94vw, 440px);
-      max-height: 92dvh;
-      background: #1b0e36;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 22px;
-      padding: clamp(14px, 2.4dvh, 22px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: clamp(10px, 1.5dvh, 14px);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
-      overflow: hidden;
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .modal-header h2 {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: #fff;
-    }
-
-    .close-btn {
-      background: rgba(255,255,255,0.12);
-      border: none;
-      color: #fff;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .input-group {
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .input-group label {
-      font-size: clamp(0.74rem, 1.6vw, 0.84rem);
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: clamp(8px, 1.4dvh, 11px) 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-      outline: none;
-    }
-
-    .input-group input:focus {
-      border-color: var(--accent-pink);
-    }
-
-    .qr-result-panel {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(8px, 1.2dvh, 10px);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 16px;
-      padding: clamp(10px, 1.6dvh, 14px);
-    }
-
-    .qr-result-panel.active { display: flex; }
-
-    #qrcodeBox {
-      background: #ffffff;
-      padding: 8px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #qrcodeBox img, #qrcodeBox canvas {
-      width: clamp(110px, 18dvh, 145px) !important;
-      height: clamp(110px, 18dvh, 145px) !important;
-    }
-
-    .generated-url-box {
-      width: 100%;
-      font-size: clamp(0.68rem, 1.4vw, 0.78rem);
-      color: #93c5fd;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 7px 10px;
-      border-radius: 10px;
-      word-break: break-all;
-      text-align: center;
-    }
-
-    /* Landscape Compact Tweaks for Short Screens */
-    @media (max-height: 540px) {
-      .cake-stage { height: 82px; }
-      .cake-wrapper { transform: scale(0.64); }
-      .steps-bar { display: none; }
-      .celebration-gif { width: 28px; height: 28px; }
-    }
-  </style>
+  ]
+}
+</script>
+<style>
+:root{color-scheme:dark;--bg:#120e19;--panel:#211a2b;--panel2:#2a2035;--ink:#fff9f3;--muted:#c3b5c8;--pink:#ff9ec7;--rose:#f16b9d;--gold:#f4cb83;--lav:#c6a9ed;--line:#ffffff20;--shadow:0 24px 80px #0008}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:"DM Sans",sans-serif;background:radial-gradient(ellipse at 15% 12%,#53304b 0,transparent 36%),radial-gradient(ellipse at 88% 90%,#382747 0,transparent 40%),var(--bg);color:var(--ink)}
+button,input,textarea,select{font:inherit}
+button{border:0;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#app{width:100%;height:100dvh;min-height:0;display:flex;flex-direction:column;position:relative;overflow:hidden;isolation:isolate}
+.ambient{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.ambient:before,.ambient:after{content:"";position:absolute;width:35vw;height:35vw;border-radius:50%;filter:blur(90px);opacity:.13;background:#ff78b6;animation:drift 13s ease-in-out infinite alternate}
+.ambient:before{top:-15%;left:-10%}.ambient:after{right:-12%;bottom:-20%;background:#a77de2;animation-delay:-5s}
+@keyframes drift{to{transform:translate(8vw,5vh) scale(1.2)}}
+.topbar{height:58px;flex:0 0 58px;padding:0 clamp(16px,5vw,70px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;z-index:5}
+.brand{font-weight:800;letter-spacing:.08em;font-size:12px}.brand span{color:var(--pink)}
+.top-note{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(10px,2.4vh,25px) clamp(12px,4vw,55px);display:flex;align-items:center;justify-content:center}
+.screen{display:none;width:min(1100px,100%);height:100%;min-height:0;margin:auto}
+.screen.active{display:flex}
+.footer{height:27px;flex:0 0 27px;display:flex;align-items:center;justify-content:center;color:#95869e;font-size:9px;letter-spacing:.04em;z-index:3}
+.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:800}
+.serif{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:-.035em}
+.muted{color:var(--muted)}
+.btn{min-height:43px;padding:11px 19px;border-radius:999px;font-size:12px;font-weight:800;transition:transform .2s,filter .2s,background .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-primary{color:#321d2a;background:linear-gradient(110deg,#ffd9a0,#ff9fc6 58%,#d7b3f5);box-shadow:0 9px 30px #e778a52b}
+.btn-ghost{background:#ffffff0d;border:1px solid var(--line);color:var(--ink)}
+.btn-dark{background:#211827;color:#fff;border:1px solid #ffffff1c}
+.icon-btn{width:38px;height:38px;border-radius:50%;background:#ffffff12;color:white;border:1px solid var(--line);display:grid;place-items:center}
+.home{align-items:center;justify-content:center;gap:clamp(20px,5vw,75px)}
+.home-copy{flex:1;max-width:490px;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(12px,2.3vh,22px)}
+.home-copy h1{font-size:clamp(38px,6.2vw,76px);line-height:.99;max-width:600px}
+.home-copy h1 em{font-style:normal;color:var(--pink)}
+.home-copy>p{max-width:420px;color:var(--muted);font-size:clamp(12px,1.2vw,15px);line-height:1.8}
+.home-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.home-art{width:min(39%,390px);height:min(78%,490px);min-height:290px;border:1px solid var(--line);border-radius:190px 190px 28px 28px;background:linear-gradient(160deg,#ffffff17,#ffffff05);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:var(--shadow)}
+.home-art:before{content:"";position:absolute;width:230px;height:230px;background:#f68ab72a;border-radius:50%;filter:blur(40px)}
+.art-spark{position:absolute;color:var(--gold);font-size:22px;animation:spark 2.5s ease-in-out infinite alternate}
+.art-spark.s1{top:17%;left:19%}.art-spark.s2{right:17%;top:29%;animation-delay:.8s}.art-spark.s3{bottom:21%;right:20%;animation-delay:1.4s}
+@keyframes spark{to{opacity:.35;transform:scale(.7) rotate(30deg)}}
+.gift{width:175px;height:150px;position:relative;filter:drop-shadow(0 22px 18px #0005);animation:giftFloat 3s ease-in-out infinite}
+@keyframes giftFloat{50%{transform:translateY(-12px) rotate(1deg)}}
+.gift-box{position:absolute;bottom:0;left:10px;width:155px;height:112px;background:linear-gradient(110deg,#d85d8d,#f28eb2 55%,#bd5789);border-radius:7px 7px 13px 13px}
+.gift-lid{position:absolute;top:25px;left:0;width:175px;height:27px;border-radius:7px;background:linear-gradient(100deg,#ffbad0,#ed7ea9);z-index:2}
+.gift-ribbon{position:absolute;top:25px;left:78px;width:20px;height:112px;background:linear-gradient(90deg,#f6d18c,#fff0c1,#e6b66c);z-index:3}
+.gift-bow{position:absolute;top:0;left:65px;width:45px;height:35px;border:9px solid #f4d18e;border-radius:80% 15% 80% 15%;transform:rotate(-22deg);z-index:4}
+.gift-bow:after{content:"";position:absolute;width:45px;height:35px;border:9px solid #f4d18e;border-radius:15% 80% 15% 80%;left:22px;top:-7px;transform:rotate(45deg)}
+.home-caption{position:absolute;bottom:12%;text-align:center;font-family:"Playfair Display",serif;font-size:17px;color:#ffe7ed}
+.wizard{align-items:center;justify-content:center}
+.wizard-card{width:min(650px,100%);max-height:100%;overflow:auto;background:linear-gradient(145deg,#ffffff12,#ffffff07);border:1px solid var(--line);border-radius:25px;padding:clamp(18px,3vw,35px);box-shadow:var(--shadow)}
+.progress-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.progress-text{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.progress-track{height:4px;background:#ffffff18;border-radius:9px;overflow:hidden;margin-bottom:25px}
+.progress-fill{height:100%;width:25%;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:9px;transition:width .3s}
+.wizard-step{display:none;animation:rise .35s ease}.wizard-step.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.wizard-step h2{font-size:clamp(27px,4vw,43px);line-height:1.08;margin:10px 0}
+.wizard-step>p{font-size:12px;line-height:1.7;color:var(--muted);margin-bottom:20px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:700;color:#eadde9}
+.field input,.field textarea,.field select{width:100%;background:#130f1b;border:1px solid #ffffff25;color:white;border-radius:12px;padding:12px 13px;min-height:44px;font-size:12px;outline:none}
+.field textarea{resize:vertical;min-height:85px;line-height:1.5}
+.field input::placeholder,.field textarea::placeholder{color:#897c91}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--pink)}
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.choice{border:1px solid var(--line);background:#ffffff08;border-radius:13px;padding:13px 8px;text-align:center;color:var(--ink);font-size:11px;line-height:1.5}
+.choice strong{display:block;font-size:22px;margin-bottom:5px}
+.choice.selected{border-color:var(--pink);background:#ff9ec71c;box-shadow:inset 0 0 0 1px #ff9ec755}
+.wizard-actions{display:flex;justify-content:space-between;gap:10px;margin-top:17px}
+.wizard-actions .btn{min-width:105px}
+.helper{font-size:10px;color:#a99bad;line-height:1.6;margin-top:10px}
+.share-screen{align-items:center;justify-content:center}
+.share-card{width:min(760px,100%);display:grid;grid-template-columns:1fr 190px;gap:25px;align-items:center;padding:clamp(18px,3vw,34px);border:1px solid var(--line);border-radius:24px;background:#ffffff0d;box-shadow:var(--shadow)}
+.share-card h2{font-size:clamp(27px,4vw,43px);line-height:1.05;margin:10px 0}
+.share-card p{font-size:12px;line-height:1.7;color:var(--muted)}
+.url-box{margin:17px 0 12px;padding:12px;border-radius:10px;background:#100c16;border:1px solid var(--line);font-size:10px;line-height:1.6;color:#ffd4e4;overflow-wrap:anywhere}
+.share-actions{display:flex;gap:8px;flex-wrap:wrap}
+.qr-panel{background:#fff;border-radius:15px;padding:12px;text-align:center;color:#241a29}
+#qr{display:flex;align-items:center;justify-content:center;min-height:155px}
+#qr img,#qr canvas{max-width:100%;height:auto!important}
+.qr-panel small{font-size:9px;font-weight:800;letter-spacing:.12em}
+.story{align-items:center;justify-content:center}
+.story-wrap{height:100%;width:min(790px,100%);max-height:100%;border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,#ffffff12,#ffffff06);box-shadow:var(--shadow);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.story-top{height:47px;flex:0 0 47px;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-bottom:1px solid #ffffff14}
+.story-top span{font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.story-tools{display:flex;gap:7px}
+.story-body{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(12px,3vh,27px);overflow:hidden}
+.scene{display:none;width:100%;height:100%;min-height:0;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.5vh,15px);animation:rise .5s ease;position:relative;z-index:1}
+.scene.active{display:flex}
+.scene h1{font-size:clamp(30px,5vw,56px);line-height:1.04}
+.scene h2{font-size:clamp(24px,3.8vw,42px);line-height:1.08}
+.scene p{max-width:520px;color:var(--muted);font-size:clamp(11px,1.1vw,13px);line-height:1.7}
+.recipient{color:var(--pink)}
+.gift-interactive{width:190px;height:160px;position:relative;cursor:pointer;filter:drop-shadow(0 15px 15px #0005);animation:giftFloat 3s infinite}
+.gift-interactive .gift-box{left:17px;width:156px;height:110px}
+.gift-interactive .gift-lid{left:5px;width:180px}
+.gift-interactive .gift-ribbon{left:85px}
+.gift-interactive .gift-bow{left:72px}
+.gift-interactive.open .gift-lid{animation:lidOpen .8s forwards}
+.gift-interactive.open .gift-bow{animation:bowAway .8s forwards}
+@keyframes lidOpen{to{transform:translateY(-65px) rotate(-18deg);opacity:0}}
+@keyframes bowAway{to{transform:translate(35px,-70px) rotate(35deg);opacity:0}}
+.gift-hint{font-size:10px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{opacity:.45}}
+.cake-stage{width:220px;height:190px;position:relative;display:flex;align-items:flex-end;justify-content:center}
+.cake-plate{position:absolute;bottom:5px;width:210px;height:19px;border-radius:50%;background:linear-gradient(#fff0f4,#bd91a8);box-shadow:0 8px 18px #0005}
+.cake-body{position:absolute;bottom:17px;width:170px;height:88px;border-radius:12px 12px 17px 17px;background:linear-gradient(90deg,#bd5e86,#f49abb 55%,#d36d9b);box-shadow:inset 0 -12px #a94c78}
+.cake-body:before{content:"";position:absolute;top:-14px;left:0;width:100%;height:28px;border-radius:50%;background:#fff0e9;box-shadow:inset 0 -5px #f3b4c9}
+.cake-drip{position:absolute;top:3px;left:20px;width:14px;height:23px;background:#fff0e9;border-radius:0 0 9px 9px;box-shadow:32px 5px #fff0e9,68px 0 #fff0e9,104px 5px #fff0e9}
+.candle-row{position:absolute;bottom:112px;display:flex;gap:17px;z-index:2}
+.candle{width:9px;height:43px;border-radius:3px;background:repeating-linear-gradient(0deg,#fff4d7 0 7px,#d99cc5 7px 13px);position:relative}
+.flame{position:absolute;width:14px;height:21px;left:-2px;top:-20px;border-radius:50% 50% 45% 45%;background:radial-gradient(ellipse at 50% 70%,#fff9c5 0 22%,#ffc65e 50%,#f47b36 80%);filter:drop-shadow(0 0 9px #ffbd55);transform-origin:bottom;animation:flicker .55s infinite alternate}
+.flame.off{display:none}
+@keyframes flicker{to{transform:rotate(7deg) scale(.85)}}
+.balloons{width:min(480px,90%);height:170px;position:relative;display:flex;align-items:center;justify-content:space-evenly}
+.balloon{width:clamp(48px,8vw,72px);height:clamp(64px,10vw,94px);border-radius:50% 50% 47% 47%;position:relative;cursor:pointer;box-shadow:inset -9px -8px 15px #0002,inset 9px 8px 15px #ffffff30;animation:balloonFloat 2.7s ease-in-out infinite}
+.balloon:after{content:"";position:absolute;bottom:-7px;left:calc(50% - 5px);border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid currentColor}
+.balloon:before{content:"";position:absolute;top:100%;left:50%;height:75px;border-left:1px solid #ffffff80}
+.balloon:nth-child(1){background:#f17ca9;color:#f17ca9}.balloon:nth-child(2){background:#b69ae8;color:#b69ae8;animation-delay:.3s}.balloon:nth-child(3){background:#f1bd72;color:#f1bd72;animation-delay:.7s}.balloon:nth-child(4){background:#83c8bd;color:#83c8bd;animation-delay:1s}.balloon:nth-child(5){background:#e58e9a;color:#e58e9a;animation-delay:1.3s}
+@keyframes balloonFloat{50%{transform:translateY(-13px) rotate(4deg)}}
+.balloon.popped{animation:pop .25s forwards;pointer-events:none}
+@keyframes pop{to{transform:scale(1.8);opacity:0}}
+.memory-grid{width:min(560px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0}
+.memory-card{min-height:105px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff18,#ffffff07);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;padding:10px}
+.memory-card strong{font-family:"Playfair Display",serif;font-size:13px}.memory-card span{font-size:25px}
+.message-paper{width:min(520px,100%);padding:clamp(16px,3vw,27px);border-radius:16px;background:#fff3e8;color:#45313b;box-shadow:0 15px 40px #0003;transform:rotate(-1deg)}
+.message-paper .paper-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#a45b7c;font-weight:800}
+.message-paper h3{font:600 clamp(23px,3.5vw,34px) "Playfair Display",serif;margin:8px 0}
+.message-paper p{font-size:12px;line-height:1.8;color:#644e5a;white-space:pre-wrap;overflow-wrap:anywhere}
+.message-paper .from{margin-top:12px;font-size:11px;color:#a45b7c;font-weight:800}
+.guestbook{width:min(540px,100%);display:flex;flex-direction:column;gap:9px;max-height:100%;overflow:auto;padding:4px}
+.guestbook-form{display:grid;grid-template-columns:1fr 2fr auto;gap:7px}
+.guestbook-form input{min-width:0;background:#130f1b;border:1px solid var(--line);border-radius:9px;color:white;padding:10px;font-size:11px}
+.guest-list{display:flex;flex-direction:column;gap:7px;text-align:left}
+.guest-entry{background:#ffffff0d;border:1px solid #ffffff16;border-radius:10px;padding:9px 11px;font-size:10px;color:#e9dfe9}
+.guest-entry strong{color:var(--pink);margin-right:6px}
+.story-bottom{height:57px;flex:0 0 57px;border-top:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-between;padding:0 15px;gap:10px}
+.story-bottom small{font-size:9px;color:var(--muted)}
+.story-bottom .btn{min-height:35px;padding:8px 16px;font-size:10px}
+.scene-dots{display:flex;gap:5px;align-items:center}
+.scene-dot{width:5px;height:5px;border-radius:50%;background:#ffffff35}
+.scene-dot.active{width:17px;border-radius:5px;background:var(--pink)}
+.confetti-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:8}
+.confetti-piece{position:absolute;top:-15px;width:8px;height:12px;animation:confettiFall 3.5s linear forwards}
+@keyframes confettiFall{to{transform:translateY(110vh) rotate(760deg);opacity:0}}
+.toast{position:fixed;z-index:20;left:50%;bottom:40px;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#fff4ea;color:#342331;padding:11px 18px;border-radius:99px;font-size:11px;font-weight:800;transition:.25s;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.music-indicator{font-size:10px;color:var(--muted)}
+@media(max-width:700px){
+.topbar{height:48px;flex-basis:48px;padding:0 15px}.top-note{font-size:8px}
+main{padding:9px 10px}
+.home{flex-direction:column;justify-content:center;gap:12px}
+.home-copy{width:100%;max-width:520px;align-items:center;text-align:center;gap:10px}
+.home-copy h1{font-size:clamp(35px,10vw,54px)}
+.home-copy>p{font-size:11px;line-height:1.55;max-width:360px}
+.home-art{width:min(65%,230px);height:min(34%,210px);min-height:135px;border-radius:100px 100px 20px 20px}
+.gift{transform:scale(.68)}.home-caption{bottom:9%;font-size:12px}
+.art-spark{font-size:14px}
+.wizard-card{padding:17px;border-radius:18px}
+.wizard-step h2{font-size:29px}
+.field-grid{grid-template-columns:1fr;gap:0}
+.choice-grid{gap:6px}.choice{padding:10px 5px;font-size:9px}.choice strong{font-size:19px}
+.share-card{grid-template-columns:1fr 112px;gap:12px;padding:14px;border-radius:17px}
+.share-card h2{font-size:25px}.share-card p{font-size:10px}
+.qr-panel{padding:7px;border-radius:10px}#qr{min-height:94px}
+#qr img,#qr canvas{width:94px!important;height:94px!important}
+.qr-panel small{font-size:7px}
+.share-actions .btn{font-size:9px;padding:9px 12px;min-height:35px}
+.story-wrap{border-radius:17px}
+.story-top{height:39px;flex-basis:39px;padding:0 10px}
+.story-top span{font-size:8px}
+.story-body{padding:9px}
+.scene h1{font-size:clamp(29px,8vw,43px)}
+.scene h2{font-size:clamp(23px,6vw,32px)}
+.scene p{font-size:10px;line-height:1.55}
+.gift-interactive{transform:scale(.82);margin:-8px 0}
+.cake-stage{transform:scale(.8);height:155px;margin:-10px 0}
+.balloons{height:135px}
+.balloon:before{height:50px}
+.memory-grid{gap:6px}.memory-card{min-height:80px;padding:6px}.memory-card strong{font-size:10px}.memory-card span{font-size:21px}
+.message-paper{padding:15px}.message-paper p{font-size:10px}
+.guestbook-form{grid-template-columns:1fr 1fr}.guestbook-form button{grid-column:1/-1}
+.story-bottom{height:48px;flex-basis:48px;padding:0 9px}
+.story-bottom small{font-size:8px}
+.story-bottom .btn{font-size:9px;padding:7px 12px;min-height:32px}
+.footer{height:21px;flex-basis:21px;font-size:8px}
+}
+@media(max-height:650px){
+.topbar{height:42px;flex-basis:42px}
+main{padding-top:5px;padding-bottom:5px}
+.home{gap:15px}.home-copy{gap:8px}.home-copy h1{font-size:clamp(30px,5vw,53px)}
+.home-art{min-height:190px}
+.wizard-card{padding:14px}.progress-track{margin-bottom:13px}.wizard-step h2{font-size:27px}.wizard-step>p{margin-bottom:10px}
+.field{margin-bottom:8px}.field input,.field textarea,.field select{min-height:38px;padding:9px}
+.choice-grid{margin:8px 0}.wizard-actions{margin-top:8px}
+.story-top{height:35px;flex-basis:35px}.story-bottom{height:43px;flex-basis:43px}
+.scene{gap:5px}.cake-stage{transform:scale(.68);height:130px;margin:-15px 0}
+.balloons{height:115px}.memory-card{min-height:65px}
+}
+@media(max-width:390px){
+.share-card{grid-template-columns:1fr 90px;gap:8px;padding:10px}
+#qr img,#qr canvas{width:78px!important;height:78px!important}
+#qr{min-height:78px}
+.share-card h2{font-size:21px}
+.share-actions{gap:5px}
+.share-actions .btn{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
 </head>
 <body>
-
-  <!-- Top Bunting & Floating Balloons Decoration -->
-  <div class="bg-decor" aria-hidden="true">
-    <div class="bunting" id="buntingBar"></div>
-    <div class="balloon-layer" id="balloonLayer"></div>
-  </div>
-
-  <!-- Main Single-Screen Birthday Card -->
-  <main class="viewport-wrapper">
-    <section class="wish-card" aria-label="Birthday Celebration Card">
-      
-      <div class="top-bar">
-        <span class="pill-badge" id="modeBadge">Demo Birthday Preview</span>
-        <span class="step-indicator" id="stepCounter">Step 1/3: Tap Cake</span>
-      </div>
-
-      <div class="hero-section">
-        <h1 class="hero-title">Happy Birthday, <span id="displayName">Elena</span>!</h1>
-        <div class="dob-chip">
-          <span>🎂</span>
-          <span id="displayDob">Born on December 16, 2007</span>
-        </div>
-      </div>
-
-      <!-- Interactive Cake with Blowable Candles -->
-      <div class="cake-stage" id="cakeStage" role="button" tabindex="0" aria-label="Tap to blow candles and celebrate">
-        <div class="cake-hint" id="cakeHint">✨ Tap cake to blow candles & celebrate!</div>
-        <div class="cake-wrapper">
-          <div class="candles" id="candleGroup">
-            <div class="candle"><span class="flame"></span></div>
-            <div class="candle"><span class="flame"></span></div>
-            <div class="candle"><span class="flame"></span></div>
-          </div>
-          <div class="cake-top"></div>
-          <div class="cake-bottom"></div>
-          <div class="cake-plate"></div>
-        </div>
-      </div>
-
-      <!-- Animated Wish Message + Celebration GIF -->
-      <div class="wish-content-box">
-        <div class="gif-badge-row">
-          <img
-            class="celebration-gif"
-            src="https://media.giphy.com/media/g5R9dok94mrIvplmZd/giphy.gif"
-            alt="Birthday Celebration Animation"
-            loading="eager"
-          />
-          <strong style="font-size: clamp(0.8rem, 1.9vw, 0.96rem); color: #ffd166;">
-            Make a Wish & Shine Bright!
-          </strong>
-        </div>
-        <p class="wish-text" id="staticWishText">
-          Wishing you endless happiness, good health, and unforgettable moments today and always. May every dream you chase turn into a joyful reality!
-        </p>
-      </div>
-
-      <!-- Step-by-Step Interactive Progress -->
-      <div class="steps-bar" aria-label="Celebration Steps">
-        <div class="step-item" id="step1">
-          <span class="step-num">Step 1</span>
-          <span>Blow Candles</span>
-        </div>
-        <div class="step-item" id="step2">
-          <span class="step-num">Step 2</span>
-          <span>Pop Confetti</span>
-        </div>
-        <div class="step-item" id="step3">
-          <span class="step-num">Step 3</span>
-          <span>Create & Share</span>
-        </div>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="action-row">
-        <button type="button" class="btn btn-primary" id="openGeneratorBtn">
-          🎁 Wish for your favourite person
-        </button>
-        <button type="button" class="btn btn-secondary" id="resetDemoBtn" style="display: none; flex: 0.45;">
-          Demo
-        </button>
-      </div>
-
-      <div class="footer-url">santoshsharma1.com.np/birthday</div>
-    </section>
-  </main>
-
-  <!-- Modal: Enter Name & DOB -> Generate Link & QR -->
-  <div class="modal-overlay" id="generatorModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h2 id="modalTitle">Wish for Your Favourite Person</h2>
-        <button type="button" class="close-btn" id="closeModalBtn" aria-label="Close">✕</button>
-      </div>
-
-      <form id="birthdayForm" style="display: flex; flex-direction: column; gap: clamp(8px, 1.4dvh, 12px);">
-        <div class="input-group">
-          <label for="inputName">Favourite Person's Name</label>
-          <input type="text" id="inputName" placeholder="e.g. Aarav / Priya" maxlength="32" required />
-        </div>
-
-        <div class="input-group">
-          <label for="inputDob">Date of Birth</label>
-          <input type="date" id="inputDob" required />
-        </div>
-
-        <button type="submit" class="btn btn-primary">✨ Generate Link & QR Code</button>
-      </form>
-
-      <div class="qr-result-panel" id="qrResultPanel">
-        <div id="qrcodeBox"></div>
-        <div class="generated-url-box" id="generatedUrlText"></div>
-        <div class="action-row">
-          <button type="button" class="btn btn-secondary" id="copyUrlBtn">📋 Copy Link</button>
-          <button type="button" class="btn btn-primary" id="previewNowBtn">🚀 Open Wish</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const CANONICAL_BASE = "https://santoshsharma1.com.np/birthday";
-      const DEMO_PERSON = {
-        name: "Elena",
-        dob: "2007-12-16",
-        isDemo: true
-      };
-
-      // 1. Build Top Bunting Flags & Floating Balloons
-      const buntingBar = document.getElementById("buntingBar");
-      const flagCount = Math.max(10, Math.floor(window.innerWidth / 38));
-      for (let i = 0; i < flagCount; i++) {
-        const flag = document.createElement("div");
-        flag.className = "flag";
-        buntingBar.appendChild(flag);
-      }
-
-      const balloonLayer = document.getElementById("balloonLayer");
-      const balloonColors = ["#ff4d8d", "#ffd166", "#00bbf9", "#9b5de5", "#00f5d4", "#ff758f"];
-      for (let i = 0; i < 12; i++) {
-        const b = document.createElement("div");
-        b.className = "balloon";
-        b.style.left = `${(i * 8.3) + 2}%`;
-        b.style.background = balloonColors[i % balloonColors.length];
-        b.style.animationDuration = `${9 + (i % 5) * 2.2}s`;
-        b.style.animationDelay = `${(i % 6) * 1.1}s`;
-        balloonLayer.appendChild(b);
-      }
-
-      // 2. Parse URL Parameters (Always santoshsharma1.com.np/birthday)
-      function formatDobDisplay(dobString) {
-        if (!dobString) return "Special Birthday Celebration";
-        const parts = dobString.split("-");
-        if (parts.length !== 3) return dobString;
-        const year = Number(parts[0]);
-        const month = Number(parts[1]) - 1;
-        const day = Number(parts[2]);
-        const dateObj = new Date(year, month, day);
-        if (Number.isNaN(dateObj.getTime())) return dobString;
-        return "Born on " + dateObj.toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric"
-        });
-      }
-
-      function resolveBirthdayProfile() {
-        const params = new URLSearchParams(window.location.search);
-        const nameParam = (params.get("name") || "").trim();
-        const dobParam = (params.get("dob") || "").trim();
-
-        if (nameParam || dobParam) {
-          return {
-            name: nameParam || DEMO_PERSON.name,
-            dob: dobParam || DEMO_PERSON.dob,
-            isDemo: false
-          };
-        }
-        return DEMO_PERSON;
-      }
-
-      const activeProfile = resolveBirthdayProfile();
-      document.getElementById("displayName").textContent = activeProfile.name;
-      document.getElementById("displayDob").textContent = formatDobDisplay(activeProfile.dob);
-      document.title = `Happy Birthday, ${activeProfile.name}! | Santosh Sharma`;
-
-      const modeBadge = document.getElementById("modeBadge");
-      const resetDemoBtn = document.getElementById("resetDemoBtn");
-
-      if (activeProfile.isDemo) {
-        modeBadge.textContent = "Demo Birthday Preview";
-        resetDemoBtn.style.display = "none";
-      } else {
-        modeBadge.textContent = "Personal Birthday Wish";
-        resetDemoBtn.style.display = "inline-flex";
-      }
-
-      resetDemoBtn.addEventListener("click", () => {
-        window.location.href = window.location.pathname;
-      });
-
-      // 3. Confetti Burst Helper
-      function launchCelebrationConfetti() {
-        if (typeof confetti !== "function") return;
-        confetti({
-          particleCount: 75,
-          spread: 70,
-          origin: { y: 0.62 }
-        });
-      }
-
-      window.addEventListener("load", () => {
-        setTimeout(launchCelebrationConfetti, 450);
-      });
-
-      // 4. Interactive Cake & Step-by-Step Progress
-      const cakeStage = document.getElementById("cakeStage");
-      const candles = document.querySelectorAll(".candle");
-      const cakeHint = document.getElementById("cakeHint");
-      const stepCounter = document.getElementById("stepCounter");
-      const step1 = document.getElementById("step1");
-      const step2 = document.getElementById("step2");
-      const step3 = document.getElementById("step3");
-
-      let candlesBlown = false;
-
-      function celebrateCakeTap() {
-        candlesBlown = !candlesBlown;
-        candles.forEach((c) => c.classList.toggle("blown", candlesBlown));
-
-        if (candlesBlown) {
-          cakeHint.textContent = "🎉 Yay! Wish made! Tap cake to relight";
-          step1.classList.add("done");
-          step2.classList.add("done");
-          stepCounter.textContent = "Step 3/3: Share Wish!";
-          launchCelebrationConfetti();
-        } else {
-          cakeHint.textContent = "✨ Tap cake to blow candles & celebrate!";
-          step1.classList.remove("done");
-          step2.classList.remove("done");
-          stepCounter.textContent = "Step 1/3: Tap Cake";
-        }
-      }
-
-      cakeStage.addEventListener("click", celebrateCakeTap);
-      cakeStage.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          celebrateCakeTap();
-        }
-      });
-
-      // 5. Generator Modal, Link & QR Creation
-      const generatorModal = document.getElementById("generatorModal");
-      const openGeneratorBtn = document.getElementById("openGeneratorBtn");
-      const closeModalBtn = document.getElementById("closeModalBtn");
-      const birthdayForm = document.getElementById("birthdayForm");
-      const qrResultPanel = document.getElementById("qrResultPanel");
-      const qrcodeBox = document.getElementById("qrcodeBox");
-      const generatedUrlText = document.getElementById("generatedUrlText");
-      const copyUrlBtn = document.getElementById("copyUrlBtn");
-      const previewNowBtn = document.getElementById("previewNowBtn");
-
-      let latestGeneratedUrl = "";
-
-      openGeneratorBtn.addEventListener("click", () => {
-        step3.classList.add("done");
-        generatorModal.classList.add("active");
-      });
-
-      closeModalBtn.addEventListener("click", () => {
-        generatorModal.classList.remove("active");
-      });
-
-      generatorModal.addEventListener("click", (e) => {
-        if (e.target === generatorModal) {
-          generatorModal.classList.remove("active");
-        }
-      });
-
-      birthdayForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const enteredName = document.getElementById("inputName").value.trim();
-        const enteredDob = document.getElementById("inputDob").value.trim();
-        if (!enteredName || !enteredDob) return;
-
-        // Always build link on santoshsharma1.com.np/birthday
-        const targetUrl = new URL(CANONICAL_BASE);
-        targetUrl.searchParams.set("name", enteredName);
-        targetUrl.searchParams.set("dob", enteredDob);
-
-        latestGeneratedUrl = targetUrl.toString();
-        generatedUrlText.textContent = latestGeneratedUrl;
-
-        qrcodeBox.innerHTML = "";
-        if (typeof QRCode === "function") {
-          new QRCode(qrcodeBox, {
-            text: latestGeneratedUrl,
-            width: 150,
-            height: 150,
-            colorDark: "#111827",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.M
-          });
-        }
-
-        qrResultPanel.classList.add("active");
-        launchCelebrationConfetti();
-      });
-
-      copyUrlBtn.addEventListener("click", async () => {
-        if (!latestGeneratedUrl) return;
-        try {
-          await navigator.clipboard.writeText(latestGeneratedUrl);
-          copyUrlBtn.textContent = "✅ Copied!";
-          setTimeout(() => { copyUrlBtn.textContent = "📋 Copy Link"; }, 1800);
-        } catch {
-          copyUrlBtn.textContent = "Copy Failed";
-        }
-      });
-
-      previewNowBtn.addEventListener("click", () => {
-        if (!latestGeneratedUrl) return;
-        const parsed = new URL(latestGeneratedUrl);
-        // Opens on current host during local testing or santoshsharma1.com.np/birthday in production
-        window.location.href = `${window.location.pathname}${parsed.search}`;
-      });
-    })();
-  </script>
+<div id="app">
+<div class="ambient"></div>
+<header class="topbar">
+<div class="brand">BIRTHDAY<span>STORY</span></div>
+<div class="top-note">A little magic, made with love ✦</div>
+</header>
+<main>
+<section class="screen home active" id="homeScreen">
+<div class="home-copy">
+<div class="kicker">A SURPRISE THEY'LL REMEMBER</div>
+<h1 class="serif">Some moments deserve <em>a little magic.</em></h1>
+<p>Create a personal birthday story with a wrapped gift, music, candles, balloons and heartfelt words. Then share one special link.</p>
+<div class="home-actions">
+<button class="btn btn-primary" id="startCreate">Create a birthday story&nbsp; →</button>
+<button class="btn btn-ghost" id="openDemo">Explore the experience</button>
+</div>
+<div class="helper">No account needed · A shareable link · Made for every kind of celebration</div>
+</div>
+<div class="home-art">
+<span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-spark s3">✦</span>
+<div class="gift">
+<div class="gift-bow"></div><div class="gift-lid"></div><div class="gift-box"></div><div class="gift-ribbon"></div>
+</div>
+<div class="home-caption">A little surprise awaits</div>
+</div>
+</section>
+<section class="screen wizard" id="wizardScreen">
+<div class="wizard-card">
+<div class="progress-row"><span class="progress-text" id="stepLabel">STEP 1 OF 4 · THE CELEBRATION</span><span class="progress-text" id="stepPercent">25%</span></div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+<div class="wizard-step active" data-step="0">
+<div class="kicker">FIRST, THE IMPORTANT DETAILS</div>
+<h2 class="serif">Who are we celebrating?</h2>
+<p>Every beautiful story starts with a name and a special date.</p>
+<div class="field-grid">
+<div class="field full"><label for="recipientName">Birthday person's name</label><input id="recipientName" maxlength="40" placeholder="Enter their name" autocomplete="off"></div>
+<div class="field"><label for="recipientDob">Date of birth</label><input id="recipientDob" type="date"></div>
+<div class="field"><label for="relationship">Your relationship</label><select id="relationship"><option value="someone special">Someone special</option><option value="best friend">Best friend</option><option value="family">Family</option><option value="sibling">Brother or sister</option><option value="partner">Someone you love</option><option value="colleague">Colleague</option></select></div>
+</div>
+<div class="wizard-actions"><button class="btn btn-ghost" id="wizardHome">Back</button><button class="btn btn-primary next-step">Continue →</button></div>
+</div>
+<div class="wizard-step" data-step="1">
+<div class="kicker">MAKE IT PERSONAL</div>
+<h2 class="serif">Add words from your heart.</h2>
+<p>Write a short personal message. It will appear inside the birthday story.</p>
+<div class="field"><label for="senderName">Your name</label><input id="senderName" maxlength="35" placeholder="Who is sending this surprise?"></div>
+<div class="field"><label for="personalMessage">Your birthday message</label><textarea id="personalMessage" maxlength="500" placeholder="Wishing you a day full of laughter, love and beautiful memories..."></textarea></div>
+<div class="wizard-actions"><button class="btn btn-ghost prev-step">← Back</button><button class="btn btn-primary next-step">Continue →</button></div>
+</div>
+<div class="wizard-step" data-step="2">
+<div class="kicker">SET THE MOOD</div>
+<h2 class="serif">Choose a celebration style.</h2>
+<p>Pick the atmosphere for this little birthday journey.</p>
+<div class="choice-grid" id="themeChoices">
+<button class="choice selected" data-theme="romantic"><strong>🌷</strong>Soft & dreamy</button>
+<button class="choice" data-theme="joyful"><strong>🎉</strong>Bright & joyful</button>
+<button class="choice" data-theme="classic"><strong>✨</strong>Classic elegance</button>
+</div>
+<div class="field"><label for="musicChoice">Music preference</label><select id="musicChoice"><option value="off">Continue without music</option><option value="on">Ask to play celebration music</option></select></div>
+<div class="helper">Music begins only after the recipient chooses to play it. This page does not autoplay audio.</div>
+<div class="wizard-actions"><button class="btn btn-ghost prev-step">← Back</button><button class="btn btn-primary next-step">Continue →</button></div>
+</div>
+<div class="wizard-step" data-step="3">
+<div class="kicker">READY TO WRAP THE SURPRISE?</div>
+<h2 class="serif">Your birthday story is ready.</h2>
+<p>We'll create a private share link with the details you entered. Anyone with the link can open this birthday story.</p>
+<div class="message-paper"><div class="paper-kicker">A NOTE FOR THE CELEBRATION</div><h3 id="reviewName">A special day</h3><p id="reviewMessage">Your personal message will appear here.</p><div class="from" id="reviewFrom">With love</div></div>
+<div class="wizard-actions"><button class="btn btn-ghost prev-step">← Back</button><button class="btn btn-primary" id="createLink">Create my birthday link ✨</button></div>
+</div>
+</div>
+</section>
+<section class="screen share-screen" id="shareScreen">
+<div class="share-card">
+<div>
+<div class="kicker">YOUR STORY IS WRAPPED</div>
+<h2 class="serif">Ready to share a little happiness?</h2>
+<p>Your personal birthday link and QR code are ready. Send the link directly or let them scan the code to begin the story.</p>
+<div class="url-box" id="shareUrl"></div>
+<div class="share-actions">
+<button class="btn btn-primary" id="copyLink">Copy link</button>
+<button class="btn btn-ghost" id="shareNative">Share</button>
+<button class="btn btn-ghost" id="previewStory">Preview story</button>
+</div>
+<div class="helper">The recipient's details are encoded in the link. Avoid including sensitive personal information.</div>
+</div>
+<div class="qr-panel"><div id="qr"></div><small>SCAN TO OPEN THE STORY</small></div>
+</div>
+</section>
+<section class="screen story" id="storyScreen">
+<div class="story-wrap">
+<div class="story-top"><span id="storyCounter">A LITTLE SURPRISE · 01 / 08</span><div class="story-tools"><span class="music-indicator" id="musicStatus">♫ Sound off</span><button class="icon-btn" id="soundToggle" aria-label="Toggle sound">♫</button></div></div>
+<div class="story-body">
+<div class="confetti-layer" id="confetti"></div>
+<div class="scene active" data-scene="0">
+<div class="kicker">A LITTLE NOTE BEFORE WE BEGIN</div>
+<h1 class="serif">A birthday story, <span class="recipient" id="introName">made just for you.</span></h1>
+<p id="musicPrompt">Someone has wrapped a little happiness for you. Would you like to begin with sound?</p>
+<div class="choice-grid" style="width:min(390px,100%);grid-template-columns:1fr 1fr">
+<button class="choice" id="musicYes"><strong>♫</strong>Play music</button>
+<button class="choice selected" id="musicNo"><strong>♡</strong>Continue silently</button>
+</div>
+<button class="btn btn-primary" id="beginStory">Begin the story →</button>
+</div>
+<div class="scene" data-scene="1">
+<div class="kicker">A SURPRISE, WRAPPED WITH LOVE</div>
+<h2 class="serif">Something special is waiting.</h2>
+<p id="giftIntro">A little gift, a little magic, and a whole lot of love.</p>
+<div class="gift-interactive" id="unwrapGift" role="button" tabindex="0" aria-label="Unwrap birthday gift">
+<div class="gift-bow"></div><div class="gift-lid"></div><div class="gift-box"></div><div class="gift-ribbon"></div>
+</div>
+<div class="gift-hint">✦ Tap the gift to unwrap ✦</div>
+</div>
+<div class="scene" data-scene="2">
+<div class="kicker">MAKE A WISH</div>
+<h2 class="serif" id="birthdayOrdinal">It's your special day!</h2>
+<p>Take a moment, make a wish, and light up this celebration.</p>
+<div class="cake-stage">
+<div class="cake-plate"></div><div class="cake-body"><div class="cake-drip"></div></div>
+<div class="candle-row"><div class="candle"><i class="flame"></i></div><div class="candle"><i class="flame"></i></div><div class="candle"><i class="flame"></i></div></div>
+</div>
+<button class="btn btn-primary" id="lightCandles">Light the candles ✨</button>
+<p id="candleHint">Tap to light the candles and make your wish.</p>
+</div>
+<div class="scene" data-scene="3">
+<div class="kicker">LET THE JOY FLOAT</div>
+<h2 class="serif">Pop the balloons!</h2>
+<p>Tap every balloon to fill the room with celebration.</p>
+<div class="balloons" id="balloons">
+<div class="balloon" role="button" tabindex="0" aria-label="Pop balloon"></div>
+<div class="balloon" role="button" tabindex="0" aria-label="Pop balloon"></div>
+<div class="balloon" role="button" tabindex="0" aria-label="Pop balloon"></div>
+<div class="balloon" role="button" tabindex="0" aria-label="Pop balloon"></div>
+<div class="balloon" role="button" tabindex="0" aria-label="Pop balloon"></div>
+</div>
+<p id="balloonCount">5 balloons are waiting for you.</p>
+</div>
+<div class="scene" data-scene="4">
+<div class="kicker">A FEW LITTLE MOMENTS</div>
+<h2 class="serif">A day full of reasons to smile.</h2>
+<p>Every birthday is a new page. Here's to more laughter, more discoveries and memories worth keeping.</p>
+<div class="memory-grid">
+<div class="memory-card"><span>🌸</span><strong>Beautiful moments</strong></div>
+<div class="memory-card"><span>🦋</span><strong>New beginnings</strong></div>
+<div class="memory-card"><span>🌟</span><strong>Big dreams</strong></div>
+</div>
+<button class="btn btn-primary scene-next">Keep the story going →</button>
+</div>
+<div class="scene" data-scene="5">
+<div class="kicker">A MESSAGE FROM THE HEART</div>
+<div class="message-paper">
+<div class="paper-kicker">A LITTLE LETTER FOR YOU</div>
+<h3 id="letterHeading">Happy Birthday!</h3>
+<p id="letterMessage"></p>
+<div class="from" id="letterFrom"></div>
+</div>
+<button class="btn btn-primary scene-next">Read the final surprise →</button>
+</div>
+<div class="scene" data-scene="6">
+<div class="kicker">SEND A LITTLE LOVE BACK</div>
+<h2 class="serif">Leave a birthday wish.</h2>
+<p>Add a name and a short message to this device's guestbook.</p>
+<div class="guestbook">
+<div class="guestbook-form"><input id="guestName" maxlength="25" placeholder="Your name"><input id="guestMessage" maxlength="100" placeholder="Write a birthday wish"><button class="btn btn-primary" id="addGuest">Send</button></div>
+<div class="guest-list" id="guestList"></div>
+</div>
+<button class="btn btn-primary scene-next">One last thing →</button>
+</div>
+<div class="scene" data-scene="7">
+<div class="kicker">THE WISH THAT KEEPS ON GIVING</div>
+<h1 class="serif">Happy Birthday, <span class="recipient" id="finalName">friend</span>!</h1>
+<p>May this new chapter bring you gentle days, brave dreams, meaningful friendships and countless reasons to smile.</p>
+<div style="font-size:clamp(32px,6vw,55px);letter-spacing:8px">🎂 🎈 💖</div>
+<p id="finalOrdinal">Your special day deserves to be celebrated.</p>
+<button class="btn btn-primary" id="restartStory">Replay the celebration ↻</button>
+</div>
+</div>
+<div class="story-bottom"><small id="storyHint">A gift is waiting to be opened</small><div class="scene-dots" id="sceneDots"></div><button class="btn btn-ghost" id="nextScene" disabled>Next →</button></div>
+</div>
+</section>
+</main>
+<footer class="footer">A little birthday magic · Created with care</footer>
+<div class="toast" id="toast" role="status"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const screens={home:$('homeScreen'),wizard:$('wizardScreen'),share:$('shareScreen'),story:$('storyScreen')};
+const wizardSteps=[...document.querySelectorAll('.wizard-step')];
+const scenes=[...document.querySelectorAll('.scene')];
+const labels=['THE CELEBRATION','A PERSONAL MESSAGE','THE ATMOSPHERE','READY TO SHARE'];
+let wizardIndex=0,sceneIndex=0,storyData=null,shareURL='',soundOn=false,audioContext=null,candleDone=false,balloonsDone=0;
+function toast(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
+function showScreen(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active')}
+function setWizard(index){wizardIndex=Math.max(0,Math.min(3,index));wizardSteps.forEach((s,i)=>s.classList.toggle('active',i===wizardIndex));$('stepLabel').textContent='STEP '+(wizardIndex+1)+' OF 4 · '+labels[wizardIndex];$('stepPercent').textContent=((wizardIndex+1)*25)+'%';$('progressFill').style.width=((wizardIndex+1)*25)+'%';if(wizardIndex===3)updateReview()}
+function validateStep(){if(wizardIndex===0){const n=$('recipientName').value.trim(),d=$('recipientDob').value;if(!n){toast('Please enter a name first.');$('recipientName').focus();return false}if(!d){toast('Please choose a date of birth.');$('recipientDob').focus();return false}const date=new Date(d+'T00:00:00');if(Number.isNaN(date.getTime())||date>new Date()){toast('Please choose a valid date of birth.');return false}return true}if(wizardIndex===1&&!$('senderName').value.trim()){$('senderName').value='Someone who cares';}return true}
+function updateReview(){$('reviewName').textContent='For '+$('recipientName').value.trim();$('reviewMessage').textContent=$('personalMessage').value.trim()||'Wishing you a day full of laughter, love and beautiful memories. May the year ahead be your brightest one yet!';$('reviewFrom').textContent='With love, '+$('senderName').value.trim()}
+function getData(){return{name:$('recipientName').value.trim(),dob:$('recipientDob').value,relationship:$('relationship').value,sender:$('senderName').value.trim()||'Someone who cares',message:$('personalMessage').value.trim()||'Wishing you a day full of laughter, love and beautiful memories. May the year ahead be your brightest one yet!',theme:document.querySelector('.choice[data-theme].selected')?.dataset.theme||'romantic',music:$('musicChoice').value}}
+function encodeData(data){const bytes=new TextEncoder().encode(JSON.stringify(data));let binary='';bytes.forEach(b=>binary+=String.fromCharCode(b));return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function decodeData(value){try{let b=value.replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';const binary=atob(b),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes))}catch(e){return null}}
+function validData(d){if(!d||typeof d.name!=='string'||typeof d.dob!=='string'||d.name.length>40||!/^\d{4}-\d{2}-\d{2}$/.test(d.dob))return false;const date=new Date(d.dob+'T00:00:00');return !Number.isNaN(date.getTime())&&date<=new Date()&&typeof d.message==='string'&&d.message.length<=500}
+function createShareURL(data){const url=new URL(location.href.split('?')[0].split('#')[0]);url.searchParams.set('story',encodeData(data));return url.toString()}
+function ageForBirthday(dob){const year=Number(dob.slice(0,4));return new Date().getFullYear()-year}
+function ordinal(n){const v=n%100;if(v>=11&&v<=13)return n+'th';switch(n%10){case 1:return n+'st';case 2:return n+'nd';case 3:return n+'rd';default:return n+'th'}}
+function formatDate(value){return new Date(value+'T00:00:00').toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'})}
+function buildShare(){storyData=getData();shareURL=createShareURL(storyData);$('shareUrl').textContent=shareURL;$('qr').innerHTML='';if(window.QRCode){new QRCode($('qr'),{text:shareURL,width:150,height:150,colorDark:'#211827',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H})}else{$('qr').textContent='QR code library could not load'}showScreen('share')}
+function showStory(){if(!storyData)return;prepareStory();showScreen('story');setScene(0)}
+function prepareStory(){const name=storyData.name,age=ageForBirthday(storyData.dob);$('introName').textContent=name;$('giftIntro').textContent='A little surprise, wrapped especially for '+name+'.';$('birthdayOrdinal').textContent='Your '+ordinal(age)+' birthday!';$('letterHeading').textContent='Happy Birthday, '+name+'!';$('letterMessage').textContent=storyData.message;$('letterFrom').textContent='With love, '+storyData.sender;$('finalName').textContent=name;$('finalOrdinal').textContent='Celebrating your '+ordinal(age)+' birthday · '+formatDate(storyData.dob);$('musicPrompt').textContent=storyData.music==='on'?'A birthday song is ready if you would like to hear it.':'Someone has wrapped a little happiness for you. Begin whenever you are ready.';document.title='Happy Birthday '+name+' — A Little Story Made With Love';document.querySelector('meta[property="og:title"]').content='A Birthday Story for '+name}
+function setScene(index){sceneIndex=Math.max(0,Math.min(scenes.length-1,index));scenes.forEach((s,i)=>s.classList.toggle('active',i===sceneIndex));$('storyCounter').textContent='A LITTLE SURPRISE · '+String(sceneIndex+1).padStart(2,'0')+' / 08';$('storyHint').textContent=['A gift is waiting to be opened','Tap the wrapped gift','Light the candles and make a wish','Pop all five balloons','Celebrate the little moments','A personal message just for you','Leave a wish in the guestbook','Keep this birthday memory'][sceneIndex];$('nextScene').disabled=sceneIndex===1||sceneIndex===2||sceneIndex===3||sceneIndex===6||sceneIndex===7;$('nextScene').style.opacity=$('nextScene').disabled?'.35':'1';$('sceneDots').innerHTML='';scenes.forEach((s,i)=>{const d=document.createElement('span');d.className='scene-dot'+(i===sceneIndex?' active':'');$('sceneDots').appendChild(d)});if(sceneIndex===6)renderGuests();if(sceneIndex===7)confetti()}
+function nextScene(){if(sceneIndex===1&&!$('unwrapGift').classList.contains('open')){toast('Unwrap the gift to continue!');return}if(sceneIndex===2&&!candleDone){toast('Light the candles first!');return}if(sceneIndex===3&&balloonsDone<5){toast('Pop all the balloons first!');return}if(sceneIndex<7)setScene(sceneIndex+1)}
+function confetti(){const layer=$('confetti');layer.innerHTML='';const colors=['#ff9ec7','#f4cb83','#c6a9ed','#fff2d9','#91d6c8'];for(let i=0;i<75;i++){const p=document.createElement('i');p.className='confetti-piece';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDelay=Math.random()*1.2+'s';p.style.animationDuration=(2.5+Math.random()*2)+'s';p.style.borderRadius=Math.random()>.5?'50%':'2px';layer.appendChild(p);setTimeout(()=>p.remove(),5000)}}
+function playTone(frequency=660,duration=.16){if(!soundOn)return;try{audioContext=audioContext||new(window.AudioContext||window.webkitAudioContext)();const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();oscillator.frequency.value=frequency;oscillator.type='sine';gain.gain.setValueAtTime(.0001,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.07,audioContext.currentTime+.02);gain.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+duration);oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.start();oscillator.stop(audioContext.currentTime+duration)}catch(e){}}
+function setSound(enabled){soundOn=enabled;$('musicStatus').textContent=enabled?'♫ Sound effects on':'♫ Sound off';$('soundToggle').textContent=enabled?'♫':'♪';if(enabled)playTone(660)}
+function renderGuests(){const list=$('guestList');list.innerHTML='';let entries=[];try{entries=JSON.parse(localStorage.getItem('birthdayGuests:'+encodeData(storyData).slice(0,24))||'[]')}catch(e){}if(!entries.length){const empty=document.createElement('div');empty.className='guest-entry';empty.textContent='Your first birthday wish can be the first one here.';list.appendChild(empty);return}entries.slice(-8).reverse().forEach(entry=>{const div=document.createElement('div');div.className='guest-entry';const strong=document.createElement('strong');strong.textContent=entry.name;const span=document.createElement('span');span.textContent=entry.message;div.append(strong,span);list.appendChild(div)})}
+function addGuest(){const name=$('guestName').value.trim(),message=$('guestMessage').value.trim();if(!name||!message){toast('Add your name and a short wish.');return}const key='birthdayGuests:'+encodeData(storyData).slice(0,24);let entries=[];try{entries=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}entries.push({name:name.slice(0,25),message:message.slice(0,100)});try{localStorage.setItem(key,JSON.stringify(entries.slice(-30)))}catch(e){}$('guestName').value='';$('guestMessage').value='';renderGuests();toast('Your wish was added on this device.')}
+$('startCreate').addEventListener('click',()=>{setWizard(0);showScreen('wizard')});
+$('wizardHome').addEventListener('click',()=>showScreen('home'));
+document.querySelectorAll('.next-step').forEach(b=>b.addEventListener('click',()=>{if(validateStep())setWizard(wizardIndex+1)}));
+document.querySelectorAll('.prev-step').forEach(b=>b.addEventListener('click',()=>setWizard(wizardIndex-1)));
+document.querySelectorAll('.choice[data-theme]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.choice[data-theme]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')}));
+$('createLink').addEventListener('click',buildShare);
+$('copyLink').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(shareURL);toast('Birthday link copied!')}catch(e){toast('Copy is unavailable in this browser.')}});
+$('shareNative').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'A Birthday Story Made With Love',text:'A little birthday surprise is waiting for you.',url:shareURL})}catch(e){}}else{try{await navigator.clipboard.writeText(shareURL);toast('Link copied!')}catch(e){toast('Please copy the link from the box.')}}});
+$('previewStory').addEventListener('click',showStory);
+$('openDemo').addEventListener('click',()=>{storyData={name:'someone special',dob:'2000-01-01',relationship:'someone special',sender:'Someone who cares',message:'May your day be filled with joy, laughter and beautiful memories. Wishing you a wonderful year ahead!',theme:'romantic',music:'off'};prepareStory();showStory()});
+$('beginStory').addEventListener('click',()=>setScene(1));
+$('musicYes').addEventListener('click',()=>{setSound(true);$('musicYes').classList.add('selected');$('musicNo').classList.remove('selected')});
+$('musicNo').addEventListener('click',()=>{setSound(false);$('musicNo').classList.add('selected');$('musicYes').classList.remove('selected')});
+$('soundToggle').addEventListener('click',()=>setSound(!soundOn));
+function unwrap(){if($('unwrapGift').classList.contains('open'))return;$('unwrapGift').classList.add('open');confetti();playTone(880);setTimeout(()=>setScene(2),1000)}
+$('unwrapGift').addEventListener('click',unwrap);
+$('unwrapGift').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();unwrap()}});
+$('lightCandles').addEventListener('click',()=>{if(candleDone)return;document.querySelectorAll('.flame').forEach(f=>f.classList.remove('off'));candleDone=true;$('lightCandles').textContent='Wish made! ✨';$('candleHint').textContent='Beautiful. Your wish is on its way.';confetti();playTone(740);setTimeout(()=>setScene(3),1100)});
+document.querySelectorAll('.balloon').forEach(balloon=>{const pop=()=>{if(balloon.classList.contains('popped'))return;balloon.classList.add('popped');balloonsDone++;$('balloonCount').textContent=balloonsDone===5?'The room is full of celebration!':' '+(5-balloonsDone)+' balloons left.';playTone(500+balloonsDone*90);if(balloonsDone===5){confetti();setTimeout(()=>setScene(4),1100)}};balloon.addEventListener('click',pop);balloon.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pop()}})});
+document.querySelectorAll('.scene-next').forEach(b=>b.addEventListener('click',nextScene));
+$('nextScene').addEventListener('click',nextScene);
+$('addGuest').addEventListener('click',addGuest);
+$('restartStory').addEventListener('click',()=>{candleDone=false;balloonsDone=0;$('unwrapGift').classList.remove('open');$('lightCandles').textContent='Light the candles ✨';$('candleHint').textContent='Tap to light the candles and make your wish.';document.querySelectorAll('.flame').forEach(f=>f.classList.add('off'));document.querySelectorAll('.balloon').forEach(b=>b.classList.remove('popped'));$('balloonCount').textContent='5 balloons are waiting for you.';setScene(0)});
+function loadFromURL(){const params=new URLSearchParams(location.search),encoded=params.get('story');if(!encoded)return false;const data=decodeData(encoded);if(!validData(data)){toast('This birthday story link is not valid.');return false}storyData=data;prepareStory();showStory();return true}
+if(!loadFromURL())showScreen('home');
+</script>
 </body>
 </html>
