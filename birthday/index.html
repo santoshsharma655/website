@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#100b25">
+<meta name="title" content="Birthday Wish Generator | Create a Beautiful Birthday Surprise">
+<meta name="description" content="Create a beautiful personalized birthday surprise with animated cakes, balloons and a unique shareable birthday link and QR code.">
+<meta name="keywords" content="birthday wish generator, birthday website, birthday QR code, birthday surprise, online birthday wishes, birthday link">
+<meta name="author" content="Santosh Sharma">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://santoshsharma1.com.np/birthday/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Create a Special Birthday Surprise">
+<meta property="og:description" content="Make someone's birthday unforgettable with a beautiful personalized birthday surprise.">
+<meta property="og:url" content="https://santoshsharma1.com.np/birthday/">
+<meta property="og:site_name" content="Santosh Sharma">
+<meta name="twitter:card" content="summary_large_image">
+<title>Birthday Wish Generator | Santosh Sharma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"Birthday Wish Generator",
+"url":"https://santoshsharma1.com.np/birthday/",
+"applicationCategory":"EntertainmentApplication",
+"operatingSystem":"All",
+"description":"Create personalized birthday wishes with a shareable link and QR code.",
+"author":{"@type":"Person","name":"Santosh Sharma","url":"https://santoshsharma1.com.np/"}
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#100b25;--pink:#ff76b8;--purple:#a78bfa;--white:#fff;--muted:#aaa3c3}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 15% 15%,#39205c 0%,transparent 45%),radial-gradient(ellipse at 85% 85%,#3d174d 0%,transparent 45%),var(--bg);color:var(--white)}
+button,input{font:inherit}
+button{cursor:pointer;border:0}
+#app{height:100dvh;width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;background:white;border-radius:50%;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:.9;transform:scale(1.4)}}
+.nav{height:9%;min-height:48px;max-height:75px;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:relative;z-index:5;border-bottom:1px solid #ffffff13}
+.logo{font-weight:800;font-size:clamp(15px,2vw,21px);letter-spacing:-.6px}
+.logo span{color:var(--pink)}
+.nav-tag{font-size:clamp(9px,1vw,12px);color:#d6c8ed;border:1px solid #ffffff25;padding:7px 13px;border-radius:30px}
+main{position:relative;z-index:2;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:1.5% 4%}
+.page{width:min(1100px,100%);height:100%;max-height:690px;display:none}
+.page.active{display:flex}
+.generator{display:grid;grid-template-columns:1fr 1fr;gap:4%;align-items:center}
+.left{display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,2vh,20px)}
+.eyebrow{color:var(--pink);font-size:clamp(9px,1vw,12px);font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font-family:'Playfair Display',serif;font-size:clamp(29px,4.3vw,55px);line-height:1.12;letter-spacing:-1.4px}
+h1 span{background:linear-gradient(90deg,#ff8dc5,#c5a2ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.description{font-size:clamp(11px,1.15vw,14px);line-height:1.7;color:#c0b7d5;max-width:440px}
+.form-card{background:#ffffff0c;border:1px solid #ffffff20;border-radius:20px;padding:clamp(14px,2vw,23px);display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(18px)}
+.form-title{font-size:clamp(14px,1.5vw,18px);font-weight:800}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:11px;color:#d4c8e8;font-weight:600}
+.field input{width:100%;height:43px;background:#ffffff0d;border:1px solid #ffffff25;border-radius:10px;color:white;padding:0 12px;outline:none;font-size:13px}
+.field input:focus{border-color:var(--pink)}
+.field input::placeholder{color:#8f85a8}
+.field input::-webkit-calendar-picker-indicator{filter:invert(1)}
+.primary{background:linear-gradient(100deg,#ff6eac,#a47bff);color:white;font-weight:800;border-radius:11px;min-height:44px;padding:10px 17px;box-shadow:0 7px 25px #e65caa35;transition:.25s}
+.primary:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.small-note{font-size:10px;color:#a99fbe;text-align:center}
+.right{display:flex;align-items:center;justify-content:center;position:relative;min-height:0}
+.preview{width:min(100%,390px);height:min(83%,510px);min-height:300px;background:linear-gradient(145deg,#ffffff1b,#ffffff06);border:1px solid #ffffff25;border-radius:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;padding:15px;box-shadow:0 20px 70px #0003}
+.preview:before{content:"";position:absolute;width:250px;height:250px;background:#ec76bf20;filter:blur(65px);border-radius:50%;top:10%}
+.preview-label{font-size:10px;letter-spacing:2px;color:#f3a4d0;text-transform:uppercase;z-index:1}
+.preview h2,.wish-content h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);margin:9px 0;z-index:1}
+.preview p{font-size:12px;color:#d3c8e6;z-index:1}
+.cake-area{position:relative;width:210px;height:195px;display:flex;align-items:flex-end;justify-content:center;margin:10px 0 20px;z-index:1}
+.cake{position:relative;width:160px;height:100px;background:linear-gradient(90deg,#ff8dbd,#ffb5d4,#e878ac);border-radius:12px 12px 17px 17px;box-shadow:0 12px 25px #0004}
+.cake:before{content:"";position:absolute;top:-14px;left:0;width:100%;height:28px;background:#fff0f2;border-radius:50%;box-shadow:inset 0 -5px #f9a7ca}
+.cake:after{content:"";position:absolute;top:10px;left:0;width:100%;height:12px;background:repeating-linear-gradient(90deg,#ff6da9 0 12px,#ffffff 12px 24px);opacity:.65}
+.cake-bottom{position:absolute;bottom:-20px;width:190px;height:23px;background:#d65a98;border-radius:50%;box-shadow:0 8px 18px #0004}
+.candle{position:absolute;width:9px;height:45px;top:-57px;left:calc(50% - 4px);background:repeating-linear-gradient(0deg,#a78bfa 0 8px,#fff 8px 15px);border-radius:3px}
+.flame{position:absolute;width:15px;height:23px;background:radial-gradient(ellipse at 50% 75%,#fff5a6 0%,#ffb347 45%,#ff6a3d 75%);border-radius:50% 50% 40% 40%;top:-24px;left:-3px;animation:flicker .6s infinite alternate;filter:drop-shadow(0 0 9px #ffad47)}
+@keyframes flicker{to{transform:rotate(8deg) scale(.85)}}
+.balloon{position:absolute;width:43px;height:55px;border-radius:50%;background:linear-gradient(135deg,#ff91c8,#e94b9c);animation:float 3s ease-in-out infinite}
+.balloon:after{content:"";position:absolute;bottom:-7px;left:19px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid #e94b9c}
+.balloon:before{content:"";position:absolute;top:52px;left:21px;height:70px;border-left:1px solid #ffffff80}
+.b1{top:12%;left:8%;transform:rotate(-12deg)}
+.b2{top:25%;right:8%;background:linear-gradient(135deg,#a78bfa,#7352d6);animation-delay:.8s}
+.b3{bottom:15%;left:13%;background:linear-gradient(135deg,#ffdb85,#ff9f54);animation-delay:1.4s;transform:scale(.8)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.footer{height:5%;min-height:24px;display:flex;align-items:center;justify-content:center;color:#887d9f;font-size:9px;position:relative;z-index:3}
+.share-page{align-items:center;justify-content:center;flex-direction:column;gap:clamp(10px,2vh,18px);overflow:auto}
+.share-card{width:min(780px,100%);background:#ffffff0d;border:1px solid #ffffff20;border-radius:22px;padding:clamp(13px,2vw,23px);display:grid;grid-template-columns:1fr 190px;gap:20px;align-items:center}
+.share-info h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,35px);margin:7px 0}
+.share-info p{font-size:12px;color:#c3b9d6;line-height:1.6}
+.link-box{margin-top:14px;background:#08061780;padding:10px;border-radius:9px;font-size:10px;word-break:break-all;color:#f5b6dc;border:1px solid #ffffff18}
+.actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.actions button{font-size:11px;padding:10px 13px;border-radius:9px;font-weight:700}
+.secondary{background:#ffffff17;color:white;border:1px solid #ffffff20}
+.qr-area{background:white;border-radius:14px;padding:12px;text-align:center;color:#21152f}
+#qrcode{display:flex;align-items:center;justify-content:center;min-height:150px}
+#qrcode img,#qrcode canvas{max-width:100%;height:auto!important}
+.qr-area p{font-size:10px;margin-top:7px}
+.steps{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.step{font-size:10px;color:#c3b9d6}
+.step b{color:#ff9bca;margin-right:5px}
+.wish-page{align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:10px}
+.wish-content{width:min(620px,100%);height:100%;max-height:610px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:linear-gradient(145deg,#ffffff13,#ffffff05);border:1px solid #ffffff20;border-radius:25px;padding:clamp(12px,2vh,22px);overflow:hidden}
+.wish-content .cake-area{transform:scale(.88);margin:0}
+.wish-content h2{font-size:clamp(25px,4vw,43px);margin:5px}
+.wish-name{color:#ff9bca}
+.wish-date{font-size:11px;color:#d2c6e7;margin:3px}
+.wish-message{max-width:420px;color:#d7cce8;font-size:clamp(11px,1.2vw,14px);line-height:1.65;margin:8px 0}
+.reveal-btn{margin:5px 0}
+.hidden-message{display:none;animation:appear .8s ease}
+.hidden-message.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+.confetti-piece{position:absolute;top:-15px;width:8px;height:13px;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(800deg);opacity:0}}
+.toast{position:fixed;bottom:7%;left:50%;transform:translate(-50%,20px);background:#fff;color:#21152f;padding:11px 20px;border-radius:30px;font-size:12px;font-weight:700;opacity:0;transition:.3s;z-index:30;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:650px){
+.nav{height:7%;padding:0 5%}
+main{padding:2% 4%}
+.generator{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:8px}
+.left{gap:9px}
+.eyebrow{font-size:9px}
+h1{font-size:clamp(26px,7vw,38px)}
+.description{font-size:10px;line-height:1.45}
+.form-card{padding:12px;gap:8px;border-radius:15px}
+.form-title{font-size:14px}
+.field{gap:4px}
+.field label{font-size:10px}
+.field input{height:36px;font-size:12px}
+.primary{min-height:38px;padding:8px;font-size:12px}
+.small-note{font-size:9px}
+.right{min-height:0}
+.preview{height:100%;min-height:0;width:100%;max-width:350px;border-radius:18px;padding:8px}
+.preview-label{font-size:8px}
+.preview h2{font-size:21px;margin:4px}
+.preview p{font-size:10px}
+.preview .cake-area{transform:scale(.65);height:125px;margin:-4px 0}
+.preview .balloon{transform:scale(.65)}
+.footer{height:4%;font-size:8px}
+.share-page{justify-content:center}
+.share-card{grid-template-columns:1fr 115px;gap:10px;padding:12px;border-radius:16px}
+.share-info h2{font-size:21px}
+.share-info p{font-size:10px}
+.link-box{font-size:9px;margin-top:8px;padding:8px}
+.actions{gap:5px;margin-top:7px}
+.actions button{font-size:9px;padding:8px}
+.qr-area{padding:7px;border-radius:9px}
+#qrcode{min-height:90px}
+#qrcode img,#qrcode canvas{width:90px!important;height:90px!important}
+.qr-area p{font-size:8px}
+.steps{gap:8px}
+.step{font-size:9px}
+.wish-content{width:100%;max-height:100%;border-radius:18px;padding:10px}
+.wish-content .cake-area{transform:scale(.7);height:135px;margin:-5px 0}
+.wish-content h2{font-size:clamp(23px,6vw,32px)}
+.wish-message{font-size:11px;line-height:1.5;margin:5px 0}
+}
+@media(max-height:650px) and (min-width:651px){
+.preview{height:95%;min-height:260px}
+.left{gap:8px}
+.form-card{gap:8px;padding:12px}
+.field input{height:36px}
+.cake-area{transform:scale(.75);margin:-5px 0}
+}
+@media(max-height:700px) and (max-width:650px){
+.generator{gap:5px}
+.left{gap:5px}
+.form-card{gap:5px;padding:9px}
+.field input{height:32px}
+.preview .cake-area{transform:scale(.55);height:105px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="stars" id="stars"></div>
+<header class="nav">
+<div class="logo">SANTOSH<span>SHARMA.</span></div>
+<div class="nav-tag">✦ MAKE IT SPECIAL</div>
+</header>
+<main>
+<section class="page generator active" id="generator">
+<div class="left">
+<div class="eyebrow">✦ A LITTLE MAGIC FOR SOMEONE SPECIAL</div>
+<h1>Make Their Birthday <span>Unforgettable.</span></h1>
+<p class="description">Create a beautiful birthday surprise for your favourite person. Personalize it, generate a QR code and share the happiness!</p>
+<div class="form-card">
+<div class="form-title">🎁 Wish for Your Favourite Person</div>
+<div class="field">
+<label for="personName">Their Name</label>
+<input id="personName" type="text" maxlength="35" placeholder="Enter their beautiful name" autocomplete="off">
+</div>
+<div class="field">
+<label for="birthDate">Date of Birth</label>
+<input id="birthDate" type="date">
+</div>
+<button class="primary" id="generateBtn">Create Birthday Surprise ✨</button>
+<div class="small-note">♡ Free to create · Easy to share · Made with love</div>
+</div>
+</div>
+<div class="right">
+<div class="preview">
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="preview-label">✦ A SPECIAL DAY ✦</div>
+<h2>A Birthday Surprise</h2>
+<p>Wrapped with happiness and love!</p>
+<div class="cake-area">
+<div class="cake-bottom"></div>
+<div class="cake"><div class="candle"><div class="flame"></div></div></div>
+</div>
+<p>Make someone's day magical ✨</p>
+</div>
+</div>
+</section>
+<section class="page share-page" id="sharePage">
+<div class="eyebrow">✦ YOUR SURPRISE IS READY</div>
+<div class="share-card">
+<div class="share-info">
+<div class="eyebrow">STEP 02 · SHARE THE MAGIC</div>
+<h2>Your Birthday Link Is Ready! 🎉</h2>
+<p>Share this special link or QR code with your favourite person. Let them discover their birthday surprise!</p>
+<div class="link-box" id="shareLink"></div>
+<div class="actions">
+<button class="primary" id="copyBtn">Copy Link ↗</button>
+<button class="secondary" id="nativeShare">Share</button>
+<button class="secondary" id="backBtn">Edit</button>
+</div>
+</div>
+<div class="qr-area">
+<div id="qrcode"></div>
+<p>SCAN TO OPEN SURPRISE</p>
+</div>
+</div>
+<div class="steps">
+<div class="step"><b>01</b> Enter details</div>
+<div class="step"><b>02</b> Generate link</div>
+<div class="step"><b>03</b> Share happiness</div>
+</div>
+</section>
+<section class="page wish-page" id="wishPage">
+<div class="wish-content">
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="eyebrow">✦ TODAY IS ALL ABOUT YOU ✦</div>
+<div class="cake-area">
+<div class="cake-bottom"></div>
+<div class="cake"><div class="candle"><div class="flame"></div></div></div>
+</div>
+<div class="preview-label">A SPECIAL SURPRISE FOR</div>
+<h2 id="wishTitle">Happy Birthday!</h2>
+<div class="wish-name" id="wishName"></div>
+<div class="wish-date" id="wishDate"></div>
+<p class="wish-message">A little surprise has been prepared just for you. There's something special waiting inside! 💝</p>
+<button class="primary reveal-btn" id="unwrapBtn">🎁 Unwrap Your Surprise</button>
+<div class="hidden-message" id="hiddenMessage">
+<h2>🎂 Happy Birthday!</h2>
+<p class="wish-message" id="birthdayMessage"></p>
+<p class="wish-message">May your days be filled with laughter, your dreams turn into reality, and your journey be full of beautiful memories. Keep shining! ✨</p>
+<div style="font-size:25px;margin-top:8px">🎈 🎉 🎂 💖 🎊</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">Made with ♡ by Santosh Sharma · © 2026</footer>
+<div class="confetti" id="confetti"></div>
+<div class="toast" id="toast"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const pages=[$('generator'),$('sharePage'),$('wishPage')];
+let currentLink='';
+function showPage(page){
+pages.forEach(p=>p.classList.remove('active'));
+page.classList.add('active');
+}
+function toast(message){
+const t=$('toast');
+t.textContent=message;
+t.classList.add('show');
+clearTimeout(window.toastTimer);
+window.toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+}
+function createStars(){
+for(let i=0;i<65;i++){
+const s=document.createElement('span');
+s.className='star';
+s.style.left=Math.random()*100+'%';
+s.style.top=Math.random()*100+'%';
+s.style.width=(Math.random()*2+1)+'px';
+s.style.height=s.style.width;
+s.style.animationDelay=Math.random()*3+'s';
+$('stars').appendChild(s);
+}
+}
+function celebrate(){
+const area=$('confetti');
+const colors=['#ff75b8','#a78bfa','#ffd166','#ffffff','#70e1c1'];
+for(let i=0;i<100;i++){
+const p=document.createElement('span');
+p.className='confetti-piece';
+p.style.left=Math.random()*100+'%';
+p.style.background=colors[Math.floor(Math.random()*colors.length)];
+p.style.animationDelay=Math.random()*1.5+'s';
+p.style.animationDuration=(Math.random()*2+2)+'s';
+p.style.borderRadius=Math.random()>.5?'50%':'2px';
+area.appendChild(p);
+setTimeout(()=>p.remove(),5000);
+}
+}
+function makeLink(name,dob){
+const url=new URL('https://santoshsharma1.com.np/birthday/');
+url.searchParams.set('name',name);
+url.searchParams.set('dob',dob);
+return url.toString();
+}
+function generate(){
+const name=$('personName').value.trim();
+const dob=$('birthDate').value;
+if(!name){toast('Please enter their name first!');$('personName').focus();return}
+if(!dob){toast('Please select their date of birth!');$('birthDate').focus();return}
+if(new Date(dob+'T00:00:00')>new Date()){
+toast('Please select a valid date of birth!');
+return;
+}
+currentLink=makeLink(name,dob);
+$('shareLink').textContent=currentLink;
+$('qrcode').innerHTML='';
+showPage($('sharePage'));
+if(typeof QRCode!=='undefined'){
+new QRCode($('qrcode'),{
+text:currentLink,
+width:150,
+height:150,
+colorDark:'#170d2b',
+colorLight:'#ffffff',
+correctLevel:QRCode.CorrectLevel.H
+});
+}else{
+$('qrcode').textContent='QR library unavailable';
+}
+}
+function formatDate(date){
+const d=new Date(date+'T00:00:00');
+return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+}
+function loadWish(){
+const params=new URLSearchParams(location.search);
+const name=params.get('name');
+const dob=params.get('dob');
+if(!name||!dob||name.length>35||!/^\d{4}-\d{2}-\d{2}$/.test(dob))return false;
+const parsed=new Date(dob+'T00:00:00');
+if(isNaN(parsed.getTime())||parsed>new Date())return false;
+const safeName=name.trim();
+if(!safeName)return false;
+$('wishTitle').textContent='Happy Birthday!';
+$('wishName').textContent='Dear '+safeName+' 💖';
+$('wishDate').textContent='🎂 '+formatDate(dob);
+$('birthdayMessage').textContent='Dear '+safeName+', wishing you a day filled with endless happiness, beautiful surprises and unforgettable moments. May this new chapter bring you everything your heart wishes for. You deserve all the happiness in the world. Happy Birthday! ❤️';
+document.title='Happy Birthday '+safeName+' | A Special Surprise';
+showPage($('wishPage'));
+return true;
+}
+$('generateBtn').addEventListener('click',generate);
+$('personName').addEventListener('keydown',e=>{if(e.key==='Enter')$('birthDate').focus()});
+$('birthDate').addEventListener('keydown',e=>{if(e.key==='Enter')generate()});
+$('copyBtn').addEventListener('click',async()=>{
+try{
+await navigator.clipboard.writeText(currentLink);
+toast('Birthday link copied! 🎉');
+}catch(e){
+const input=document.createElement('textarea');
+input.value=currentLink;
+document.body.appendChild(input);
+input.select();
+document.execCommand('copy');
+input.remove();
+toast('Birthday link copied!');
+}
+});
+$('nativeShare').addEventListener('click',async()=>{
+if(navigator.share){
+try{await navigator.share({title:'A Birthday Surprise 🎂',text:'I made a special birthday surprise for you!',url:currentLink})}catch(e){}
+}else{
+try{await navigator.clipboard.writeText(currentLink);toast('Link copied! Share it with your favourite person.')}catch(e){toast('Please copy the link manually.')}
+}
+});
+$('backBtn').addEventListener('click',()=>showPage($('generator')));
+$('unwrapBtn').addEventListener('click',()=>{
+$('unwrapBtn').style.display='none';
+$('hiddenMessage').classList.add('show');
+celebrate();
+});
+createStars();
+if(!loadWish()){
+showPage($('generator'));
+$('personName').value='Elena';
+$('birthDate').value='2000-11-24';
+}
+</script>
+</body>
+</html>
