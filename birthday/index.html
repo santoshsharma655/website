@@ -534,13 +534,6 @@ main{padding:8px 10px}
   audioEl.src = AUDIO_SRC;
   audioEl.loop = true;
 
-  // Keep browser address bar showing clean santoshsharma1.com.np/birthday when opened with query
-  if (window.location.search && window.location.pathname.includes("/birthday")) {
-    try {
-      window.history.replaceState({}, document.title, "/birthday");
-    } catch (_) {}
-  }
-
   function startContinuousAudio() {
     audioEl.loop = true;
     const playPromise = audioEl.play();
@@ -549,7 +542,6 @@ main{padding:8px 10px}
     }
   }
 
-  // Attempt autoplay immediately & on first user gesture anywhere
   startContinuousAudio();
   document.addEventListener("pointerdown", startContinuousAudio, { once: false });
 
@@ -588,7 +580,6 @@ main{padding:8px 10px}
     }
   }
 
-  // Ordinal helper
   function ordinal(n) {
     const v = n % 100;
     if (v >= 11 && v <= 13) return n + "th";
@@ -629,7 +620,7 @@ main{padding:8px 10px}
     return dt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   }
 
-  // Builder Navigation (Step 1: Name & DOB -> Step 2: Sender & Relationship)
+  // Builder Navigation
   const bSteps = document.querySelectorAll(".builder-step");
   const buildStepText = document.getElementById("buildStepText");
   const buildStepPct = document.getElementById("buildStepPct");
@@ -773,7 +764,7 @@ main{padding:8px 10px}
     showScreen(builderScreen);
   });
 
-  // Setup 9-Step Birthday Story Experience
+  // 9-Step Birthday Story Experience
   const scenes = document.querySelectorAll(".scene");
   const sceneDotsContainer = document.getElementById("sceneDots");
   const storyStepLabel = document.getElementById("storyStepLabel");
@@ -827,7 +818,6 @@ main{padding:8px 10px}
       data.name + ", no matter how many birthdays pass, your presence as a " + data.rel.toLowerCase() +
       " makes every celebration brighter. — " + data.from;
 
-    // Reset interactive states
     document.getElementById("unwrapGiftBtn").classList.remove("open");
     document.getElementById("pullBowBtn").classList.remove("pulled");
     document.getElementById("pullStatusText").textContent = "Tap / pull to release";
@@ -839,7 +829,6 @@ main{padding:8px 10px}
     document.getElementById("letterPaper").style.display = "none";
     document.getElementById("revealSecretBtn").classList.remove("revealed");
 
-    // Quiz built dynamically from entered details
     const quizBox = document.getElementById("quizContainer");
     const options = [
       { label: data.from + " (" + data.rel + ")", correct: true },
@@ -874,14 +863,12 @@ main{padding:8px 10px}
     showScreen(storyScreen);
   }
 
-  // "Explore the experience" starts audio continuously and advances to Step 2 (Unwrap)
   document.getElementById("exploreExperienceBtn").addEventListener("click", () => {
     startContinuousAudio();
     spawnConfetti();
     goToScene(1);
   });
 
-  // Step 2: Unwrap Gift
   const unwrapGiftBtn = document.getElementById("unwrapGiftBtn");
   unwrapGiftBtn.addEventListener("click", () => {
     startContinuousAudio();
@@ -890,7 +877,6 @@ main{padding:8px 10px}
     setTimeout(() => goToScene(2), 550);
   });
 
-  // Step 3: Pull & Release
   const pullBowBtn = document.getElementById("pullBowBtn");
   pullBowBtn.addEventListener("click", () => {
     startContinuousAudio();
@@ -899,7 +885,6 @@ main{padding:8px 10px}
     spawnConfetti();
   });
 
-  // Step 4: Pop Balloons
   const balloons = document.querySelectorAll("#balloonGroup .balloon");
   balloons.forEach((b) => {
     b.addEventListener("click", () => {
@@ -914,7 +899,6 @@ main{padding:8px 10px}
     });
   });
 
-  // Step 5: Light Candles
   document.getElementById("lightCandlesBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.querySelectorAll("#storyScreen .flame").forEach((f) => f.classList.add("lit"));
@@ -922,7 +906,6 @@ main{padding:8px 10px}
     showToast("Candles lit! Make a wish ✨");
   });
 
-  // Step 6: Cut Cake
   document.getElementById("cutCakeBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("cutCakeStage").classList.add("sliced");
@@ -930,7 +913,6 @@ main{padding:8px 10px}
     showToast("Cake sliced! Enjoy the celebration 🎂");
   });
 
-  // Step 7: Envelope -> Letter
   document.getElementById("openEnvelopeBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("openEnvelopeBtn").style.display = "none";
@@ -938,7 +920,6 @@ main{padding:8px 10px}
     spawnConfetti();
   });
 
-  // Step 8: Reveal Secret
   document.getElementById("revealSecretBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("revealSecretBtn").classList.add("revealed");
@@ -952,7 +933,7 @@ main{padding:8px 10px}
     }
   });
 
-  // If opened with encoded ?w= parameter (via QR or Link), open story directly
+  // Read ?w= first, open story with "Explore the experience", then clean URL
   (function initFromQuery() {
     const params = new URLSearchParams(window.location.search);
     const w = params.get("w");
@@ -966,8 +947,14 @@ main{padding:8px 10px}
           from: String(parsed.from).slice(0, 40),
           rel: String(parsed.rel || "Friend").slice(0, 30)
         };
-        startContinuousAudio();
         populateStory(currentData);
+        startContinuousAudio();
+        try {
+          const cleanPath = window.location.pathname.endsWith("/")
+            ? window.location.pathname
+            : window.location.pathname + "/";
+          window.history.replaceState({}, document.title, cleanPath);
+        } catch (_) {}
       }
     } catch (_) {}
   })();
@@ -975,4 +962,3 @@ main{padding:8px 10px}
 </script>
 </body>
 </html>
-```[cite: 11, 12]
