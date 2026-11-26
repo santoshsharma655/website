@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#120e19">
 <link rel="icon" type="image/png" href="https://santoshsharma1.com.np/favicon.png">
 <link rel="apple-touch-icon" href="https://santoshsharma1.com.np/favicon.png">
-<meta name="description" content="Create a magical interactive birthday story with a wrapped gift, music, candles, 3 wish balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link or QR code.">
+<meta name="description" content="Create a magical interactive birthday story with a wrapped gift, music, candles, floating balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link or QR code.">
 <meta name="keywords" content="birthday story, birthday surprise, birthday wish, birthday blessing, birthday link, birthday QR code, Santosh Sharma">
 <meta name="author" content="Santosh Sharma">
 <meta name="creator" content="Santosh Sharma">
@@ -15,14 +15,14 @@
 <link rel="canonical" href="https://santoshsharma1.com.np/birthday/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Happy Birthday to You — Interactive Birthday Story & Surprise">
-<meta property="og:description" content="Celebrate someone special with balloons, cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
+<meta property="og:title" content="Happy Birthday to You — A Little Surprise Made With Love">
+<meta property="og:description" content="Celebrate someone special with flying balloons, realistic cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
 <meta property="og:url" content="https://santoshsharma1.com.np/birthday/">
 <meta property="og:site_name" content="Birthday Stories">
 <meta property="og:image" content="https://santoshsharma1.com.np/favicon.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Happy Birthday to You — Interactive Birthday Story & Surprise">
-<meta name="twitter:description" content="Celebrate someone special with balloons, cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
+<meta name="twitter:title" content="Happy Birthday to You — A Little Surprise Made With Love">
+<meta name="twitter:description" content="Celebrate someone special with flying balloons, realistic cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
 <meta name="twitter:creator" content="@santosh_sharma_offical">
 <title>Happy Birthday to You — Interactive Birthday Story &amp; Surprise</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -59,8 +59,8 @@
       "@type": "WebPage",
       "@id": "https://santoshsharma1.com.np/birthday/#webpage",
       "url": "https://santoshsharma1.com.np/birthday/",
-      "name": "Happy Birthday to You — Interactive Birthday Story & Surprise",
-      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, 3 wish balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link.",
+      "name": "Happy Birthday to You — A Little Surprise Made With Love",
+      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, floating balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link.",
       "isPartOf": {
         "@id": "https://santoshsharma1.com.np/#website"
       },
@@ -197,19 +197,19 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,1.8vh,20p
 .gift-hint{font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;animation:pulse 1.5s infinite}
 @keyframes pulse{50%{opacity:.45}}
 
-/* Pull & Release Arch + Floating Balloons & Hearts */
+/* Pull & Release Balloons with Light Mixed Cheer */
 .arch-stage{width:min(440px,95%);display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 16px;border-radius:20px;background:#ffffff09;border:1px solid var(--line);position:relative;overflow:hidden}
 .arch-bow{width:190px;height:52px;border-bottom:4px solid var(--gold);border-radius:0 0 95px 95px;display:flex;align-items:flex-end;justify-content:center;position:relative;cursor:pointer;transition:transform .25s ease}
 .arch-bow.pulled{transform:translateY(11px) scaleY(1.22);border-bottom-color:var(--pink)}
 .arch-tag{background:#fff3e8;color:#45313b;padding:5px 16px;border-radius:999px;font-family:"Playfair Display",serif;font-weight:700;font-size:13px;box-shadow:0 6px 16px #0004}
-.cheer-zone{display:flex;align-items:center;justify-content:center;gap:14px;min-height:46px;flex-wrap:wrap}
-.mini-balloon{font-size:22px;display:inline-block;opacity:.45;transform:translateY(6px);transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .5s}
-.mini-heart{font-size:20px;color:var(--pink);display:inline-block;opacity:.45;transform:scale(.85);transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .5s}
-.arch-stage.released .mini-balloon{opacity:1;transform:translateY(-6px) rotate(-6deg);animation:cheerBob 2.2s ease-in-out infinite}
-.arch-stage.released .mini-balloon:nth-child(2){animation-delay:.25s}.arch-stage.released .mini-balloon:nth-child(4){animation-delay:.45s}
-.arch-stage.released .mini-heart{opacity:1;transform:scale(1.15);animation:heartBeat 1.4s ease-in-out infinite}
-@keyframes cheerBob{50%{transform:translateY(-13px) rotate(6deg)}}
-@keyframes heartBeat{50%{transform:scale(1.3)}}
+.balloon-cheer-row{display:flex;align-items:center;justify-content:center;gap:12px;min-height:46px;flex-wrap:wrap}
+.fly-balloon-icon{font-size:24px;display:inline-block;opacity:.65;transform:translateY(6px);transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .5s}
+.fly-cheer-spark{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--gold);background:#ffffff10;border:1px solid #ffffff22;padding:3px 9px;border-radius:999px;opacity:.6;transition:transform .55s ease,opacity .5s}
+.arch-stage.released .fly-balloon-icon{opacity:1;transform:translateY(-10px) rotate(-6deg);animation:balloonSkyFloat 2.1s ease-in-out infinite}
+.arch-stage.released .fly-balloon-icon:nth-child(2){animation-delay:.2s}.arch-stage.released .fly-balloon-icon:nth-child(4){animation-delay:.4s}
+.arch-stage.released .fly-cheer-spark{opacity:1;transform:translateY(-6px) scale(1.06);animation:cheerPulse 1.6s ease-in-out infinite}
+@keyframes balloonSkyFloat{50%{transform:translateY(-18px) rotate(6deg)}}
+@keyframes cheerPulse{50%{transform:translateY(-10px) scale(1.12)}}
 .released-wish-banner{display:none;padding:8px 14px;border-radius:12px;background:linear-gradient(120deg,#ff9ec726,#f4cb8324);border:1px solid #ff9ec755;font-size:12px;color:#fff6fa;line-height:1.5}
 .arch-stage.released .released-wish-banner{display:block;animation:rise .35s ease}
 
@@ -226,28 +226,35 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,1.8vh,20p
 @keyframes pop{to{transform:scale(1.7);opacity:0}}
 .balloon-wish-box{min-height:46px;max-width:520px;padding:9px 15px;border-radius:13px;background:#ffffff0d;border:1px solid #ffffff20;font-size:12px;color:#ffe6f0;line-height:1.55;display:flex;align-items:center;justify-content:center}
 
-/* Realistic 4-Slice Cake + Knife */
-.cake-stage{width:236px;height:166px;position:relative;display:flex;align-items:flex-end;justify-content:center}
-.cake-plate{position:absolute;bottom:4px;width:224px;height:18px;border-radius:50%;background:linear-gradient(#fff0f4,#bd91a8);box-shadow:0 8px 18px #0005}
-.cake-slices-wrap{position:absolute;bottom:15px;width:184px;height:84px;display:flex;align-items:flex-end;justify-content:center;gap:0;transition:gap .55s cubic-bezier(.22,1,.36,1)}
-.cake-slice{flex:1;height:100%;position:relative;background:linear-gradient(180deg,#fff3ec 0 18px,#f49abb 18px 26px,#d36d9b 26px 56px,#f9c5d8 56px 63px,#bd5e86 63px 100%);box-shadow:inset 0 -8px #9e436e;transition:transform .55s cubic-bezier(.22,1,.36,1),margin .55s ease}
-.cake-slice:first-child{border-radius:12px 0 0 14px}
-.cake-slice:last-child{border-radius:0 12px 14px 0}
-.cake-slice + .cake-slice{border-left:1px dashed #7a2c4e55}
-.cake-knife{position:absolute;top:16px;right:-14px;width:72px;height:12px;border-radius:2px 8px 8px 2px;background:linear-gradient(90deg,#e8edf2,#ffffff 55%,#cbd5e1);box-shadow:0 4px 12px #0006,inset -18px 0 0 #6d3b24;transform:rotate(-38deg);transform-origin:right center;opacity:0;pointer-events:none;z-index:5;transition:transform .55s ease,opacity .25s ease}
-.cake-knife:before{content:"";position:absolute;inset:0;border-right:2px solid #94a3b8}
-.cake-stage.slicing .cake-knife{opacity:1;animation:knifeCut .85s ease forwards}
-@keyframes knifeCut{
-  0%{opacity:1;transform:translate(16px,-18px) rotate(-35deg)}
-  55%{opacity:1;transform:translate(-52px,42px) rotate(-22deg)}
-  100%{opacity:0;transform:translate(-72px,54px) rotate(-15deg)}
+/* Realistic 4-Slice Layered Cake + Knife */
+.cake-stage{width:246px;height:172px;position:relative;display:flex;align-items:flex-end;justify-content:center}
+.cake-plate{position:absolute;bottom:3px;width:232px;height:20px;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#ffffff,#dec3d3 72%,#9e768f);box-shadow:0 10px 22px #0007}
+.cake-slices-wrap{position:absolute;bottom:14px;width:192px;height:90px;display:flex;align-items:flex-end;justify-content:center;gap:0;transition:gap .6s cubic-bezier(.22,1,.36,1)}
+.cake-slice{flex:1;height:100%;position:relative;border-radius:10px 10px 6px 6px;background:
+  radial-gradient(circle at 25% 14px,#fff7f2 7px,transparent 8px),
+  radial-gradient(circle at 72% 16px,#fff7f2 8px,transparent 9px),
+  linear-gradient(180deg,#fff5ef 0 15px,#f38eb7 15px 22px,#cf5d8d 22px 44px,#ffe4d6 44px 51px,#c95485 51px 74px,#ffe4d6 74px 80px,#9e3d67 80px 100%);
+box-shadow:inset 0 -7px #7a294d,0 6px 12px #0005;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .4s ease}
+.cake-slice:first-child{border-radius:14px 4px 4px 12px}
+.cake-slice:last-child{border-radius:4px 14px 12px 4px}
+.cake-slice + .cake-slice{border-left:1.5px solid #591b3666}
+.cake-knife{position:absolute;top:10px;right:-16px;width:82px;height:14px;pointer-events:none;z-index:6;opacity:0;transform-origin:88% 50%}
+.cake-knife .blade{position:absolute;left:0;top:1px;width:54px;height:11px;border-radius:10px 2px 3px 10px;background:linear-gradient(180deg,#f8fafc 0%,#cbd5e1 55%,#94a3b8 100%);box-shadow:0 3px 8px #0007}
+.cake-knife .handle{position:absolute;right:0;top:0;width:28px;height:13px;border-radius:3px 8px 8px 3px;background:linear-gradient(180deg,#8b4a2b,#542712);box-shadow:inset 0 2px 3px #ffffff35}
+.cake-stage.slicing .cake-knife{opacity:1;animation:realisticKnifeSlice 1.05s cubic-bezier(.34,1.2,.64,1) forwards}
+@keyframes realisticKnifeSlice{
+  0%{opacity:1;transform:translate(18px,-24px) rotate(-32deg)}
+  25%{opacity:1;transform:translate(-18px,18px) rotate(-18deg)}
+  50%{opacity:1;transform:translate(-52px,48px) rotate(-14deg)}
+  75%{opacity:1;transform:translate(-84px,52px) rotate(-12deg)}
+  100%{opacity:0;transform:translate(-105px,44px) rotate(-8deg)}
 }
-.cake-stage.sliced .cake-slices-wrap{gap:6px}
-.cake-stage.sliced .cake-slice:nth-child(1){transform:translate(-6px,-5px) rotate(-3deg)}
-.cake-stage.sliced .cake-slice:nth-child(2){transform:translateY(-2px)}
-.cake-stage.sliced .cake-slice:nth-child(3){transform:translateY(-2px)}
-.cake-stage.sliced .cake-slice:nth-child(4){transform:translate(6px,-5px) rotate(3deg)}
-.candle-row{position:absolute;bottom:104px;display:flex;gap:18px;z-index:3}
+.cake-stage.sliced .cake-slices-wrap{gap:9px}
+.cake-stage.sliced .cake-slice:nth-child(1){transform:translate(-10px,-7px) rotate(-4deg);box-shadow:-4px 8px 16px #0007}
+.cake-stage.sliced .cake-slice:nth-child(2){transform:translate(-3px,-3px) rotate(-1deg)}
+.cake-stage.sliced .cake-slice:nth-child(3){transform:translate(3px,-3px) rotate(1deg)}
+.cake-stage.sliced .cake-slice:nth-child(4){transform:translate(10px,-7px) rotate(4deg);box-shadow:4px 8px 16px #0007}
+.candle-row{position:absolute;bottom:110px;display:flex;gap:20px;z-index:3}
 .candle{width:9px;height:38px;border-radius:3px;background:repeating-linear-gradient(0deg,#fff4d7 0 7px,#d99cc5 7px 13px);position:relative}
 .flame{display:none;position:absolute;width:14px;height:20px;left:-2px;top:-19px;border-radius:50% 50% 45% 45%;background:radial-gradient(ellipse at 50% 70%,#fff9c5 0 22%,#ffc65e 50%,#f47b36 80%);filter:drop-shadow(0 0 9px #ffbd55);transform-origin:bottom;animation:flicker .5s infinite alternate}
 .flame.lit{display:block}
@@ -279,7 +286,7 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,1.8vh,20p
 .quiz-opt.wrong{background:#f59e0b2e;border-color:#fbbf24;color:#fef3c7}
 .blessing-feedback{min-height:38px;padding:8px 12px;border-radius:11px;background:#ffffff0a;border:1px dashed #ffffff26;font-size:11.5px;color:var(--gold);text-align:center;line-height:1.45}
 
-/* Finale Unbox + Flying Balloons */
+/* Finale Unbox + Flying Balloons + Light Cheer */
 .finale-stage{width:min(560px,96%);min-height:210px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:hidden;padding:12px;border-radius:20px;background:#ffffff08;border:1px solid var(--line)}
 .unbox-trigger{padding:16px 22px;border-radius:18px;background:linear-gradient(135deg,#ffd9a0,#ff9ec7 60%,#d7b3f5);color:#2d1926;box-shadow:0 14px 34px #0006;display:flex;flex-direction:column;align-items:center;gap:5px;animation:giftFloat 2.8s infinite;z-index:3}
 .finale-revealed{display:none;flex-direction:column;align-items:center;gap:8px;z-index:3;animation:rise .45s ease}
@@ -289,6 +296,7 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,1.8vh,20p
 .finale-wish-card h3{font:700 clamp(18px,2.5vw,25px) "Playfair Display",serif;color:#8e3b63;margin-bottom:5px}
 .finale-wish-card p{font-size:12px;line-height:1.6;color:#523c49}
 .flying-balloon{position:absolute;bottom:-54px;font-size:26px;pointer-events:none;z-index:2;animation:flyUp var(--dur,4.2s) ease-in forwards;will-change:transform,opacity}
+.flying-cheer-tag{position:absolute;bottom:-36px;font-size:11px;font-weight:800;color:#ffe6f0;background:#ff78b633;border:1px solid #ff9ec766;padding:2px 8px;border-radius:999px;pointer-events:none;z-index:2;animation:flyUp var(--dur,4.4s) ease-in forwards;will-change:transform,opacity}
 @keyframes flyUp{
   0%{transform:translateY(0) translateX(0) rotate(-6deg);opacity:0}
   15%{opacity:1}
@@ -349,7 +357,7 @@ main{padding:8px 10px}
 <div class="start-copy">
 <div class="kicker">HAPPY BIRTHDAY WISHES • JOY • BLESSINGS</div>
 <h1 class="serif">Wish a <em>Birthday</em></h1>
-<p>Send a warm, joyful birthday wish filled with smiles, sweet cake slices, popping balloons, funny blessings, and a personal link or QR code that plays birthday music the moment someone explores the experience.</p>
+<p>Send a warm, joyful birthday wish filled with smiles, sweet cake slices, floating balloons, funny blessings, and a personal link or QR code that plays birthday music the moment someone explores the experience.</p>
 <div class="start-quote">“May every candle you light shine brighter than your worries, and every new year bring laughter, health, and endless happiness.”</div>
 <div class="wish-highlights">
 <span class="wish-pill">🎈 3 Wish Balloons</span>
@@ -397,7 +405,7 @@ main{padding:8px 10px}
 <div class="builder-step" data-bstep="1">
 <div class="kicker">FROM YOU</div>
 <h2 class="serif">Who Wishes Birthday?</h2>
-<p>Add your name and relationship so your birthday wish and blessings feel personal.</p>
+<p>Add your name and choose one relationship word so your birthday wish and blessings feel personal.</p>
 <div class="field">
 <label for="bSenderName">Your name (who wishes birthday)</label>
 <input id="bSenderName" maxlength="40" placeholder="Enter your name" required autocomplete="off">
@@ -405,12 +413,20 @@ main{padding:8px 10px}
 <div class="field">
 <label for="bRelationship">Relationship</label>
 <select id="bRelationship">
-<option value="Best Friend">Best Friend</option>
-<option value="Close Friend">Close Friend</option>
+<option value="Bestie">Bestie</option>
+<option value="Friend">Friend</option>
+<option value="Buddy">Buddy</option>
 <option value="Family">Family</option>
-<option value="Brother / Sister">Brother / Sister</option>
+<option value="Brother">Brother</option>
+<option value="Sister">Sister</option>
+<option value="Cousin">Cousin</option>
 <option value="Partner">Partner</option>
+<option value="Crush">Crush</option>
+<option value="Soulmate">Soulmate</option>
 <option value="Colleague">Colleague</option>
+<option value="Mentor">Mentor</option>
+<option value="Classmate">Classmate</option>
+<option value="Roommate">Roommate</option>
 </select>
 </div>
 <div class="builder-actions">
@@ -474,23 +490,23 @@ main{padding:8px 10px}
 <div class="gift-hint">✦ Tap the gift box to unwrap your birthday wish ✦</div>
 </div>
 
-<!-- Pull & Release with Balloons & Hearts Cheer -->
+<!-- Pull & Release Balloons with Light Mixed Cheer -->
 <div class="scene" data-scene="2">
-<div class="kicker">PULL, RELEASE &amp; CHEER</div>
-<h2 class="serif">Pull &amp; Release Birthday Cheer</h2>
+<div class="kicker">BALLOONS &amp; WISH RELEASE</div>
+<h2 class="serif">Pull &amp; Release Birthday Balloons</h2>
 <p id="s3WishIntro"></p>
 <div class="arch-stage" id="archStageBox">
-<div class="cheer-zone">
-<span class="mini-balloon">🎈</span>
-<span class="mini-heart">♥</span>
-<span class="mini-balloon">🎈</span>
-<span class="mini-heart">♥</span>
-<span class="mini-balloon">🎈</span>
+<div class="balloon-cheer-row">
+<span class="fly-balloon-icon">🎈</span>
+<span class="fly-balloon-icon">🎈</span>
+<span class="fly-cheer-spark">Yay!</span>
+<span class="fly-balloon-icon">🎈</span>
+<span class="fly-balloon-icon">🎈</span>
 </div>
 <div class="arch-bow" id="pullBowBtn" role="button" tabindex="0" aria-label="Pull and release">
 <span class="arch-tag" id="archNameTag"></span>
 </div>
-<small class="muted" id="pullStatusText">Tap or pull the ribbon bow to release balloons, love &amp; wishes</small>
+<small class="muted" id="pullStatusText">Tap or pull the ribbon bow to release balloons and a little cheer</small>
 <div class="released-wish-banner" id="releasedWishBanner"></div>
 </div>
 </div>
@@ -534,9 +550,12 @@ main{padding:8px 10px}
 <div class="scene" data-scene="5">
 <div class="kicker">SWEET CAKE SLICE</div>
 <h2 class="serif">Slice the birthday cake!</h2>
-<p>Cut into 4 sweet slices for <span class="recipient-highlight" id="s6Name"></span>—one for joy, one for luck, one for fun, and one for extra dessert!</p>
+<p>Watch the knife slice into 4 realistic layered pieces for <span class="recipient-highlight" id="s6Name"></span>—one for joy, one for luck, one for fun, and one for extra dessert!</p>
 <div class="cake-stage" id="cutCakeStage">
-<div class="cake-knife" aria-hidden="true"></div>
+<div class="cake-knife" aria-hidden="true">
+<span class="blade"></span>
+<span class="handle"></span>
+</div>
 <div class="cake-plate"></div>
 <div class="cake-slices-wrap">
 <div class="cake-slice"></div>
@@ -589,14 +608,14 @@ main{padding:8px 10px}
 <div class="quiz-box" id="quizContainer"></div>
 </div>
 
-<!-- Final Unbox Wish with Flying Balloons & Animations -->
+<!-- Final Unbox Wish with Flying Balloons & Light Cheer -->
 <div class="scene" data-scene="9">
 <div class="kicker">FINAL SURPRISE UNBOX</div>
 <h2 class="serif">Unbox your grand birthday wish!</h2>
 <div class="finale-stage" id="finaleStage">
 <button type="button" class="unbox-trigger" id="unboxFinaleBtn">
 <strong style="font-size:14px">🎁 Unbox Grand Birthday Wish</strong>
-<span style="font-size:11px">Tap to launch balloons &amp; full wish</span>
+<span style="font-size:11px">Tap to fly balloons &amp; reveal full wish</span>
 </button>
 <div class="finale-revealed" id="finaleRevealed">
 <div class="finale-wish-card">
@@ -681,19 +700,26 @@ main{padding:8px 10px}
     }
   }
 
-  function launchFlyingBalloons(amount = 12) {
+  function launchFlyingBalloonsWithCheer(amount = 14) {
     const stage = document.getElementById("finaleStage");
-    const emojis = ["🎈", "🎉", "💖", "🥳", "✨", "🎂"];
+    const balloons = ["🎈", "🎈", "🎈", "🎈", "🎈", "🎈"];
+    const lightCheers = ["Hooray!", "Yay!", "Woohoo!"];
     for (let i = 0; i < amount; i++) {
-      const b = document.createElement("span");
-      b.className = "flying-balloon";
-      b.textContent = emojis[i % emojis.length];
-      b.style.left = (8 + Math.random() * 84) + "%";
-      b.style.setProperty("--drift", ((Math.random() - 0.5) * 70).toFixed(0) + "px");
-      b.style.setProperty("--dur", (3.2 + Math.random() * 2.2).toFixed(1) + "s");
-      b.style.animationDelay = (Math.random() * 0.8).toFixed(2) + "s";
-      stage.appendChild(b);
-      setTimeout(() => b.remove(), 6000);
+      const isCheerTag = i % 4 === 2;
+      const el = document.createElement(isCheerTag ? "span" : "span");
+      if (isCheerTag) {
+        el.className = "flying-cheer-tag";
+        el.textContent = lightCheers[i % lightCheers.length];
+      } else {
+        el.className = "flying-balloon";
+        el.textContent = balloons[i % balloons.length];
+      }
+      el.style.left = (8 + Math.random() * 84) + "%";
+      el.style.setProperty("--drift", ((Math.random() - 0.5) * 70).toFixed(0) + "px");
+      el.style.setProperty("--dur", (3.2 + Math.random() * 2.2).toFixed(1) + "s");
+      el.style.animationDelay = (Math.random() * 0.8).toFixed(2) + "s";
+      stage.appendChild(el);
+      setTimeout(() => el.remove(), 6000);
     }
   }
 
@@ -886,7 +912,7 @@ main{padding:8px 10px}
   const moods = [
     "BIRTHDAY WISH",
     "WRAPPED SURPRISE",
-    "BALLOONS & LOVE",
+    "BALLOONS & CHEER",
     "3 WISH BALLOONS",
     "MAKE A WISH",
     "CAKE SLICES",
@@ -929,10 +955,10 @@ main{padding:8px 10px}
       "Sent by " + data.from + " (" + data.rel + ") with a whole heart full of birthday wishes.";
 
     document.getElementById("s3WishIntro").textContent =
-      "Pull the ribbon bow to cheer on " + data.name + " with balloons, love, and a special birthday blessing!";
-    document.getElementById("archNameTag").textContent = "Happy Birthday " + data.name + " ♥";
+      "Pull the ribbon bow to send flying balloons and a little birthday cheer to " + data.name + "!";
+    document.getElementById("archNameTag").textContent = "Happy Birthday " + data.name + " 🎈";
     document.getElementById("releasedWishBanner").textContent =
-      "🎈 ♥ Cheer unlocked! May " + data.name + " receive double happiness, sweet moments, and zero bad moods today — from " + data.from + "!";
+      "🎈 Yay! Balloons & wishes flying for " + data.name + "—may double happiness and sweet moments come your way today from " + data.from + "!";
 
     document.getElementById("s4Name").textContent = data.name;
     document.getElementById("s5OrdinalText").textContent = milestone;
@@ -950,7 +976,7 @@ main{padding:8px 10px}
       "Secret wish for " + data.name + ": Even when life gets busy, " + data.from + " (" + data.rel +
       ") is always cheering for your happiness, success, and biggest birthday smile!";
 
-    document.getElementById("finaleTitle").textContent = "Happy Birthday, " + data.name + "! 🎉";
+    document.getElementById("finaleTitle").textContent = "Happy Birthday, " + data.name + "! 🎈";
     document.getElementById("finaleMessage").textContent =
       "May your " + milestone.toLowerCase() + " bring nonstop blessings, extra cake slices, hilarious memories, and true peace every single day. — Best wishes from " +
       data.from + " (" + data.rel + ")";
@@ -959,12 +985,12 @@ main{padding:8px 10px}
     document.getElementById("unwrapGiftBtn").classList.remove("open");
     document.getElementById("archStageBox").classList.remove("released");
     document.getElementById("pullBowBtn").classList.remove("pulled");
-    document.getElementById("pullStatusText").textContent = "Tap or pull the ribbon bow to release balloons, love & wishes";
+    document.getElementById("pullStatusText").textContent = "Tap or pull the ribbon bow to release balloons and a little cheer";
 
     const balloonWishes = {
       1: "🎈 Wish 1: Happy Birthday " + data.name + "! May your smile stay bright and your heart stay light all year long.",
-      2: "💜 Wish 2: Cheers to " + data.name + "! May every dream you chase come closer with joy and confidence.",
-      3: "🌟 Wish 3: Special blessing for " + data.name + " from " + data.from + "—good health, sweet surprises, and endless celebration!"
+      2: "🎈 Wish 2: Hooray for " + data.name + "! May every dream you chase come closer with joy and confidence.",
+      3: "🎈 Wish 3: Special blessing for " + data.name + " from " + data.from + "—good health, sweet surprises, and endless celebration!"
     };
 
     document.querySelectorAll("#balloonGroup .balloon-3").forEach((b) => {
@@ -992,24 +1018,24 @@ main{padding:8px 10px}
     const quizBox = document.getElementById("quizContainer");
     const options = [
       {
-        label: data.from + " (" + data.rel + ") — Chief Birthday Cheerleader",
+        label: data.from + " (" + data.rel + ")",
         correct: true,
         msg: "😂 Spot on! Blessing unlocked: May " + data.name + " get VIP cake rights, zero chores today, and 100% good vibes from " + data.from + "!"
       },
       {
-        label: "A cake-stealing ninja",
+        label: "Cake Ninja",
         correct: false,
         msg: "🥷 Close! We warned the cake ninjas to stay away from " + data.name + "'s slices today!"
       },
       {
-        label: "A time-traveling blessing wizard",
+        label: "Wish Wizard",
         correct: false,
         msg: "🧙‍♂️ Fun guess! Blessing added anyway: May " + data.name + " age like fine chocolate—sweeter every year!"
       },
       {
-        label: "Your future self sending confetti",
+        label: "Future You",
         correct: false,
-        msg: "🎉 Future you says: Happy Birthday " + data.name + "! Keep laughing and enjoy every moment!"
+        msg: "🎈 Future you says: Happy Birthday " + data.name + "! Keep laughing and enjoy every moment!"
       }
     ];
 
@@ -1045,7 +1071,6 @@ main{padding:8px 10px}
     showScreen(storyScreen);
   }
 
-  // Explore starts audio continuously and moves to Gift Unwrap
   document.getElementById("exploreExperienceBtn").addEventListener("click", () => {
     enableAndPlayAudio();
     spawnConfetti(30);
@@ -1065,7 +1090,7 @@ main{padding:8px 10px}
     startContinuousAudio();
     pullBowBtn.classList.add("pulled");
     document.getElementById("archStageBox").classList.add("released");
-    document.getElementById("pullStatusText").textContent = "Balloons, love & birthday wish released! 🎈♥✨";
+    document.getElementById("pullStatusText").textContent = "Balloons & birthday cheer released! 🎈✨";
     spawnConfetti(34);
   });
 
@@ -1084,8 +1109,8 @@ main{padding:8px 10px}
     setTimeout(() => {
       stage.classList.add("sliced");
       spawnConfetti(36);
-      showToast("Cake sliced into 4 sweet pieces! 🔪🎂");
-    }, 450);
+      showToast("Cake sliced into 4 realistic pieces! 🔪🎂");
+    }, 620);
   });
 
   document.getElementById("openEnvelopeBtn").addEventListener("click", () => {
@@ -1104,13 +1129,13 @@ main{padding:8px 10px}
   document.getElementById("unboxFinaleBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("finaleStage").classList.add("unboxed");
-    launchFlyingBalloons(16);
+    launchFlyingBalloonsWithCheer(16);
     spawnConfetti(48);
   });
 
   document.getElementById("replayBalloonsBtn").addEventListener("click", () => {
     startContinuousAudio();
-    launchFlyingBalloons(14);
+    launchFlyingBalloonsWithCheer(14);
     spawnConfetti(26);
   });
 
