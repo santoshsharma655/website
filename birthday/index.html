@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#120e19">
-<meta name="description" content="Create a magical interactive birthday story with a wrapped gift, music, candles, balloons, memories and a personal shareable birthday link.">
-<meta name="keywords" content="birthday story, birthday surprise, birthday website, birthday wish, birthday link, birthday QR code">
+<link rel="icon" type="image/png" href="https://santoshsharma1.com.np/favicon.png">
+<link rel="apple-touch-icon" href="https://santoshsharma1.com.np/favicon.png">
+<meta name="description" content="Create a magical interactive birthday story with a wrapped gift, music, candles, 3 wish balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link or QR code.">
+<meta name="keywords" content="birthday story, birthday surprise, birthday wish, birthday blessing, birthday link, birthday QR code, Santosh Sharma">
 <meta name="author" content="Santosh Sharma">
 <meta name="creator" content="Santosh Sharma">
 <meta name="publisher" content="Santosh Sharma">
@@ -13,19 +15,21 @@
 <link rel="canonical" href="https://santoshsharma1.com.np/birthday/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="A Birthday Story Made With Love">
-<meta property="og:description" content="Open a little surprise made especially for someone special.">
+<meta property="og:title" content="Happy Birthday to You — Interactive Birthday Story & Surprise">
+<meta property="og:description" content="Celebrate someone special with balloons, cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
 <meta property="og:url" content="https://santoshsharma1.com.np/birthday/">
 <meta property="og:site_name" content="Birthday Stories">
+<meta property="og:image" content="https://santoshsharma1.com.np/favicon.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="A Birthday Story Made With Love">
-<meta name="twitter:description" content="Open a little surprise made especially for someone special.">
+<meta name="twitter:title" content="Happy Birthday to You — Interactive Birthday Story & Surprise">
+<meta name="twitter:description" content="Celebrate someone special with balloons, cake slices, heartfelt wishes, funny blessings and a shareable birthday link.">
 <meta name="twitter:creator" content="@santosh_sharma_offical">
-<title>Happy Birthday to You — A Little Surprise Made With Love</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Happy Birthday to You — Interactive Birthday Story &amp; Surprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="audio" href="https://santoshsharma1.com.np/assets/images/happybirthdaywish.mp3">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,8 +59,8 @@
       "@type": "WebPage",
       "@id": "https://santoshsharma1.com.np/birthday/#webpage",
       "url": "https://santoshsharma1.com.np/birthday/",
-      "name": "Happy Birthday to You — A Little Surprise Made With Love",
-      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, balloons, memories and a personal shareable birthday link.",
+      "name": "Happy Birthday to You — Interactive Birthday Story & Surprise",
+      "description": "Create a magical interactive birthday story with a wrapped gift, music, candles, 3 wish balloons, realistic cake slices, funny blessings quiz, unboxable finale and shareable link.",
       "isPartOf": {
         "@id": "https://santoshsharma1.com.np/#website"
       },
@@ -91,39 +95,42 @@
 }
 </script>
 <style>
-:root{color-scheme:dark;--bg:#120e19;--panel:#211a2b;--panel2:#2a2035;--ink:#fff9f3;--muted:#c3b5c8;--pink:#ff9ec7;--rose:#f16b9d;--gold:#f4cb83;--lav:#c6a9ed;--line:#ffffff20;--shadow:0 24px 80px #0008}
+:root{color-scheme:dark;--bg:#120e19;--panel:#211a2b;--panel2:#2a2035;--ink:#fff9f3;--muted:#c7b8cd;--pink:#ff9ec7;--rose:#f16b9d;--gold:#f4cb83;--lav:#c6a9ed;--mint:#83c8bd;--line:#ffffff22;--shadow:0 24px 80px #0008}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%;overflow:hidden}
-body{font-family:"DM Sans",sans-serif;background:radial-gradient(ellipse at 15% 12%,#53304b 0,transparent 36%),radial-gradient(ellipse at 88% 90%,#382747 0,transparent 40%),var(--bg);color:var(--ink)}
+body{font-family:"DM Sans",sans-serif;background:radial-gradient(ellipse at 15% 12%,#53304b 0,transparent 38%),radial-gradient(ellipse at 88% 90%,#382747 0,transparent 42%),var(--bg);color:var(--ink)}
 button,input,textarea,select{font:inherit}
 button{border:0;cursor:pointer}
 button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 #app{width:100%;height:100dvh;min-height:0;display:flex;flex-direction:column;position:relative;overflow:hidden;isolation:isolate}
 .ambient{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
-.ambient:before,.ambient:after{content:"";position:absolute;width:35vw;height:35vw;border-radius:50%;filter:blur(90px);opacity:.13;background:#ff78b6;animation:drift 13s ease-in-out infinite alternate}
+.ambient:before,.ambient:after{content:"";position:absolute;width:36vw;height:36vw;border-radius:50%;filter:blur(90px);opacity:.14;background:#ff78b6;animation:drift 13s ease-in-out infinite alternate;will-change:transform}
 .ambient:before{top:-15%;left:-10%}.ambient:after{right:-12%;bottom:-20%;background:#a77de2;animation-delay:-5s}
-@keyframes drift{to{transform:translate(8vw,5vh) scale(1.2)}}
-.topbar{height:54px;flex:0 0 54px;padding:0 clamp(14px,5vw,60px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;z-index:5}
+@keyframes drift{to{transform:translate(8vw,5vh) scale(1.18)}}
+.topbar{height:52px;flex:0 0 52px;padding:0 clamp(14px,5vw,60px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff14;z-index:5}
 .brand{font-weight:800;letter-spacing:.08em;font-size:12px}.brand span{color:var(--pink)}
 .top-note{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
-main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,2vh,22px) clamp(10px,3.5vw,48px);display:flex;align-items:center;justify-content:center}
+main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,1.8vh,20px) clamp(10px,3.5vw,48px);display:flex;align-items:center;justify-content:center}
 .screen{display:none;width:min(1060px,100%);height:100%;min-height:0;margin:auto}
 .screen.active{display:flex}
-.footer{height:24px;flex:0 0 24px;display:flex;align-items:center;justify-content:center;color:#95869e;font-size:9px;letter-spacing:.04em;z-index:3}
+.footer{height:28px;flex:0 0 28px;padding:0 12px;display:flex;align-items:center;justify-content:center;color:#b2a2ba;font-size:10px;letter-spacing:.03em;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:3}
 .kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);font-weight:800}
 .serif{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:-.03em}
 .muted{color:var(--muted)}
-.btn{min-height:42px;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:800;transition:transform .2s,filter .2s,background .2s}
+.btn{min-height:42px;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:800;transition:transform .2s,filter .2s,background .2s;will-change:transform}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .btn-primary{color:#321d2a;background:linear-gradient(110deg,#ffd9a0,#ff9fc6 58%,#d7b3f5);box-shadow:0 9px 30px #e778a52b}
 .btn-ghost{background:#ffffff0d;border:1px solid var(--line);color:var(--ink)}
 
 /* Start Screen */
-.start-screen{align-items:center;justify-content:center;gap:clamp(18px,4vw,64px)}
-.start-copy{flex:1;max-width:480px;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(10px,2vh,18px)}
-.start-copy h1{font-size:clamp(36px,5.8vw,68px);line-height:1.02}
+.start-screen{align-items:center;justify-content:center;gap:clamp(18px,4vw,56px)}
+.start-copy{flex:1;max-width:520px;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(9px,1.6vh,15px)}
+.start-copy h1{font-size:clamp(34px,5.4vw,64px);line-height:1.02}
 .start-copy h1 em{font-style:normal;color:var(--pink)}
-.start-copy>p{max-width:410px;color:var(--muted);font-size:clamp(12px,1.15vw,14px);line-height:1.75}
+.start-copy>p{max-width:470px;color:var(--muted);font-size:clamp(12px,1.1vw,13.5px);line-height:1.68}
+.wish-highlights{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.wish-pill{font-size:10.5px;color:#ffe6f0;background:#ffffff0e;border:1px solid #ffffff1c;padding:5px 10px;border-radius:999px}
+.start-quote{font-family:"Playfair Display",serif;font-style:italic;font-size:12.5px;color:var(--gold);border-left:2px solid var(--pink);padding-left:10px;line-height:1.5}
 .start-art{width:min(38%,370px);height:min(76%,450px);min-height:240px;border:1px solid var(--line);border-radius:190px 190px 28px 28px;background:linear-gradient(160deg,#ffffff17,#ffffff05);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:var(--shadow)}
 .gift{width:165px;height:142px;position:relative;filter:drop-shadow(0 20px 16px #0005);animation:giftFloat 3s ease-in-out infinite}
 @keyframes giftFloat{50%{transform:translateY(-10px) rotate(1deg)}}
@@ -132,7 +139,7 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,2vh,22px)
 .gift-ribbon{position:absolute;top:24px;left:73px;width:19px;height:104px;background:linear-gradient(90deg,#f6d18c,#fff0c1,#e6b66c);z-index:3}
 .gift-bow{position:absolute;top:0;left:61px;width:42px;height:33px;border:8px solid #f4d18e;border-radius:80% 15% 80% 15%;transform:rotate(-22deg);z-index:4}
 .gift-bow:after{content:"";position:absolute;width:42px;height:33px;border:8px solid #f4d18e;border-radius:15% 80% 15% 80%;left:20px;top:-6px;transform:rotate(45deg)}
-.start-caption{position:absolute;bottom:10%;text-align:center;font-family:"Playfair Display",serif;font-size:15px;color:#ffe7ed}
+.start-caption{position:absolute;bottom:9%;padding:0 12px;text-align:center;font-family:"Playfair Display",serif;font-size:14px;color:#ffe7ed}
 
 /* Builder Steps */
 .builder{align-items:center;justify-content:center}
@@ -165,23 +172,24 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,2vh,22px)
 
 /* Story Experience */
 .story{align-items:center;justify-content:center}
-.story-wrap{height:100%;width:min(790px,100%);max-height:100%;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#ffffff12,#ffffff06);box-shadow:var(--shadow);overflow:hidden;position:relative;display:flex;flex-direction:column}
-.story-top{height:44px;flex:0 0 44px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #ffffff14}
-.story-top span{font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-.story-body{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(10px,2.4vh,24px);overflow:hidden}
-.scene{display:none;width:100%;height:100%;min-height:0;flex-direction:column;align-items:center;justify-content:center;gap:clamp(7px,1.4vh,13px);animation:rise .4s ease;position:relative;z-index:1}
+.story-wrap{height:100%;width:min(820px,100%);max-height:100%;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#ffffff12,#ffffff06);box-shadow:var(--shadow);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.story-top{height:42px;flex:0 0 42px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #ffffff14}
+.story-top span{font-size:9.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.story-body{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(10px,2vh,22px);overflow:hidden}
+.scene{display:none;width:100%;height:100%;min-height:0;flex-direction:column;align-items:center;justify-content:center;gap:clamp(7px,1.2vh,12px);animation:rise .4s ease;position:relative;z-index:1}
 .scene.active{display:flex}
-.scene h1{font-size:clamp(28px,4.6vw,50px);line-height:1.05}
-.scene h2{font-size:clamp(22px,3.4vw,38px);line-height:1.1}
-.scene p{max-width:520px;color:var(--muted);font-size:clamp(11px,1.1vw,13px);line-height:1.65}
+.scene h1{font-size:clamp(28px,4.4vw,48px);line-height:1.05}
+.scene h2{font-size:clamp(22px,3.2vw,36px);line-height:1.1}
+.scene p{max-width:560px;color:var(--muted);font-size:clamp(11.5px,1.1vw,13px);line-height:1.6}
 .recipient-highlight{color:var(--pink)}
+.wish-note-card{max-width:540px;padding:10px 16px;border-radius:14px;background:#ffffff0c;border:1px solid #ffffff1c;font-size:12px;color:#ffeaf2;line-height:1.55}
 
-/* Step 1: Gift Unwrap */
-.gift-interactive{width:175px;height:145px;position:relative;cursor:pointer;filter:drop-shadow(0 14px 14px #0005);animation:giftFloat 2.8s infinite}
-.gift-interactive .gift-box{left:15px;width:145px;height:100px}
-.gift-interactive .gift-lid{left:5px;width:165px}
-.gift-interactive .gift-ribbon{left:78px;height:100px}
-.gift-interactive .gift-bow{left:66px}
+/* Gift Unwrap */
+.gift-interactive{width:165px;height:138px;position:relative;cursor:pointer;filter:drop-shadow(0 14px 14px #0005);animation:giftFloat 2.8s infinite}
+.gift-interactive .gift-box{left:10px;width:145px;height:98px}
+.gift-interactive .gift-lid{left:0;width:165px}
+.gift-interactive .gift-ribbon{left:73px;height:98px}
+.gift-interactive .gift-bow{left:61px}
 .gift-interactive.open .gift-lid{animation:lidOpen .75s forwards}
 .gift-interactive.open .gift-bow{animation:bowAway .75s forwards}
 @keyframes lidOpen{to{transform:translateY(-60px) rotate(-18deg);opacity:0}}
@@ -189,70 +197,114 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,2vh,22px)
 .gift-hint{font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;animation:pulse 1.5s infinite}
 @keyframes pulse{50%{opacity:.45}}
 
-/* Step 2: Pull & Release Arch */
-.arch-stage{width:min(360px,92%);display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px;border-radius:18px;background:#ffffff09;border:1px solid var(--line)}
-.arch-bow{width:180px;height:52px;border-bottom:4px solid var(--gold);border-radius:0 0 90px 90px;display:flex;align-items:flex-end;justify-content:center;position:relative;cursor:pointer;transition:transform .2s}
-.arch-bow.pulled{transform:translateY(10px) scaleY(1.18)}
-.arch-tag{background:#fff3e8;color:#45313b;padding:4px 14px;border-radius:999px;font-family:"Playfair Display",serif;font-weight:700;font-size:13px;box-shadow:0 6px 16px #0004}
+/* Pull & Release Arch + Floating Balloons & Hearts */
+.arch-stage{width:min(440px,95%);display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 16px;border-radius:20px;background:#ffffff09;border:1px solid var(--line);position:relative;overflow:hidden}
+.arch-bow{width:190px;height:52px;border-bottom:4px solid var(--gold);border-radius:0 0 95px 95px;display:flex;align-items:flex-end;justify-content:center;position:relative;cursor:pointer;transition:transform .25s ease}
+.arch-bow.pulled{transform:translateY(11px) scaleY(1.22);border-bottom-color:var(--pink)}
+.arch-tag{background:#fff3e8;color:#45313b;padding:5px 16px;border-radius:999px;font-family:"Playfair Display",serif;font-weight:700;font-size:13px;box-shadow:0 6px 16px #0004}
+.cheer-zone{display:flex;align-items:center;justify-content:center;gap:14px;min-height:46px;flex-wrap:wrap}
+.mini-balloon{font-size:22px;display:inline-block;opacity:.45;transform:translateY(6px);transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .5s}
+.mini-heart{font-size:20px;color:var(--pink);display:inline-block;opacity:.45;transform:scale(.85);transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .5s}
+.arch-stage.released .mini-balloon{opacity:1;transform:translateY(-6px) rotate(-6deg);animation:cheerBob 2.2s ease-in-out infinite}
+.arch-stage.released .mini-balloon:nth-child(2){animation-delay:.25s}.arch-stage.released .mini-balloon:nth-child(4){animation-delay:.45s}
+.arch-stage.released .mini-heart{opacity:1;transform:scale(1.15);animation:heartBeat 1.4s ease-in-out infinite}
+@keyframes cheerBob{50%{transform:translateY(-13px) rotate(6deg)}}
+@keyframes heartBeat{50%{transform:scale(1.3)}}
+.released-wish-banner{display:none;padding:8px 14px;border-radius:12px;background:linear-gradient(120deg,#ff9ec726,#f4cb8324);border:1px solid #ff9ec755;font-size:12px;color:#fff6fa;line-height:1.5}
+.arch-stage.released .released-wish-banner{display:block;animation:rise .35s ease}
 
-/* Step 3: Balloons */
-.balloons{width:min(480px,92%);height:155px;position:relative;display:flex;align-items:center;justify-content:space-evenly}
-.balloon{width:clamp(46px,7.5vw,68px);height:clamp(60px,9.5vw,88px);border-radius:50% 50% 47% 47%;position:relative;cursor:pointer;box-shadow:inset -8px -7px 14px #0003,inset 8px 7px 14px #ffffff30;animation:balloonFloat 2.6s ease-in-out infinite}
-.balloon:after{content:"";position:absolute;bottom:-7px;left:calc(50% - 5px);border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid currentColor}
-.balloon:before{content:"";position:absolute;top:100%;left:50%;height:65px;border-left:1px solid #ffffff80}
-.balloon:nth-child(1){background:#f17ca9;color:#f17ca9}.balloon:nth-child(2){background:#b69ae8;color:#b69ae8;animation-delay:.3s}.balloon:nth-child(3){background:#f1bd72;color:#f1bd72;animation-delay:.6s}.balloon:nth-child(4){background:#83c8bd;color:#83c8bd;animation-delay:.9s}.balloon:nth-child(5){background:#e58e9a;color:#e58e9a;animation-delay:1.2s}
-@keyframes balloonFloat{50%{transform:translateY(-12px) rotate(4deg)}}
-.balloon.popped{animation:pop .22s forwards;pointer-events:none}
-@keyframes pop{to{transform:scale(1.75);opacity:0}}
+/* 3 Wish Balloons */
+.balloons-three{width:min(460px,94%);height:142px;position:relative;display:flex;align-items:center;justify-content:space-around}
+.balloon-3{width:clamp(58px,9vw,78px);height:clamp(74px,11.5vw,98px);border-radius:50% 50% 47% 47%;position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800;letter-spacing:.06em;text-shadow:0 1px 4px #0006;box-shadow:inset -8px -7px 14px #0003,inset 8px 7px 14px #ffffff38;animation:balloonFloat 2.6s ease-in-out infinite}
+.balloon-3:after{content:"";position:absolute;bottom:-7px;left:calc(50% - 5px);border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid currentColor}
+.balloon-3:before{content:"";position:absolute;top:100%;left:50%;height:46px;border-left:1px solid #ffffff80}
+.balloon-3:nth-child(1){background:#f17ca9;color:#f17ca9}
+.balloon-3:nth-child(2){background:#b69ae8;color:#b69ae8;animation-delay:.35s}
+.balloon-3:nth-child(3){background:#f1bd72;color:#f1bd72;animation-delay:.7s}
+@keyframes balloonFloat{50%{transform:translateY(-11px) rotate(4deg)}}
+.balloon-3.popped{animation:pop .25s forwards;pointer-events:none}
+@keyframes pop{to{transform:scale(1.7);opacity:0}}
+.balloon-wish-box{min-height:46px;max-width:520px;padding:9px 15px;border-radius:13px;background:#ffffff0d;border:1px solid #ffffff20;font-size:12px;color:#ffe6f0;line-height:1.55;display:flex;align-items:center;justify-content:center}
 
-/* Step 4 & 5: Cake & Cut Cake */
-.cake-stage{width:210px;height:165px;position:relative;display:flex;align-items:flex-end;justify-content:center}
-.cake-plate{position:absolute;bottom:4px;width:200px;height:18px;border-radius:50%;background:linear-gradient(#fff0f4,#bd91a8);box-shadow:0 8px 18px #0005}
-.cake-body{position:absolute;bottom:15px;width:162px;height:82px;border-radius:12px 12px 16px 16px;background:linear-gradient(90deg,#bd5e86,#f49abb 55%,#d36d9b);box-shadow:inset 0 -11px #a94c78;transition:transform .4s ease}
-.cake-body:before{content:"";position:absolute;top:-13px;left:0;width:100%;height:26px;border-radius:50%;background:#fff0e9;box-shadow:inset 0 -5px #f3b4c9}
-.cake-drip{position:absolute;top:3px;left:18px;width:13px;height:21px;background:#fff0e9;border-radius:0 0 9px 9px;box-shadow:30px 4px #fff0e9,64px 0 #fff0e9,98px 4px #fff0e9}
-.cake-cut-line{display:none;position:absolute;bottom:15px;width:12px;height:96px;background:linear-gradient(180deg,var(--gold),var(--pink));border-radius:6px;z-index:3;box-shadow:0 0 14px var(--gold)}
-.cake-stage.sliced .cake-cut-line{display:block}
-.cake-stage.sliced .cake-body{transform:scaleX(1.06)}
-.candle-row{position:absolute;bottom:104px;display:flex;gap:16px;z-index:2}
-.candle{width:9px;height:40px;border-radius:3px;background:repeating-linear-gradient(0deg,#fff4d7 0 7px,#d99cc5 7px 13px);position:relative}
+/* Realistic 4-Slice Cake + Knife */
+.cake-stage{width:236px;height:166px;position:relative;display:flex;align-items:flex-end;justify-content:center}
+.cake-plate{position:absolute;bottom:4px;width:224px;height:18px;border-radius:50%;background:linear-gradient(#fff0f4,#bd91a8);box-shadow:0 8px 18px #0005}
+.cake-slices-wrap{position:absolute;bottom:15px;width:184px;height:84px;display:flex;align-items:flex-end;justify-content:center;gap:0;transition:gap .55s cubic-bezier(.22,1,.36,1)}
+.cake-slice{flex:1;height:100%;position:relative;background:linear-gradient(180deg,#fff3ec 0 18px,#f49abb 18px 26px,#d36d9b 26px 56px,#f9c5d8 56px 63px,#bd5e86 63px 100%);box-shadow:inset 0 -8px #9e436e;transition:transform .55s cubic-bezier(.22,1,.36,1),margin .55s ease}
+.cake-slice:first-child{border-radius:12px 0 0 14px}
+.cake-slice:last-child{border-radius:0 12px 14px 0}
+.cake-slice + .cake-slice{border-left:1px dashed #7a2c4e55}
+.cake-knife{position:absolute;top:16px;right:-14px;width:72px;height:12px;border-radius:2px 8px 8px 2px;background:linear-gradient(90deg,#e8edf2,#ffffff 55%,#cbd5e1);box-shadow:0 4px 12px #0006,inset -18px 0 0 #6d3b24;transform:rotate(-38deg);transform-origin:right center;opacity:0;pointer-events:none;z-index:5;transition:transform .55s ease,opacity .25s ease}
+.cake-knife:before{content:"";position:absolute;inset:0;border-right:2px solid #94a3b8}
+.cake-stage.slicing .cake-knife{opacity:1;animation:knifeCut .85s ease forwards}
+@keyframes knifeCut{
+  0%{opacity:1;transform:translate(16px,-18px) rotate(-35deg)}
+  55%{opacity:1;transform:translate(-52px,42px) rotate(-22deg)}
+  100%{opacity:0;transform:translate(-72px,54px) rotate(-15deg)}
+}
+.cake-stage.sliced .cake-slices-wrap{gap:6px}
+.cake-stage.sliced .cake-slice:nth-child(1){transform:translate(-6px,-5px) rotate(-3deg)}
+.cake-stage.sliced .cake-slice:nth-child(2){transform:translateY(-2px)}
+.cake-stage.sliced .cake-slice:nth-child(3){transform:translateY(-2px)}
+.cake-stage.sliced .cake-slice:nth-child(4){transform:translate(6px,-5px) rotate(3deg)}
+.candle-row{position:absolute;bottom:104px;display:flex;gap:18px;z-index:3}
+.candle{width:9px;height:38px;border-radius:3px;background:repeating-linear-gradient(0deg,#fff4d7 0 7px,#d99cc5 7px 13px);position:relative}
 .flame{display:none;position:absolute;width:14px;height:20px;left:-2px;top:-19px;border-radius:50% 50% 45% 45%;background:radial-gradient(ellipse at 50% 70%,#fff9c5 0 22%,#ffc65e 50%,#f47b36 80%);filter:drop-shadow(0 0 9px #ffbd55);transform-origin:bottom;animation:flicker .5s infinite alternate}
 .flame.lit{display:block}
 @keyframes flicker{to{transform:rotate(7deg) scale(.86)}}
 
-/* Step 6 & 7: Envelope & Letter */
-.envelope-box{width:min(320px,88%);padding:20px;border-radius:16px;background:linear-gradient(145deg,#ffd6e7,#f2a9c6);color:#452636;box-shadow:0 16px 36px #0005;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .25s}
+/* Envelope & Letter */
+.envelope-box{width:min(330px,90%);padding:18px;border-radius:16px;background:linear-gradient(145deg,#ffd6e7,#f2a9c6);color:#452636;box-shadow:0 16px 36px #0005;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .25s}
 .envelope-box:hover{transform:translateY(-3px)}
 .wax-seal{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffdf9e,#c78b38);color:#3b2108;font-family:"Playfair Display",serif;font-weight:800;font-size:17px;display:grid;place-items:center;box-shadow:0 4px 12px #0004}
-.message-paper{width:min(520px,100%);padding:clamp(14px,2.6vw,24px);border-radius:16px;background:#fff3e8;color:#45313b;box-shadow:0 15px 40px #0004;text-align:left}
+.message-paper{width:min(540px,100%);padding:clamp(14px,2.4vw,22px);border-radius:16px;background:#fff3e8;color:#45313b;box-shadow:0 15px 40px #0004;text-align:left}
 .message-paper .paper-kicker{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#a45b7c;font-weight:800}
-.message-paper h3{font:600 clamp(20px,3vw,30px) "Playfair Display",serif;margin:6px 0}
-.message-paper p{font-size:12px;line-height:1.7;color:#5c4552}
-.message-paper .from{margin-top:10px;font-size:11px;color:#a45b7c;font-weight:800;text-align:right}
+.message-paper h3{font:600 clamp(20px,2.8vw,28px) "Playfair Display",serif;margin:5px 0}
+.message-paper p{font-size:12px;line-height:1.68;color:#5c4552}
+.message-paper .from{margin-top:8px;font-size:11px;color:#a45b7c;font-weight:800;text-align:right}
 
-/* Step 8: Scratch / Reveal Secret */
-.secret-card{width:min(460px,94%);min-height:140px;border-radius:18px;padding:20px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;border:1px solid var(--line)}
+/* Secret */
+.secret-card{width:min(470px,94%);min-height:138px;border-radius:18px;padding:20px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;border:1px solid var(--line)}
 .secret-cover{position:absolute;inset:0;background:linear-gradient(135deg,#c9658e,#8a4b8c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:opacity .35s,transform .35s;z-index:2}
 .secret-cover.revealed{opacity:0;pointer-events:none;transform:scale(1.05)}
-.secret-body{font-family:"Playfair Display",serif;font-size:clamp(17px,2.4vw,24px);line-height:1.45;color:#fff9f3}
+.secret-body{font-family:"Playfair Display",serif;font-size:clamp(16px,2.2vw,22px);line-height:1.45;color:#fff9f3}
 
-/* Step 9: Quiz */
-.quiz-box{width:min(480px,95%);display:flex;flex-direction:column;gap:8px;text-align:left}
-.quiz-q{background:#ffffff12;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:700;font-size:13px;text-align:center}
-.quiz-opt{width:100%;padding:10px 14px;border-radius:11px;background:#ffffff0c;border:1px solid var(--line);color:var(--ink);font-size:12px;font-weight:600;text-align:left;transition:background .2s,border-color .2s}
-.quiz-opt:hover{background:#ffffff1a;border-color:var(--pink)}
+/* Funny Quiz & Blessings */
+.quiz-box{width:min(520px,96%);display:flex;flex-direction:column;gap:7px;text-align:left}
+.quiz-q{background:#ffffff12;border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-weight:700;font-size:12.5px;text-align:center;color:#fff4f8}
+.quiz-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.quiz-opt{width:100%;padding:9px 12px;border-radius:11px;background:#ffffff0c;border:1px solid var(--line);color:var(--ink);font-size:11.5px;font-weight:600;text-align:left;transition:background .2s,border-color .2s,transform .15s}
+.quiz-opt:hover{background:#ffffff1a;border-color:var(--pink);transform:translateY(-1px)}
 .quiz-opt.correct{background:#22c55e33;border-color:#4ade80;color:#dcfce7}
-.quiz-opt.wrong{background:#ef444433;border-color:#f87171;color:#fee2e2}
+.quiz-opt.wrong{background:#f59e0b2e;border-color:#fbbf24;color:#fef3c7}
+.blessing-feedback{min-height:38px;padding:8px 12px;border-radius:11px;background:#ffffff0a;border:1px dashed #ffffff26;font-size:11.5px;color:var(--gold);text-align:center;line-height:1.45}
 
-.story-bottom{height:52px;flex:0 0 52px;border-top:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-between;padding:0 14px;gap:8px}
-.story-bottom small{font-size:9px;color:var(--muted)}
-.story-bottom .btn{min-height:34px;padding:7px 15px;font-size:10px}
-.scene-dots{display:flex;gap:4px;align-items:center}
-.scene-dot{width:5px;height:5px;border-radius:50%;background:#ffffff35}
-.scene-dot.active{width:15px;border-radius:5px;background:var(--pink)}
+/* Finale Unbox + Flying Balloons */
+.finale-stage{width:min(560px,96%);min-height:210px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:hidden;padding:12px;border-radius:20px;background:#ffffff08;border:1px solid var(--line)}
+.unbox-trigger{padding:16px 22px;border-radius:18px;background:linear-gradient(135deg,#ffd9a0,#ff9ec7 60%,#d7b3f5);color:#2d1926;box-shadow:0 14px 34px #0006;display:flex;flex-direction:column;align-items:center;gap:5px;animation:giftFloat 2.8s infinite;z-index:3}
+.finale-revealed{display:none;flex-direction:column;align-items:center;gap:8px;z-index:3;animation:rise .45s ease}
+.finale-stage.unboxed .unbox-trigger{display:none}
+.finale-stage.unboxed .finale-revealed{display:flex}
+.finale-wish-card{padding:14px 18px;border-radius:16px;background:#fff3e8;color:#45313b;max-width:480px;box-shadow:0 14px 32px #0005}
+.finale-wish-card h3{font:700 clamp(18px,2.5vw,25px) "Playfair Display",serif;color:#8e3b63;margin-bottom:5px}
+.finale-wish-card p{font-size:12px;line-height:1.6;color:#523c49}
+.flying-balloon{position:absolute;bottom:-54px;font-size:26px;pointer-events:none;z-index:2;animation:flyUp var(--dur,4.2s) ease-in forwards;will-change:transform,opacity}
+@keyframes flyUp{
+  0%{transform:translateY(0) translateX(0) rotate(-6deg);opacity:0}
+  15%{opacity:1}
+  80%{opacity:1}
+  100%{transform:translateY(-300px) translateX(var(--drift,18px)) rotate(12deg);opacity:0}
+}
+
+.story-bottom{height:50px;flex:0 0 50px;border-top:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-between;padding:0 14px;gap:8px}
+.story-bottom small{font-size:10px;color:var(--muted)}
+.story-bottom .btn{min-height:34px;padding:7px 15px;font-size:10.5px}
+.scene-dots{display:flex;gap:5px;align-items:center}
+.scene-dot{width:6px;height:6px;border-radius:50%;background:#ffffff35;transition:all .25s}
+.scene-dot.active{width:16px;border-radius:6px;background:var(--pink)}
 
 .confetti-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:8}
-.confetti-piece{position:absolute;top:-15px;width:8px;height:12px;animation:confettiFall 3.2s linear forwards}
+.confetti-piece{position:absolute;top:-15px;width:8px;height:12px;animation:confettiFall 3.2s linear forwards;will-change:transform,opacity}
 @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
 
 .toast{position:fixed;z-index:30;left:50%;bottom:36px;transform:translate(-50%,14px);opacity:0;pointer-events:none;background:#fff4ea;color:#342331;padding:10px 18px;border-radius:99px;font-size:11px;font-weight:800;transition:.25s;box-shadow:var(--shadow)}
@@ -261,18 +313,20 @@ main{flex:1;min-height:0;position:relative;z-index:2;padding:clamp(8px,2vh,22px)
 @media(max-width:700px){
 .topbar{height:46px;flex-basis:46px;padding:0 14px}.top-note{font-size:8px}
 main{padding:8px 10px}
-.start-screen{flex-direction:column;justify-content:center;gap:12px}
-.start-copy{width:100%;align-items:center;text-align:center;gap:9px}
-.start-copy h1{font-size:clamp(32px,9.5vw,48px)}
-.start-art{width:min(62%,220px);height:min(32%,195px);min-height:125px;border-radius:100px 100px 20px 20px}
-.gift{transform:scale(.65)}.start-caption{font-size:11px}
+.start-screen{flex-direction:column;justify-content:center;gap:10px}
+.start-copy{width:100%;align-items:center;text-align:center;gap:7px}
+.start-copy h1{font-size:clamp(30px,9vw,44px)}
+.start-art{width:min(58%,200px);height:min(28%,175px);min-height:118px;border-radius:100px 100px 20px 20px}
+.gift{transform:scale(.62)}.start-caption{font-size:11px}
 .builder-card{padding:15px;border-radius:18px}
 .share-card{grid-template-columns:1fr 114px;gap:12px;padding:14px;border-radius:17px}
 #qr{min-height:92px}#qr img,#qr canvas{width:92px!important;height:92px!important}
 .story-wrap{border-radius:17px}
 .cake-stage{transform:scale(.82);height:142px}
-.balloons{height:125px}.balloon:before{height:42px}
+.balloons-three{height:118px}.balloon-3:before{height:34px}
+.quiz-grid{grid-template-columns:1fr}
 .story-bottom{height:46px;flex-basis:46px;padding:0 10px}
+.footer{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){
 *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -286,40 +340,46 @@ main{padding:8px 10px}
 
 <header class="topbar">
 <div class="brand">BIRTHDAY<span>STORY</span></div>
-<div class="top-note">Made with love ✦</div>
+<div class="top-note">Happy Birthday Wishes &amp; Blessings ✦</div>
 </header>
 
 <main>
-<!-- 0. ENTRY SCREEN: "Wish a Birthday" -->
+<!-- 0. ENTRY SCREEN: Rich Birthday Wish Content (No Audio Here) -->
 <section class="screen start-screen active" id="startScreen">
 <div class="start-copy">
-<div class="kicker">CELEBRATE SOMEONE SPECIAL</div>
+<div class="kicker">HAPPY BIRTHDAY WISHES • JOY • BLESSINGS</div>
 <h1 class="serif">Wish a <em>Birthday</em></h1>
-<p>Create a personalized interactive birthday surprise with a link and QR code, or open a shared birthday story.</p>
+<p>Send a warm, joyful birthday wish filled with smiles, sweet cake slices, popping balloons, funny blessings, and a personal link or QR code that plays birthday music the moment someone explores the experience.</p>
+<div class="start-quote">“May every candle you light shine brighter than your worries, and every new year bring laughter, health, and endless happiness.”</div>
+<div class="wish-highlights">
+<span class="wish-pill">🎈 3 Wish Balloons</span>
+<span class="wish-pill">🎂 Realistic Cake Slices</span>
+<span class="wish-pill">😄 Funny Blessings Quiz</span>
+<span class="wish-pill">🎁 Unbox Finale</span>
+</div>
 <button class="btn btn-primary" id="wishBirthdayBtn">Wish a Birthday →</button>
 </div>
 <div class="start-art">
 <div class="gift">
 <div class="gift-bow"></div><div class="gift-lid"></div><div class="gift-box"></div><div class="gift-ribbon"></div>
 </div>
-<div class="start-caption">Tap Wish a Birthday to begin</div>
+<div class="start-caption">Happy Birthday wishes wrapped with care</div>
 </div>
 </section>
 
-<!-- 1. BUILDER WIZARD (Step 1: Name + DOB, Step 2: Sender Name + Relationship) -->
+<!-- 1. BUILDER WIZARD -->
 <section class="screen builder" id="builderScreen">
 <div class="builder-card">
 <div class="progress-row">
-<span class="progress-text" id="buildStepText">STEP 1 OF 2 · BIRTHDAY PERSON</span>
+<span class="progress-text" id="buildStepText">1 OF 2 · BIRTHDAY PERSON</span>
 <span class="progress-text" id="buildStepPct">50%</span>
 </div>
 <div class="progress-track"><div class="progress-fill" id="buildProgressFill"></div></div>
 
-<!-- Builder Step 1: Name & Date of Birth -->
 <div class="builder-step active" data-bstep="0">
-<div class="kicker">STEP 01</div>
+<div class="kicker">BIRTHDAY PERSON</div>
 <h2 class="serif">Name &amp; Date of Birth</h2>
-<p>Enter the birthday person's name and date of birth.</p>
+<p>Enter the birthday person's name and date of birth to craft a heartfelt, fun birthday surprise.</p>
 <div class="field">
 <label for="bPersonName">Birthday person's name</label>
 <input id="bPersonName" maxlength="40" placeholder="Enter name" required autocomplete="off">
@@ -330,15 +390,14 @@ main{padding:8px 10px}
 </div>
 <div class="builder-actions">
 <button type="button" class="btn btn-ghost" id="backToStartBtn">← Back</button>
-<button type="button" class="btn btn-primary" id="nextToSenderBtn">Next Step →</button>
+<button type="button" class="btn btn-primary" id="nextToSenderBtn">Next →</button>
 </div>
 </div>
 
-<!-- Builder Step 2: Who Wishes Birthday (Sender Name + Relationship) -->
 <div class="builder-step" data-bstep="1">
-<div class="kicker">STEP 02</div>
+<div class="kicker">FROM YOU</div>
 <h2 class="serif">Who Wishes Birthday?</h2>
-<p>Enter your name and choose your relationship.</p>
+<p>Add your name and relationship so your birthday wish and blessings feel personal.</p>
 <div class="field">
 <label for="bSenderName">Your name (who wishes birthday)</label>
 <input id="bSenderName" maxlength="40" placeholder="Enter your name" required autocomplete="off">
@@ -362,13 +421,13 @@ main{padding:8px 10px}
 </div>
 </section>
 
-<!-- 2. LINK & QR SHARE SCREEN (Copy Link + Download QR as JPG) -->
+<!-- 2. LINK & QR SHARE SCREEN -->
 <section class="screen share-screen" id="shareScreen">
 <div class="share-card">
 <div>
-<div class="kicker">LINK &amp; QR READY</div>
+<div class="kicker">BIRTHDAY LINK &amp; QR READY</div>
 <h2 class="serif">Share the Birthday Surprise</h2>
-<p>Copy the link or download the QR code as a JPG image. Scanning the QR or opening the link launches the birthday story on <strong>santoshsharma1.com.np/birthday</strong>.</p>
+<p>Send this link or QR code—when opened, music starts only after tapping <strong>Explore the experience</strong> on <strong>santoshsharma1.com.np/birthday</strong>.</p>
 <div class="url-box" id="generatedUrlBox"></div>
 <div class="share-actions">
 <button type="button" class="btn btn-primary" id="copyUrlBtn">Copy Link</button>
@@ -383,72 +442,85 @@ main{padding:8px 10px}
 </div>
 </section>
 
-<!-- 3. BIRTHDAY STORY EXPERIENCE (Opened via Link or QR) -->
+<!-- 3. BIRTHDAY STORY EXPERIENCE -->
 <section class="screen story" id="storyScreen">
 <div class="story-wrap">
 <div class="story-top">
-<span id="storyStepLabel">STEP 01 / 09</span>
-<span id="storyBadgeText">BIRTHDAY STORY</span>
+<span id="storyBadgeText">BIRTHDAY WISH</span>
+<span id="storyMoodText">CELEBRATION &amp; BLESSINGS</span>
 </div>
 
 <div class="story-body">
 <div class="confetti-layer" id="confetti"></div>
 
-<!-- Story Step 1: Welcome + "Explore the experience" ONLY (Starts Audio Continuously) -->
+<!-- Welcome + "Explore the experience" (Starts Audio Here) -->
 <div class="scene active" data-scene="0">
-<div class="kicker">HAPPY BIRTHDAY</div>
+<div class="kicker">HAPPY BIRTHDAY WISH</div>
 <h1 class="serif">Happy Birthday, <span class="recipient-highlight" id="s1Name"></span>!</h1>
 <p id="s1MilestoneText"></p>
+<div class="wish-note-card" id="s1WishMessage"></div>
 <button type="button" class="btn btn-primary" id="exploreExperienceBtn">Explore the experience</button>
 </div>
 
-<!-- Story Step 2: Tap Gift to Unwrap -->
+<!-- Gift Unwrap with Rich Wish -->
 <div class="scene" data-scene="1">
-<div class="kicker">STEP 02 • WRAPPED SURPRISE</div>
-<h2 class="serif">A birthday surprise wrapped for <span class="recipient-highlight" id="s2Name"></span></h2>
+<div class="kicker">WRAPPED BIRTHDAY WISH</div>
+<h2 class="serif">A special birthday surprise for <span class="recipient-highlight" id="s2Name"></span></h2>
 <p id="s2FromText"></p>
+<div class="wish-note-card">May today bring big smiles, loud laughs, zero stress, and all the best things life has to offer. Happy Birthday!</div>
 <div class="gift-interactive" id="unwrapGiftBtn" role="button" tabindex="0" aria-label="Tap to unwrap">
 <div class="gift-bow"></div><div class="gift-lid"></div><div class="gift-box"></div><div class="gift-ribbon"></div>
 </div>
-<div class="gift-hint">✦ Tap to unwrap ✦</div>
+<div class="gift-hint">✦ Tap the gift box to unwrap your birthday wish ✦</div>
 </div>
 
-<!-- Story Step 3: Pull & Release -->
+<!-- Pull & Release with Balloons & Hearts Cheer -->
 <div class="scene" data-scene="2">
-<div class="kicker">STEP 03 • SPECIAL MOMENT</div>
-<h2 class="serif">Pull &amp; Release</h2>
-<p>Pull the ribbon bow below to release a special birthday wish.</p>
-<div class="arch-stage">
+<div class="kicker">PULL, RELEASE &amp; CHEER</div>
+<h2 class="serif">Pull &amp; Release Birthday Cheer</h2>
+<p id="s3WishIntro"></p>
+<div class="arch-stage" id="archStageBox">
+<div class="cheer-zone">
+<span class="mini-balloon">🎈</span>
+<span class="mini-heart">♥</span>
+<span class="mini-balloon">🎈</span>
+<span class="mini-heart">♥</span>
+<span class="mini-balloon">🎈</span>
+</div>
 <div class="arch-bow" id="pullBowBtn" role="button" tabindex="0" aria-label="Pull and release">
 <span class="arch-tag" id="archNameTag"></span>
 </div>
-<small class="muted" id="pullStatusText">Tap / pull to release</small>
+<small class="muted" id="pullStatusText">Tap or pull the ribbon bow to release balloons, love &amp; wishes</small>
+<div class="released-wish-banner" id="releasedWishBanner"></div>
 </div>
 </div>
 
-<!-- Story Step 4: Pop the Balloons -->
+<!-- 3 Balloons -> Show Birthday Special Wish Message on Blast -->
 <div class="scene" data-scene="3">
-<div class="kicker">STEP 04 • CELEBRATION</div>
-<h2 class="serif">Pop the balloons!</h2>
-<p>Tap every balloon to celebrate <span class="recipient-highlight" id="s4Name"></span>.</p>
-<div class="balloons" id="balloonGroup">
-<div class="balloon" role="button" tabindex="0" aria-label="Balloon 1"></div>
-<div class="balloon" role="button" tabindex="0" aria-label="Balloon 2"></div>
-<div class="balloon" role="button" tabindex="0" aria-label="Balloon 3"></div>
-<div class="balloon" role="button" tabindex="0" aria-label="Balloon 4"></div>
-<div class="balloon" role="button" tabindex="0" aria-label="Balloon 5"></div>
+<div class="kicker">3 WISH BALLOONS</div>
+<h2 class="serif">Pop the 3 birthday balloons!</h2>
+<p>Blast each balloon to unlock a special birthday wish for <span class="recipient-highlight" id="s4Name"></span>.</p>
+<div class="balloons-three" id="balloonGroup">
+<div class="balloon-3" data-wish="1" role="button" tabindex="0" aria-label="Balloon 1">WISH 1</div>
+<div class="balloon-3" data-wish="2" role="button" tabindex="0" aria-label="Balloon 2">WISH 2</div>
+<div class="balloon-3" data-wish="3" role="button" tabindex="0" aria-label="Balloon 3">WISH 3</div>
 </div>
-<p id="balloonCountText">Tap balloons to pop them</p>
+<div class="balloon-wish-box" id="balloonWishBox">Tap any of the 3 balloons to blast and read your special birthday wish!</div>
 </div>
 
-<!-- Story Step 5: Light All Three Candles -->
+<!-- Light Candles -->
 <div class="scene" data-scene="4">
-<div class="kicker">STEP 05 • MAKE A WISH</div>
+<div class="kicker">MAKE A BIRTHDAY WISH</div>
 <h2 class="serif">Light all three candles</h2>
-<p>Make a wish for your <span id="s5OrdinalText"></span> and light the candles.</p>
+<p>Close your eyes, make a wish for your <span id="s5OrdinalText"></span>, and light all three candles.</p>
 <div class="cake-stage">
 <div class="cake-plate"></div>
-<div class="cake-body"><div class="cake-drip"></div></div>
+<div class="cake-slices-wrap">
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+</div>
 <div class="candle-row">
 <div class="candle"><i class="flame"></i></div>
 <div class="candle"><i class="flame"></i></div>
@@ -458,31 +530,36 @@ main{padding:8px 10px}
 <button type="button" class="btn btn-primary" id="lightCandlesBtn">Light all three candles ✨</button>
 </div>
 
-<!-- Story Step 6: Cut the Cake -->
+<!-- Realistic 4-Slice Cake Cutting with Knife -->
 <div class="scene" data-scene="5">
-<div class="kicker">STEP 06 • SWEET MOMENT</div>
-<h2 class="serif">Now cut the cake!</h2>
-<p>A slice of happiness is waiting inside for <span class="recipient-highlight" id="s6Name"></span>.</p>
+<div class="kicker">SWEET CAKE SLICE</div>
+<h2 class="serif">Slice the birthday cake!</h2>
+<p>Cut into 4 sweet slices for <span class="recipient-highlight" id="s6Name"></span>—one for joy, one for luck, one for fun, and one for extra dessert!</p>
 <div class="cake-stage" id="cutCakeStage">
+<div class="cake-knife" aria-hidden="true"></div>
 <div class="cake-plate"></div>
-<div class="cake-body"><div class="cake-drip"></div></div>
-<div class="cake-cut-line"></div>
+<div class="cake-slices-wrap">
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+<div class="cake-slice"></div>
+</div>
 <div class="candle-row">
 <div class="candle"><i class="flame lit"></i></div>
 <div class="candle"><i class="flame lit"></i></div>
 <div class="candle"><i class="flame lit"></i></div>
 </div>
 </div>
-<button type="button" class="btn btn-primary" id="cutCakeBtn">Cut the cake 🎂</button>
+<button type="button" class="btn btn-primary" id="cutCakeBtn">Cut cake into slices 🔪</button>
 </div>
 
-<!-- Story Step 7: Sealed Envelope & Heartfelt Letter -->
+<!-- Letter -->
 <div class="scene" data-scene="6">
-<div class="kicker">STEP 07 • FROM THE HEART</div>
+<div class="kicker">HEARTFELT BIRTHDAY NOTE</div>
 <h2 class="serif">A few words from the heart</h2>
 <div class="envelope-box" id="openEnvelopeBtn" role="button" tabindex="0" aria-label="Open birthday letter">
 <div class="wax-seal" id="envelopeSeal">♥</div>
-<strong style="font-size:13px">Tap the seal to open the letter</strong>
+<strong style="font-size:13px">Tap the seal to read your birthday letter</strong>
 </div>
 <div class="message-paper" id="letterPaper" style="display:none">
 <div class="paper-kicker" id="letterKicker"></div>
@@ -492,29 +569,48 @@ main{padding:8px 10px}
 </div>
 </div>
 
-<!-- Story Step 8: Scratch / Reveal Secret -->
+<!-- Secret -->
 <div class="scene" data-scene="7">
-<div class="kicker">STEP 08 • LITTLE SECRET</div>
+<div class="kicker">SPECIAL SECRET WISH</div>
 <h2 class="serif">One more thing to know</h2>
 <div class="secret-card" style="background:linear-gradient(135deg,#3a2248,#241530)">
 <div class="secret-cover" id="revealSecretBtn" role="button" tabindex="0">
-<strong style="font-size:14px">A little secret, just for you</strong>
+<strong style="font-size:14px">A little birthday secret, just for you</strong>
 <span style="font-size:11px;opacity:.9">Tap to reveal</span>
 </div>
 <div class="secret-body" id="secretMessageText"></div>
 </div>
 </div>
 
-<!-- Story Step 9: Little Quiz -->
+<!-- Funny Quiz & Blessings -->
 <div class="scene" data-scene="8">
-<div class="kicker">STEP 09 • A LITTLE QUIZ</div>
-<h2 class="serif">Remember when...?</h2>
+<div class="kicker">FUNNY BIRTHDAY QUIZ &amp; BLESSINGS</div>
+<h2 class="serif">Birthday trivia &amp; cheeky blessings!</h2>
 <div class="quiz-box" id="quizContainer"></div>
+</div>
+
+<!-- Final Unbox Wish with Flying Balloons & Animations -->
+<div class="scene" data-scene="9">
+<div class="kicker">FINAL SURPRISE UNBOX</div>
+<h2 class="serif">Unbox your grand birthday wish!</h2>
+<div class="finale-stage" id="finaleStage">
+<button type="button" class="unbox-trigger" id="unboxFinaleBtn">
+<strong style="font-size:14px">🎁 Unbox Grand Birthday Wish</strong>
+<span style="font-size:11px">Tap to launch balloons &amp; full wish</span>
+</button>
+<div class="finale-revealed" id="finaleRevealed">
+<div class="finale-wish-card">
+<h3 id="finaleTitle"></h3>
+<p id="finaleMessage"></p>
+</div>
+<button type="button" class="btn btn-ghost" id="replayBalloonsBtn">🎈 Fly More Balloons</button>
+</div>
+</div>
 </div>
 </div>
 
 <div class="story-bottom">
-<small id="storyFooterNote">♫ Music playing</small>
+<small id="storyFooterNote">♫ Birthday song on Explore</small>
 <div class="scene-dots" id="sceneDots"></div>
 <button type="button" class="btn btn-primary" id="nextSceneBtn">Next →</button>
 </div>
@@ -522,7 +618,7 @@ main{padding:8px 10px}
 </section>
 </main>
 
-<footer class="footer">https://santoshsharma1.com.np/birthday</footer>
+<footer class="footer">🎂 May your cake never run out of cream, your Wi-Fi stay fast, and your blessings multiply all year long!</footer>
 <div class="toast" id="toast"></div>
 </div>
 
@@ -534,7 +630,10 @@ main{padding:8px 10px}
   audioEl.src = AUDIO_SRC;
   audioEl.loop = true;
 
+  let audioEnabled = false;
+
   function startContinuousAudio() {
+    if (!audioEnabled) return;
     audioEl.loop = true;
     const playPromise = audioEl.play();
     if (playPromise && typeof playPromise.catch === "function") {
@@ -542,8 +641,10 @@ main{padding:8px 10px}
     }
   }
 
-  startContinuousAudio();
-  document.addEventListener("pointerdown", startContinuousAudio, { once: false });
+  function enableAndPlayAudio() {
+    audioEnabled = true;
+    startContinuousAudio();
+  }
 
   // Screens
   const startScreen = document.getElementById("startScreen");
@@ -565,10 +666,10 @@ main{padding:8px 10px}
     showToast._timer = setTimeout(() => t.classList.remove("show"), 2200);
   }
 
-  function spawnConfetti() {
+  function spawnConfetti(count = 36) {
     const layer = document.getElementById("confetti");
     const colors = ["#ff9ec7", "#ffd9a0", "#c6a9ed", "#83c8bd", "#f16b9d"];
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < count; i++) {
       const piece = document.createElement("i");
       piece.className = "confetti-piece";
       piece.style.left = Math.random() * 100 + "%";
@@ -577,6 +678,22 @@ main{padding:8px 10px}
       piece.style.animationDelay = (Math.random() * 0.4) + "s";
       layer.appendChild(piece);
       setTimeout(() => piece.remove(), 4200);
+    }
+  }
+
+  function launchFlyingBalloons(amount = 12) {
+    const stage = document.getElementById("finaleStage");
+    const emojis = ["🎈", "🎉", "💖", "🥳", "✨", "🎂"];
+    for (let i = 0; i < amount; i++) {
+      const b = document.createElement("span");
+      b.className = "flying-balloon";
+      b.textContent = emojis[i % emojis.length];
+      b.style.left = (8 + Math.random() * 84) + "%";
+      b.style.setProperty("--drift", ((Math.random() - 0.5) * 70).toFixed(0) + "px");
+      b.style.setProperty("--dur", (3.2 + Math.random() * 2.2).toFixed(1) + "s");
+      b.style.animationDelay = (Math.random() * 0.8).toFixed(2) + "s";
+      stage.appendChild(b);
+      setTimeout(() => b.remove(), 6000);
     }
   }
 
@@ -629,11 +746,11 @@ main{padding:8px 10px}
   function setBuilderStep(idx) {
     bSteps.forEach((el, i) => el.classList.toggle("active", i === idx));
     if (idx === 0) {
-      buildStepText.textContent = "STEP 1 OF 2 · BIRTHDAY PERSON";
+      buildStepText.textContent = "1 OF 2 · BIRTHDAY PERSON";
       buildStepPct.textContent = "50%";
       buildProgressFill.style.width = "50%";
     } else {
-      buildStepText.textContent = "STEP 2 OF 2 · WHO WISHES BIRTHDAY";
+      buildStepText.textContent = "2 OF 2 · WHO WISHES BIRTHDAY";
       buildStepPct.textContent = "100%";
       buildProgressFill.style.width = "100%";
     }
@@ -689,13 +806,7 @@ main{padding:8px 10px}
       return;
     }
 
-    const payload = {
-      name: pName,
-      dob: pDob,
-      from: sName,
-      rel: rel
-    };
-
+    const payload = { name: pName, dob: pDob, from: sName, rel: rel };
     const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
     currentShareUrl = CANONICAL_BASE + "/?w=" + encodeURIComponent(encoded);
     currentData = payload;
@@ -704,17 +815,19 @@ main{padding:8px 10px}
 
     const qrContainer = document.getElementById("qr");
     qrContainer.innerHTML = "";
-    new QRCode(qrContainer, {
-      text: currentShareUrl,
-      width: 150,
-      height: 150,
-      colorDark: "#120e19",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.M
-    });
+    if (typeof QRCode === "function") {
+      new QRCode(qrContainer, {
+        text: currentShareUrl,
+        width: 150,
+        height: 150,
+        colorDark: "#120e19",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
 
     showScreen(shareScreen);
-    spawnConfetti();
+    spawnConfetti(28);
   });
 
   document.getElementById("copyUrlBtn").addEventListener("click", async () => {
@@ -727,7 +840,6 @@ main{padding:8px 10px}
     }
   });
 
-  // Download QR as JPG
   document.getElementById("downloadQrJpgBtn").addEventListener("click", () => {
     const qrCanvas = document.querySelector("#qr canvas");
     const qrImg = document.querySelector("#qr img");
@@ -764,12 +876,25 @@ main{padding:8px 10px}
     showScreen(builderScreen);
   });
 
-  // 9-Step Birthday Story Experience
+  // Story Scenes Setup
   const scenes = document.querySelectorAll(".scene");
   const sceneDotsContainer = document.getElementById("sceneDots");
-  const storyStepLabel = document.getElementById("storyStepLabel");
+  const storyMoodText = document.getElementById("storyMoodText");
   const nextSceneBtn = document.getElementById("nextSceneBtn");
   let activeSceneIdx = 0;
+
+  const moods = [
+    "BIRTHDAY WISH",
+    "WRAPPED SURPRISE",
+    "BALLOONS & LOVE",
+    "3 WISH BALLOONS",
+    "MAKE A WISH",
+    "CAKE SLICES",
+    "FROM THE HEART",
+    "LITTLE SECRET",
+    "FUNNY BLESSINGS",
+    "GRAND FINALE"
+  ];
 
   scenes.forEach((_, idx) => {
     const dot = document.createElement("span");
@@ -784,7 +909,7 @@ main{padding:8px 10px}
     scenes.forEach((sc, i) => sc.classList.toggle("active", i === idx));
     const dots = sceneDotsContainer.querySelectorAll(".scene-dot");
     dots.forEach((d, i) => d.classList.toggle("active", i === idx));
-    storyStepLabel.textContent = "STEP 0" + (idx + 1) + " / 09";
+    storyMoodText.textContent = moods[idx] || "BIRTHDAY WISH";
     nextSceneBtn.style.visibility = idx === scenes.length - 1 ? "hidden" : "visible";
   }
 
@@ -792,16 +917,23 @@ main{padding:8px 10px}
     const milestone = getBirthdayMilestone(data.dob);
     const dobText = formatDobReadable(data.dob);
 
-    document.getElementById("storyBadgeText").textContent = "FOR " + data.name.toUpperCase();
+    document.getElementById("storyBadgeText").textContent = "HAPPY BIRTHDAY " + data.name.toUpperCase();
     document.getElementById("s1Name").textContent = data.name;
     document.getElementById("s1MilestoneText").textContent =
-      milestone + (dobText ? " • Born " + dobText : "") + " • Wished by " + data.from + " (" + data.rel + ")";
+      milestone + (dobText ? " • Born " + dobText : "") + " • Warm wishes from " + data.from + " (" + data.rel + ")";
+    document.getElementById("s1WishMessage").textContent =
+      "Happy Birthday, " + data.name + "! Wishing you endless joy, big milestones, great health, and a day packed with unforgettable smiles.";
 
     document.getElementById("s2Name").textContent = data.name;
     document.getElementById("s2FromText").textContent =
-      "Sent by " + data.from + " (" + data.rel + ") with warmth and joy.";
+      "Sent by " + data.from + " (" + data.rel + ") with a whole heart full of birthday wishes.";
 
-    document.getElementById("archNameTag").textContent = data.name + " ♥";
+    document.getElementById("s3WishIntro").textContent =
+      "Pull the ribbon bow to cheer on " + data.name + " with balloons, love, and a special birthday blessing!";
+    document.getElementById("archNameTag").textContent = "Happy Birthday " + data.name + " ♥";
+    document.getElementById("releasedWishBanner").textContent =
+      "🎈 ♥ Cheer unlocked! May " + data.name + " receive double happiness, sweet moments, and zero bad moods today — from " + data.from + "!";
+
     document.getElementById("s4Name").textContent = data.name;
     document.getElementById("s5OrdinalText").textContent = milestone;
     document.getElementById("s6Name").textContent = data.name;
@@ -810,62 +942,113 @@ main{padding:8px 10px}
     document.getElementById("letterKicker").textContent = milestone + " • " + data.rel;
     document.getElementById("letterGreeting").textContent = "Dear " + data.name + ",";
     document.getElementById("letterBodyText").textContent =
-      "Happy Birthday, " + data.name + "! Wishing you a day filled with genuine smiles, peaceful moments, good health, and bright opportunities ahead. May this " +
-      milestone.toLowerCase() + " bring every bit of happiness you deserve.";
-    document.getElementById("letterSignOff").textContent = "With warm wishes, " + data.from;
+      "Happy Birthday, " + data.name + "! Wishing you a wonderful day filled with genuine laughter, peaceful mornings, exciting adventures, and everything your heart hopes for. May this " +
+      milestone.toLowerCase() + " be your happiest chapter yet.";
+    document.getElementById("letterSignOff").textContent = "With warm birthday wishes, " + data.from;
 
     document.getElementById("secretMessageText").textContent =
-      data.name + ", no matter how many birthdays pass, your presence as a " + data.rel.toLowerCase() +
-      " makes every celebration brighter. — " + data.from;
+      "Secret wish for " + data.name + ": Even when life gets busy, " + data.from + " (" + data.rel +
+      ") is always cheering for your happiness, success, and biggest birthday smile!";
 
+    document.getElementById("finaleTitle").textContent = "Happy Birthday, " + data.name + "! 🎉";
+    document.getElementById("finaleMessage").textContent =
+      "May your " + milestone.toLowerCase() + " bring nonstop blessings, extra cake slices, hilarious memories, and true peace every single day. — Best wishes from " +
+      data.from + " (" + data.rel + ")";
+
+    // Reset states
     document.getElementById("unwrapGiftBtn").classList.remove("open");
+    document.getElementById("archStageBox").classList.remove("released");
     document.getElementById("pullBowBtn").classList.remove("pulled");
-    document.getElementById("pullStatusText").textContent = "Tap / pull to release";
-    document.querySelectorAll("#balloonGroup .balloon").forEach((b) => b.classList.remove("popped"));
-    document.getElementById("balloonCountText").textContent = "Tap balloons to pop them";
+    document.getElementById("pullStatusText").textContent = "Tap or pull the ribbon bow to release balloons, love & wishes";
+
+    const balloonWishes = {
+      1: "🎈 Wish 1: Happy Birthday " + data.name + "! May your smile stay bright and your heart stay light all year long.",
+      2: "💜 Wish 2: Cheers to " + data.name + "! May every dream you chase come closer with joy and confidence.",
+      3: "🌟 Wish 3: Special blessing for " + data.name + " from " + data.from + "—good health, sweet surprises, and endless celebration!"
+    };
+
+    document.querySelectorAll("#balloonGroup .balloon-3").forEach((b) => {
+      b.classList.remove("popped");
+      b.onclick = () => {
+        startContinuousAudio();
+        b.classList.add("popped");
+        const wKey = b.getAttribute("data-wish");
+        document.getElementById("balloonWishBox").textContent = balloonWishes[wKey] || "Happy Birthday!";
+        spawnConfetti(18);
+      };
+    });
+    document.getElementById("balloonWishBox").textContent = "Tap any of the 3 balloons to blast and read your special birthday wish!";
+
     document.querySelectorAll("#storyScreen .flame").forEach((f) => f.classList.remove("lit"));
-    document.getElementById("cutCakeStage").classList.remove("sliced");
+    const cutCakeStage = document.getElementById("cutCakeStage");
+    cutCakeStage.classList.remove("sliced", "slicing");
+
     document.getElementById("openEnvelopeBtn").style.display = "flex";
     document.getElementById("letterPaper").style.display = "none";
     document.getElementById("revealSecretBtn").classList.remove("revealed");
+    document.getElementById("finaleStage").classList.remove("unboxed");
 
+    // Funny Quiz + Blessings
     const quizBox = document.getElementById("quizContainer");
     const options = [
-      { label: data.from + " (" + data.rel + ")", correct: true },
-      { label: "A mystery guest", correct: false },
-      { label: "A party planner", correct: false },
-      { label: "Someone from afar", correct: false }
+      {
+        label: data.from + " (" + data.rel + ") — Chief Birthday Cheerleader",
+        correct: true,
+        msg: "😂 Spot on! Blessing unlocked: May " + data.name + " get VIP cake rights, zero chores today, and 100% good vibes from " + data.from + "!"
+      },
+      {
+        label: "A cake-stealing ninja",
+        correct: false,
+        msg: "🥷 Close! We warned the cake ninjas to stay away from " + data.name + "'s slices today!"
+      },
+      {
+        label: "A time-traveling blessing wizard",
+        correct: false,
+        msg: "🧙‍♂️ Fun guess! Blessing added anyway: May " + data.name + " age like fine chocolate—sweeter every year!"
+      },
+      {
+        label: "Your future self sending confetti",
+        correct: false,
+        msg: "🎉 Future you says: Happy Birthday " + data.name + "! Keep laughing and enjoy every moment!"
+      }
     ];
+
     quizBox.innerHTML =
-      '<div class="quiz-q">Who wished ' + data.name + " a happy birthday today?</div>";
+      '<div class="quiz-q">Funny Question: Who sent today\'s birthday wish &amp; cheeky blessing to ' + data.name + '?</div>' +
+      '<div class="quiz-grid" id="quizOptGrid"></div>' +
+      '<div class="blessing-feedback" id="blessingFeedback">Pick an answer to unlock a funny birthday blessing! 😄</div>';
+
+    const grid = document.getElementById("quizOptGrid");
+    const feedback = document.getElementById("blessingFeedback");
+
     options.forEach((opt) => {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "quiz-opt";
       btn.textContent = opt.label;
       btn.addEventListener("click", () => {
-        quizBox.querySelectorAll(".quiz-opt").forEach((b) => {
-          b.classList.remove("correct", "wrong");
-        });
+        startContinuousAudio();
+        grid.querySelectorAll(".quiz-opt").forEach((b) => b.classList.remove("correct", "wrong"));
         if (opt.correct) {
           btn.classList.add("correct");
-          spawnConfetti();
-          showToast("Happy Birthday, " + data.name + "!");
+          spawnConfetti(32);
         } else {
           btn.classList.add("wrong");
-          showToast("Try another choice!");
+          spawnConfetti(14);
         }
+        feedback.textContent = opt.msg;
       });
-      quizBox.appendChild(btn);
+      grid.appendChild(btn);
     });
 
     goToScene(0);
     showScreen(storyScreen);
   }
 
+  // Explore starts audio continuously and moves to Gift Unwrap
   document.getElementById("exploreExperienceBtn").addEventListener("click", () => {
-    startContinuousAudio();
-    spawnConfetti();
+    enableAndPlayAudio();
+    spawnConfetti(30);
     goToScene(1);
   });
 
@@ -873,7 +1056,7 @@ main{padding:8px 10px}
   unwrapGiftBtn.addEventListener("click", () => {
     startContinuousAudio();
     unwrapGiftBtn.classList.add("open");
-    spawnConfetti();
+    spawnConfetti(26);
     setTimeout(() => goToScene(2), 550);
   });
 
@@ -881,49 +1064,54 @@ main{padding:8px 10px}
   pullBowBtn.addEventListener("click", () => {
     startContinuousAudio();
     pullBowBtn.classList.add("pulled");
-    document.getElementById("pullStatusText").textContent = "Wish released! ✨";
-    spawnConfetti();
-  });
-
-  const balloons = document.querySelectorAll("#balloonGroup .balloon");
-  balloons.forEach((b) => {
-    b.addEventListener("click", () => {
-      startContinuousAudio();
-      b.classList.add("popped");
-      const poppedCount = document.querySelectorAll("#balloonGroup .balloon.popped").length;
-      document.getElementById("balloonCountText").textContent =
-        "Popped " + poppedCount + " of " + balloons.length + " balloons";
-      if (poppedCount === balloons.length) {
-        spawnConfetti();
-      }
-    });
+    document.getElementById("archStageBox").classList.add("released");
+    document.getElementById("pullStatusText").textContent = "Balloons, love & birthday wish released! 🎈♥✨";
+    spawnConfetti(34);
   });
 
   document.getElementById("lightCandlesBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.querySelectorAll("#storyScreen .flame").forEach((f) => f.classList.add("lit"));
-    spawnConfetti();
-    showToast("Candles lit! Make a wish ✨");
+    spawnConfetti(28);
+    showToast("All 3 candles lit! Make a wish ✨");
   });
 
   document.getElementById("cutCakeBtn").addEventListener("click", () => {
     startContinuousAudio();
-    document.getElementById("cutCakeStage").classList.add("sliced");
-    spawnConfetti();
-    showToast("Cake sliced! Enjoy the celebration 🎂");
+    const stage = document.getElementById("cutCakeStage");
+    stage.classList.remove("sliced");
+    stage.classList.add("slicing");
+    setTimeout(() => {
+      stage.classList.add("sliced");
+      spawnConfetti(36);
+      showToast("Cake sliced into 4 sweet pieces! 🔪🎂");
+    }, 450);
   });
 
   document.getElementById("openEnvelopeBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("openEnvelopeBtn").style.display = "none";
     document.getElementById("letterPaper").style.display = "block";
-    spawnConfetti();
+    spawnConfetti(24);
   });
 
   document.getElementById("revealSecretBtn").addEventListener("click", () => {
     startContinuousAudio();
     document.getElementById("revealSecretBtn").classList.add("revealed");
-    spawnConfetti();
+    spawnConfetti(24);
+  });
+
+  document.getElementById("unboxFinaleBtn").addEventListener("click", () => {
+    startContinuousAudio();
+    document.getElementById("finaleStage").classList.add("unboxed");
+    launchFlyingBalloons(16);
+    spawnConfetti(48);
+  });
+
+  document.getElementById("replayBalloonsBtn").addEventListener("click", () => {
+    startContinuousAudio();
+    launchFlyingBalloons(14);
+    spawnConfetti(26);
   });
 
   nextSceneBtn.addEventListener("click", () => {
@@ -933,7 +1121,7 @@ main{padding:8px 10px}
     }
   });
 
-  // Read ?w= first, open story with "Explore the experience", then clean URL
+  // Direct link (?w=...) opens story screen (audio remains off until "Explore the experience" is clicked)
   (function initFromQuery() {
     const params = new URLSearchParams(window.location.search);
     const w = params.get("w");
@@ -948,7 +1136,6 @@ main{padding:8px 10px}
           rel: String(parsed.rel || "Friend").slice(0, 30)
         };
         populateStory(currentData);
-        startContinuousAudio();
         try {
           const cleanPath = window.location.pathname.endsWith("/")
             ? window.location.pathname
