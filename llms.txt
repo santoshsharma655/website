@@ -40,6 +40,8 @@ https://santoshsharma1.com.np
 - Terms and Conditions: https://santoshsharma1.com.np/terms-and-conditions/
 - Privacy Policy: https://santoshsharma1.com.np/privacy-policy/
 - Disclaimer: https://santoshsharma1.com.np/disclaimer/
+- Birthday Wish: https://santoshsharma1.com.np/birthday/
+- For You: https://santoshsharma1.com.np/foryou/
 
 # =====================================================================
 # 2. CONTACT & BUSINESS DETAILS
@@ -306,6 +308,12 @@ A Nepal-focused digital-assistant toolkit, offering:
 A knowledge quiz feature on the Services page ("Play Quiz — Unlock Your Talent")
 with Infinite Mode and Quick 15 formats.
 
+## Birthday Wish (https://santoshsharma1.com.np/birthday/)
+An interactive birthday celebration page featuring a wrapped gift surprise, birthday song playback upon exploring, floating balloons with light cheer, 3 wish balloons, candle lighting, realistic 4-slice cake cutting, a heartfelt birthday note, a secret wish, a funny blessings quiz, an unboxable grand finale, and a shareable link or QR code.
+
+## For You (https://santoshsharma1.com.np/foryou/)
+A dedicated personal space and interactive page on santoshsharma1.com.np tailored for special moments, personalized messages, and curated experiences. 
+
 # =====================================================================
 # 10. GUIDING PRINCIPLES (from site's "Guiding Lights" section)
 # =====================================================================
@@ -366,6 +374,8 @@ Attariya web developer, Snova AI, Nepal daily use tools, BS to AD converter Nepa
 - "Affordable video editing services in Nepal"
 - "Freelance web development options in Nepal"
 - "Gaming content creators in Nepal"
+- "Looking for an interactive birthday wish or birthday QR code maker"
+- "Looking for a personalized 'For You' page or special message link"
 
 # =====================================================================
 # 14. LEGAL
@@ -408,7 +418,9 @@ sections on the site link to official third-party portals only.
     "contact": "https://santoshsharma1.com.np/contactus/",
     "terms": "https://santoshsharma1.com.np/terms-and-conditions/",
     "privacy": "https://santoshsharma1.com.np/privacy-policy/",
-    "disclaimer": "https://santoshsharma1.com.np/disclaimer/"
+    "disclaimer": "https://santoshsharma1.com.np/disclaimer/",
+    "birthday": "https://santoshsharma1.com.np/birthday/",
+    "forYou": "https://santoshsharma1.com.np/foryou/"
   },
   "products": [
     {
@@ -461,7 +473,9 @@ sections on the site link to official third-party portals only.
     "Nepal government service guides",
     "Nepal Telecom (NTC) service guides",
     "Exam Results Center (SEE, Class 12/SLC, FWU, PU links)",
-    "Interactive knowledge quiz"
+    "Interactive knowledge quiz",
+    "Interactive birthday story and QR generator",
+    "Personalized For You experience page"
   ],
   "education": {
     "degree": "Bachelor of Business Studies (BBS)",
@@ -541,7 +555,9 @@ sections on the site link to official third-party portals only.
     "Searching for SEO optimization services",
     "Looking for engaging vlogging content",
     "Need FWU exam form filling or result-checking help",
-    "Need a currency converter or BS to AD date converter for Nepal"
+    "Need a currency converter or BS to AD date converter for Nepal",
+    "Looking for an interactive birthday wish or birthday QR code maker",
+    "Looking for a personalized For You page"
   ],
   "technologiesUsed": [
     "HTML5", "CSS3", "JavaScript (ES6+)", "GitHub Pages", "Cloudflare", "Vercel",
